@@ -90,6 +90,34 @@
   });
 
   /* ==========================================================================
+     THEME MANAGEMENT (DARK / LIGHT NORMAL MODE)
+     ========================================================================== */
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  let currentTheme = localStorage.getItem("preferred_theme") || "dark";
+
+  function applyTheme(theme) {
+    currentTheme = theme;
+    localStorage.setItem("preferred_theme", theme);
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    }
+  }
+
+  // Init theme immediately
+  applyTheme(currentTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+    });
+  }
+
+  /* ==========================================================================
      2. DYNAMIC HERO TYPEWRITER ANIMATION
      ========================================================================== */
   let typeIndex = 0;

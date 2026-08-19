@@ -64,6 +64,170 @@
   --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* --------------------------------------------------------------------------
+   LIGHT THEME / MODE NORMAL TOKENS
+   -------------------------------------------------------------------------- */
+html.light {
+  color-scheme: light;
+  
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --bg-glass: rgba(255, 255, 255, 0.82);
+  --bg-glass-strong: rgba(255, 255, 255, 0.94);
+  
+  --border-subtle: rgba(15, 23, 42, 0.1);
+  --border-glass: rgba(2, 132, 199, 0.25);
+  --border-glass-hover: rgba(2, 132, 199, 0.55);
+  
+  --cyan-primary: #0284c7;
+  --cyan-light: #0369a1;
+  --cyan-glow: rgba(2, 132, 199, 0.22);
+  
+  --violet-primary: #7c3aed;
+  --violet-light: #6d28d9;
+  --violet-glow: rgba(124, 58, 237, 0.2);
+
+  --emerald-primary: #059669;
+  --emerald-light: #047857;
+  --emerald-glow: rgba(5, 150, 105, 0.2);
+
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-heading: #0f172a;
+
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 0 15px -3px rgba(2, 132, 199, 0.15);
+}
+
+html.light .ambient-glow-1 {
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+html.light .ambient-glow-2 {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+html.light .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+html.light .hero-card-preview {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(241, 245, 249, 0.96) 100%);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1), 0 0 25px -5px rgba(2, 132, 199, 0.12);
+}
+
+html.light .tech-badge,
+html.light .deliv-chip,
+html.light .company-pill {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: var(--text-main);
+}
+
+html.light .tech-badge:hover {
+  background: rgba(2, 132, 199, 0.1);
+  border-color: var(--cyan-primary);
+  color: var(--cyan-primary);
+}
+
+html.light .project-metrics-row {
+  background: rgba(241, 245, 249, 0.85);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+html.light .filter-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: var(--text-muted);
+}
+
+html.light .filter-btn.active {
+  background: var(--cyan-primary);
+  color: #ffffff;
+  border-color: var(--cyan-primary);
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+}
+
+html.light .btn-secondary {
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--text-heading);
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+html.light .btn-secondary:hover {
+  background: rgba(15, 23, 42, 0.1);
+  color: var(--text-heading);
+}
+
+html.light .btn-outline {
+  border-color: rgba(15, 23, 42, 0.2);
+  color: var(--text-heading);
+}
+
+html.light .btn-outline:hover {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: var(--cyan-primary);
+  color: var(--cyan-primary);
+}
+
+html.light .form-control {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+html.light .form-control:focus {
+  background: #ffffff;
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+html.light .footer {
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+}
+
+html.light .modal-window {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2), 0 0 30px rgba(2, 132, 199, 0.15);
+}
+
+html.light .modal-header {
+  background: #ffffff;
+  border-bottom-color: #e2e8f0;
+}
+
+html.light .modal-diagram-box {
+  background: #0f172a;
+  color: #7dd3fc;
+}
+
+html.light .lang-switcher {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+html.light .lang-btn.active {
+  background: var(--cyan-primary);
+  color: #ffffff;
+}
+
+html.light .nav-links {
+  background: rgba(255, 255, 255, 0.98);
+  border-top-color: rgba(15, 23, 42, 0.08);
+}
+
+html.light .timeline-dot {
+  border-color: #f8fafc;
+}
+
 /* Base Reset & Smooth Scrolling */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -74,7 +238,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 20px);
-  color-scheme: dark;
 }
 
 body {
@@ -87,6 +250,7 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 /* Background Canvas Layer */
@@ -334,6 +498,46 @@ img, svg {
   0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
   70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  background: rgba(16, 24, 43, 0.8);
+  border: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: all var(--transition-fast);
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+html.light .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(15, 23, 42, 0.15);
+  color: #0f172a;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--cyan-primary);
+  transform: scale(1.08);
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
+
+html.dark .theme-icon-sun { display: inline-block; }
+html.dark .theme-icon-moon { display: none; }
+html.light .theme-icon-sun { display: none; }
+html.light .theme-icon-moon { display: inline-block; }
+
+html.light .section-title {
+  background: linear-gradient(135deg, #0f172a 40%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Scroll reveal helper classes */
