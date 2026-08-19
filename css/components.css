@@ -1036,7 +1036,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   9. SKILLS MATRIX
+   9. SKILLS MATRIX (Sober Tag Cloud & Tech Pills)
    -------------------------------------------------------------------------- */
 .skills-categories-grid {
   display: grid;
@@ -1046,6 +1046,8 @@
 
 .skill-category-card {
   padding: 28px;
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-cat-header {
@@ -1053,7 +1055,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
-  padding-bottom: 12px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -1065,48 +1067,38 @@
   font-size: 1.15rem;
 }
 
-.skill-list {
+.skill-tags-cloud {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.skill-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.skill-name {
+.skill-tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.88rem;
+  font-weight: 500;
   color: var(--text-main);
+  transition: all var(--transition-fast);
 }
 
-.skill-level {
-  color: var(--cyan-primary);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+.skill-tag-item:hover {
+  border-color: var(--cyan-primary);
+  background: rgba(6, 182, 212, 0.08);
+  color: var(--cyan-light);
+  transform: translateY(-2px);
 }
 
-.skill-progress-bar {
-  width: 100%;
+.skill-tag-item .tag-dot {
+  width: 6px;
   height: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-pill);
-  overflow: hidden;
-}
-
-.skill-progress-fill {
-  height: 100%;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(90deg, var(--cyan-primary), var(--violet-primary));
-  transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border-radius: 50%;
+  background: var(--cyan-primary);
 }
 
 /* --------------------------------------------------------------------------
