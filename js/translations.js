@@ -12,13 +12,12 @@ const translations = {
     
     // Navbar
     nav_home: "Accueil",
-    nav_approach: "Méthode Freelance",
+    nav_approach: "Méthode",
     nav_services: "Prestations",
     nav_projects: "Réalisations",
-    nav_terminal: "Terminal Live",
     nav_skills: "Compétences",
     nav_experience: "Références",
-    nav_contact: "Contact Freelance",
+    nav_contact: "Contact",
     nav_status_badge: "Disponible pour nouvelles missions Freelance",
     nav_cta: "Me contacter",
     
@@ -183,15 +182,14 @@ const translations = {
     
     // Navbar
     nav_home: "Home",
-    nav_approach: "Freelance Approach",
+    nav_approach: "Method",
     nav_services: "Services",
-    nav_projects: "Case Studies",
-    nav_terminal: "Live CLI",
+    nav_projects: "Projects",
     nav_skills: "Skills",
-    nav_experience: "Track Record",
-    nav_contact: "Hire Me",
+    nav_experience: "Experience",
+    nav_contact: "Contact",
     nav_status_badge: "Available for Freelance & Remote Contracts",
-    nav_cta: "Hire Me",
+    nav_cta: "Contact Me",
 
     // Hero Section
     hero_greeting: "Hello, I am",
