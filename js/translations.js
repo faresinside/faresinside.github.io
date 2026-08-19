@@ -7,8 +7,8 @@
 const translations = {
   fr: {
     // Meta & Header
-    meta_title: "Fares METIDJI | Ingénieur DevOps & Développeur Full-Stack Freelance",
-    meta_desc: "Consultant DevOps & Développeur Full-Stack Freelance (5+ ans d'exp). Accompagnement de startups, PMEs et équipes tech : APIs FastAPI/Node, interfaces React et infrastructures Docker/Kubernetes fiables.",
+    meta_title: "Fares METIDJI | Ingénieur DevSecOps & Développeur Full-Stack IA",
+    meta_desc: "Consultant DevSecOps & Développeur Full-Stack Freelance (5+ ans d'exp, Master 2 Sécurité). Intégration d'IA (LLMs/RAG), backends FastAPI/React et infrastructures Cloud sécurisées (Docker/K8s/CI-CD).",
     
     // Navbar
     nav_home: "Accueil",
@@ -18,7 +18,7 @@ const translations = {
     nav_skills: "Compétences",
     nav_experience: "Références",
     nav_contact: "Contact",
-    nav_status_badge: "Disponible pour nouvelles missions Freelance",
+    nav_status_badge: "Disponible pour missions Freelance & Régie",
     nav_cta: "Me contacter",
     
     // Hero Section
@@ -26,12 +26,12 @@ const translations = {
     hero_name: "Fares METIDJI",
     hero_role_prefix: "Ingénieur Freelance spécialisé en",
     hero_roles: [
-      "DevOps & Industrialisation Cloud (Docker, Kubernetes, CI/CD)",
-      "Développement Full-Stack (Python, FastAPI, TypeScript, React)",
-      "Automatisation, Scrapers de Données & Intégration d'APIs",
-      "Diagnostic & Maintien en Condition Opérationnelle (MCO)"
+      "DevSecOps & Sécurité Cloud (Docker, Kubernetes, Trivy, CI/CD)",
+      "Intégration d'IA & Architectures RAG (LLMs, FastAPI, pgvector, Ollama)",
+      "Développement Full-Stack (Python 3.12, TypeScript, React, Fastify)",
+      "Diagnostic, MCO & Résolution d'Incidents de Production (N3)"
     ],
-    hero_pitch: "Consultant DevOps & Développeur Full-Stack avec 5+ ans d'expérience (Conseil Départemental, Publicis, Vocalcom, Orange). J'accompagne les entreprises, startups et agences au forfait ou en régie pour concevoir des applications solides et automatiser leurs déploiements Cloud.",
+    hero_pitch: "Ingénieur avec 5+ ans d'expérience en entreprise (Conseil Départemental, Publicis, Vocalcom, Orange) et diplômé d'un Master 2 en Réseaux & Sécurité. J'aide les startups et équipes tech à concevoir des applications web/IA performantes et à industrialiser leurs infrastructures Cloud avec les standards DevSecOps.",
     hero_cta_projects: "Explorer mes réalisations",
     hero_cta_contact: "Me confier une mission",
     hero_stats_exp: "Ans d'expérience",
@@ -41,36 +41,37 @@ const translations = {
 
     // Value Pillars (Work Philosophy & Trust)
     pillars_title: "Ma Méthode d'Accompagnement Freelance",
-    pillars_subtitle: "Un partenariat technique fluide, transparent et axé sur la livraison concrète de valeur.",
-    pillar1_title: "Cadrage Clair & Autonomie 100%",
-    pillar1_desc: "Analyse pragmatique de votre besoin, code typé et documenté, pour que votre équipe reste parfaitement autonome sans dépendance technique.",
-    pillar2_title: "Livrables Clés en Main & DevOps",
-    pillar2_desc: "Applications conteneurisées (Docker), scripts de déploiement automatisés et reverse proxies sécurisés prêts pour la production.",
+    pillars_subtitle: "Un partenariat technique fluide, axé sur l'intégration d'IA pragmatique, la sécurité DevSecOps et le code maintenable.",
+    pillar1_title: "Architecture IA & Code Propre",
+    pillar1_desc: "Conception d'APIs performantes (FastAPI, TypeScript), intégration de LLMs (OpenAI, Gemini, Ollama) et architectures RAG avec vector database pour enrichir vos produits.",
+    pillar2_title: "Culture DevSecOps & Fiabilité",
+    pillar2_desc: "Conteneurisation Docker durcie, scans de vulnérabilités (Trivy), gestion des secrets et pipelines CI/CD automatisés pour des mises en production sereines.",
     pillar3_title: "Flexibilité & Sécurité Contractuelle",
-    pillar3_desc: "Intervention au forfait ou au TJM, en direct ou via plateformes sécurisées (Codeur.com, Malt, Upwork). Réactivité et points d'étape réguliers.",
+    pillar3_desc: "Intervention au forfait ou au TJM, en direct ou via plateformes sécurisées (Codeur.com, Malt, Upwork). Réactivité sous 24h et points d'étape réguliers.",
 
     // Services
-    services_title: "Prestations & Modes d'Intervention",
-    services_subtitle: "Missions au forfait ou en renfort d'équipe (TJM) adaptées à vos objectifs.",
-    service_fullstack_title: "Développement Web & APIs",
-    service_fullstack_desc: "Création de backends rapides (FastAPI, Fastify, Node.js), d'interfaces web réactives (React, TypeScript) et d'applications mobiles (React Native).",
-    service_fullstack_tag: "Full-Stack Web",
-    service_devops_title: "DevOps & Déploiements Cloud",
-    service_devops_desc: "Mise en place de pipelines CI/CD (GitLab CI, GitHub Actions), conteneurisation Docker, orchestration Kubernetes et configuration de serveurs Linux/AWS.",
-    service_devops_tag: "DevOps & Cloud",
-    service_automation_title: "Automatisation & Web Scraping",
-    service_automation_desc: "Développement de scripts d'automatisation sur-mesure, extracteurs de données asynchrones, pipelines ETL et webhooks d'alertes.",
-    service_automation_tag: "Automation",
-    service_audit_title: "Audit, MCO & Résolution d'Incidents",
-    service_audit_desc: "Diagnostic de bugs critiques en production, optimisation des performances, monitoring Prometheus/Grafana et sécurisation d'environnements.",
-    service_audit_tag: "Support & Audit",
+    services_title: "Prestations & Domaines d'Intervention",
+    services_subtitle: "Des expertises pointues pour accélérer votre développement produit et sécuriser vos déploiements.",
+    service_fullstack_title: "Développement Web & Solutions IA",
+    service_fullstack_desc: "Création d'APIs rapides (FastAPI, Fastify, Node.js), interfaces web réactives (React, TypeScript) et intégration de modèles d'IA (LLMs, RAG, Agents).",
+    service_fullstack_tag: "Full-Stack & IA",
+    service_devops_title: "DevSecOps & Déploiements Cloud",
+    service_devops_desc: "Pipelines CI/CD sécurisés (GitLab CI, GitHub Actions), conteneurisation Docker, clusters Kubernetes durcis, scans de vulnérabilités et configuration AWS/Linux.",
+    service_devops_tag: "DevSecOps & Cloud",
+    service_automation_title: "Automatisation & Pipelines ETL",
+    service_automation_desc: "Développement de scrapers de données asynchrones, pipelines d'ingestion et d'analyse automatisée par IA, et webhooks d'alertes en temps réel.",
+    service_automation_tag: "Automation & Data",
+    service_audit_title: "Audit de Sécurité, MCO & Support N3",
+    service_audit_desc: "Audit de durcissement (Hardening), résolution d'incidents critiques en production, supervision (Prometheus/Grafana) et optimisation des coûts Cloud.",
+    service_audit_tag: "Sécurité & MCO",
 
     // Projects Section
     projects_title: "Projets & Études de Cas",
-    projects_subtitle: "Exemples concrets d'architectures techniques et de solutions développées.",
+    projects_subtitle: "Exemples concrets d'architectures techniques, d'intégrations IA et de déploiements sécurisés.",
     projects_filter_all: "Tous les Projets",
+    projects_filter_ai: "IA & LLMs",
+    projects_filter_devops: "DevSecOps & Cloud",
     projects_filter_fullstack: "Web & SaaS",
-    projects_filter_devops: "DevOps & Cloud",
     projects_filter_automation: "Automatisation",
     projects_filter_mobile: "Mobile",
     projects_btn_arch: "Voir l'architecture",
@@ -177,8 +178,8 @@ const translations = {
 
   en: {
     // Meta & Header
-    meta_title: "Fares METIDJI | Senior DevOps & Full-Stack Freelance Engineer",
-    meta_desc: "Freelance DevOps Consultant & Full-Stack Developer (5+ years exp). Helping startups, tech teams, and agencies build resilient web/mobile apps and automate production Cloud infrastructure.",
+    meta_title: "Fares METIDJI | DevSecOps Engineer & Full-Stack AI Developer",
+    meta_desc: "Freelance DevSecOps Consultant & Full-Stack Developer (5+ years exp, Master 2 in Networks & Security). AI & LLM Integrations, FastAPI/React backends, and hardened Cloud infrastructure (Docker/K8s/CI-CD).",
     
     // Navbar
     nav_home: "Home",
@@ -196,12 +197,12 @@ const translations = {
     hero_name: "Fares METIDJI",
     hero_role_prefix: "Freelance Engineer specialized in",
     hero_roles: [
-      "DevOps & Cloud Automation (Docker, Kubernetes, CI/CD)",
-      "Full-Stack Development (Python, FastAPI, TypeScript, React)",
-      "Automation, Data Scrapers & API Integrations",
-      "Production Troubleshooting & Reliability (MCO)"
+      "DevSecOps & Cloud Hardening (Docker, Kubernetes, Trivy, CI/CD)",
+      "AI & LLM Integration / RAG (FastAPI, pgvector, Ollama, LangChain)",
+      "Full-Stack Development (Python 3.12, TypeScript, React, Fastify)",
+      "Production Troubleshooting, MCO & Tier-3 Support"
     ],
-    hero_pitch: "Senior DevOps Consultant & Full-Stack Developer with 5+ years of experience (Conseil Départemental, Publicis, Vocalcom, Orange). I partner with startups, scale-ups, and tech leads on fixed-price milestones or daily consulting to build dependable systems.",
+    hero_pitch: "Engineer with 5+ years of enterprise experience (Conseil Départemental, Publicis, Vocalcom, Orange) and a Master's Degree in Networks & Cybersecurity. I help startups and tech teams build resilient web & AI applications and automate their Cloud infrastructure using modern DevSecOps practices.",
     hero_cta_projects: "Explore My Work",
     hero_cta_contact: "Start a Collaboration",
     hero_stats_exp: "Years Experience",
@@ -211,36 +212,37 @@ const translations = {
 
     // Value Pillars (Work Philosophy & Trust)
     pillars_title: "How We Collaborate",
-    pillars_subtitle: "A pragmatic technical partnership focused on clean code, security, and continuous delivery.",
-    pillar1_title: "Clear Scoping & 100% Autonomy",
-    pillar1_desc: "Strictly typed, modular, and well-documented code so your team stays completely independent without technical lock-in.",
-    pillar2_title: "Production-Ready DevOps Deliverables",
-    pillar2_desc: "Docker containerization, automated CI/CD workflows, and secured reverse proxies built for zero-downtime operations.",
+    pillars_subtitle: "A pragmatic technical partnership focused on AI integration, DevSecOps security, and maintainable code.",
+    pillar1_title: "AI Architecture & Clean Code",
+    pillar1_desc: "High-performance APIs (FastAPI, TypeScript), LLM integrations (OpenAI, Gemini, Ollama), and RAG vector search pipelines to empower your digital products.",
+    pillar2_title: "DevSecOps & Production Reliability",
+    pillar2_desc: "Hardened Docker containers, vulnerability scanning (Trivy), automated secrets management, and robust CI/CD pipelines for smooth zero-downtime releases.",
     pillar3_title: "Flexibility & Seamless Invoicing",
-    pillar3_desc: "Fixed-price project scopes or daily rate (TJM) consulting. Direct contractual agreements or via Upwork, Malt, and Codeur.com.",
+    pillar3_desc: "Fixed-price project scopes or daily rate (TJM) consulting. Direct contractual agreements or via Upwork, Malt, and Codeur.com with 24h response time.",
 
     // Services
     services_title: "Freelance Services & Expertise",
-    services_subtitle: "Tailored to your roadmap, whether on fixed deliverables or engineering reinforcement.",
-    service_fullstack_title: "Web & API Development",
-    service_fullstack_desc: "High-performance backends (FastAPI, Fastify, Node.js), responsive web frontends (React, TypeScript), and mobile applications (React Native).",
-    service_fullstack_tag: "Full-Stack Web",
-    service_devops_title: "DevOps & Cloud Automation",
-    service_devops_desc: "Automated CI/CD pipelines (GitLab CI, GitHub Actions), Docker containerization, Kubernetes clusters, and Linux/AWS architecture.",
-    service_devops_tag: "DevOps & Cloud",
-    service_automation_title: "Automation & Data Scraping",
-    service_automation_desc: "Custom asynchronous data scrapers, automated ETL processing pipelines, and multi-channel alerting webhooks.",
-    service_automation_tag: "Automation",
-    service_audit_title: "Audit, MCO & Incident Troubleshooting",
-    service_audit_desc: "Production issue diagnostics, performance profiling, Prometheus/Grafana monitoring, and environment security hardening.",
-    service_audit_tag: "Support & Audit",
+    services_subtitle: "Specialized engineering to accelerate your roadmap and secure your Cloud deployments.",
+    service_fullstack_title: "Web Development & AI Solutions",
+    service_fullstack_desc: "High-performance backends (FastAPI, Fastify, Node.js), responsive frontends (React, TypeScript), and AI model integration (LLMs, RAG, Agents).",
+    service_fullstack_tag: "Full-Stack & AI",
+    service_devops_title: "DevSecOps & Cloud Hardening",
+    service_devops_desc: "Automated CI/CD security pipelines (GitLab CI, GitHub Actions), hardened Docker/Kubernetes clusters, vulnerability scans, and Linux/AWS configuration.",
+    service_devops_tag: "DevSecOps & Cloud",
+    service_automation_title: "Automation & ETL Pipelines",
+    service_automation_desc: "Custom asynchronous data scrapers, automated ingestion & AI-driven text analysis pipelines, and multi-channel alerting webhooks.",
+    service_automation_tag: "Automation & Data",
+    service_audit_title: "Security Auditing, MCO & Tier-3 Support",
+    service_audit_desc: "Production issue diagnostics, infrastructure hardening, Prometheus/Grafana observability, and Cloud cost optimization.",
+    service_audit_tag: "Security & MCO",
 
     // Projects Section
     projects_title: "Featured Projects & Case Studies",
-    projects_subtitle: "Concrete examples of technical architectures and software solutions.",
+    projects_subtitle: "Concrete examples of technical architectures, AI integrations, and hardened Cloud systems.",
     projects_filter_all: "All Projects",
+    projects_filter_ai: "AI & LLMs",
+    projects_filter_devops: "DevSecOps & Cloud",
     projects_filter_fullstack: "Web & SaaS",
-    projects_filter_devops: "DevOps & Cloud",
     projects_filter_automation: "Automation",
     projects_filter_mobile: "Mobile",
     projects_btn_arch: "View Architecture",

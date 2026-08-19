@@ -563,42 +563,138 @@ const projectsData = [
     image: "assets/images/project-citypulse.svg"
   },
   {
+    id: "intrasys-ai-hub",
+    category: "ai",
+    categories: ["ai", "backend", "fullstack"],
+    featured: true,
+    badges: ["FastAPI", "Python 3.12", "Ollama", "pgvector", "LangChain", "Docker", "React"],
+    metrics: {
+      fr: [
+        { label: "Confidentialité données", value: "100% On-Premise" },
+        { label: "Modèles supportés", value: "Mistral, Llama 3" },
+        { label: "Recherche sémantique", value: "<15ms (pgvector)" },
+        { label: "Conteneurisation", value: "Docker Compose" }
+      ],
+      en: [
+        { label: "Data Privacy", value: "100% On-Premise" },
+        { label: "Supported Models", value: "Mistral, Llama 3" },
+        { label: "Semantic Search", value: "<15ms (pgvector)" },
+        { label: "Containerization", value: "Docker Compose" }
+      ]
+    },
+    title: {
+      fr: "IntraSys AI Hub — Plateforme Privée de LLMs & RAG Sémantique",
+      en: "IntraSys AI Hub — Private LLM & Semantic RAG Platform"
+    },
+    subtitle: {
+      fr: "Serveur d'inférence LLM local sécurisé (Ollama / Mistral) avec vector database PostgreSQL (pgvector), pipelines RAG et interface de chat moderne.",
+      en: "Secured on-premise LLM inference server (Ollama / Mistral) with PostgreSQL pgvector embeddings, RAG retrieval pipelines, and modern chat UI."
+    },
+    summary: {
+      fr: "Solution complète d'intelligence artificielle privée permettant aux entreprises d'exploiter la puissance des LLMs sur leurs propres documents internes sans aucune fuite de données vers des APIs tierces. Intègre un embedding vectoriel local, une recherche sémantique ultra-rapide (pgvector) et une API FastAPI sécurisée.",
+      en: "Enterprise-grade private AI platform enabling organizations to leverage local LLMs on internal proprietary documentation without external data leaks. Features local embeddings, sub-15ms pgvector semantic similarity search, and a secured FastAPI orchestration layer."
+    },
+    architecture: {
+      fr: {
+        problem: "Les entreprises manipulant des données sensibles ou confidentielles ne peuvent pas envoyer leurs documents vers des APIs LLM Cloud publiques (OpenAI/Anthropic) pour des raisons de conformité RGPD et de secret des affaires.",
+        solution: "Déploiement d'un cluster d'inférence IA 100% conteneurisé avec Ollama (Mistral 7B / Llama 3), vector store PostgreSQL pgvector, pipeline d'ingestion de documents LangChain et API FastAPI avec streaming SSE.",
+        stack: ["FastAPI (Python 3.12)", "Ollama (Inférence LLM Locale)", "PostgreSQL 16 & pgvector", "LangChain / LlamaIndex", "Docker Compose & GPU Passthrough", "React / Tailwind / SSE Streaming"],
+        diagram: `
++-------------------------------------------------------------+
+|                 DOCUMENTS D'ENTREPRISE (PDF, MD, TXT)       |
++------------------------------+------------------------------+
+                               | (Pipeline d'Ingestion & Chunking)
+                               v
++-------------------------------------------------------------+
+|               EMBEDDING & POSTGRESQL PGVECTOR               |
+|  - Génération d'embeddings locaux (BGE / Nomic)              |
+|  - Index HNSW / Cosine Similarity (<15ms)                   |
++------------------------------+------------------------------+
+                               | (Contexte Sémantique Pertinent)
+                               v
++-------------------------------------------------------------+
+|               FASTAPI AI ORCHESTRATOR & AGENT               |
+|  - Prompt Engineering & Context Assembly                    |
+|  - Serveur Ollama Local (Mistral 7B / Llama 3)               |
+|  - Streaming SSE Token par Token                            |
++------------------------------+------------------------------+
+                               |
+                               v
++-------------------------------------------------------------+
+|                MODERN REACT WEB CHAT INTERFACE              |
++-------------------------------------------------------------+`
+      },
+      en: {
+        problem: "Enterprises dealing with sensitive or regulated data cannot send proprietary internal knowledge to public cloud LLM APIs due to strict GDPR and compliance policies.",
+        solution: "Engineered a self-hosted, 100% containerized private AI ecosystem combining local Ollama model runtime, pgvector similarity store, LangChain document chunking, and a FastAPI SSE streaming backend.",
+        stack: ["FastAPI (Python 3.12)", "Ollama (Local LLM Inference)", "PostgreSQL 16 & pgvector", "LangChain / LlamaIndex", "Docker Compose & GPU acceleration", "React / SSE Streaming"],
+        diagram: `
++-------------------------------------------------------------+
+|                 INTERNAL ENTERPRISE DOCS (PDF, TXT)         |
++------------------------------+------------------------------+
+                               | (Chunking & Embedding Pipeline)
+                               v
++-------------------------------------------------------------+
+|               EMBEDDINGS & POSTGRESQL PGVECTOR              |
+|  - Local Vector Embeddings (BGE / Nomic)                    |
+|  - HNSW Indexing & Cosine Distance (<15ms)                  |
++------------------------------+------------------------------+
+                               | (Relevant Context Injection)
+                               v
++-------------------------------------------------------------+
+|               FASTAPI AI ORCHESTRATION ENGINE               |
+|  - Dynamic System Prompt Synthesis                          |
+|  - Local Ollama Ingestion (Mistral 7B / Llama 3)            |
+|  - Real-Time Token-by-Token SSE Stream                      |
++------------------------------+------------------------------+
+                               |
+                               v
++-------------------------------------------------------------+
+|                MODERN REACT AI CHAT INTERFACE               |
++-------------------------------------------------------------+`
+      }
+    },
+    demoUrl: null,
+    githubUrl: "https://github.com/faresmetidji",
+    image: "assets/images/project-remoteradar.svg"
+  },
+  {
     id: "enterprise-devops-infra",
     category: "devops",
     categories: ["devops", "cloud", "backend"],
     featured: true,
-    badges: ["Kubernetes", "Docker", "GitLab CI", "Ansible", "AWS", "Prometheus", "Grafana", "Linux RHEL"],
+    badges: ["DevSecOps", "Kubernetes", "Docker", "GitLab CI", "Trivy Scan", "Ansible", "AWS", "Prometheus", "Grafana"],
     metrics: {
       fr: [
         { label: "Apps en production", value: "150+" },
         { label: "Déploiements manuels", value: "-60%" },
         { label: "Disponibilité SLA", value: "99.9%" },
-        { label: "Support N3", value: "Expert" }
+        { label: "Support N3 & Sécurité", value: "Expert" }
       ],
       en: [
         { label: "Production Apps", value: "150+" },
         { label: "Manual Deploy Overhead", value: "-60%" },
         { label: "Service SLA", value: "99.9%" },
-        { label: "Tier 3 Incident Mgmt", value: "Expert" }
+        { label: "Tier 3 & Security", value: "Expert" }
       ]
     },
     title: {
-      fr: "Infrastructure Cloud, DevOps & Observabilité — 150+ Applications Métier",
-      en: "Enterprise DevOps & Cloud Observability — 150+ Mission-Critical Apps"
+      fr: "DevSecOps, Industrialisation Cloud & Observabilité — 150+ Applications Métier",
+      en: "Enterprise DevSecOps & Cloud Observability — 150+ Mission-Critical Apps"
     },
     subtitle: {
-      fr: "Industrialisation CI/CD (GitLab CI, Ansible, Docker, K8s), maintien en condition opérationnelle (MCO) et observabilité Prometheus/Grafana.",
-      en: "End-to-end CI/CD industrialization (GitLab CI, Ansible, Docker, Kubernetes), 24/7 high availability, and Prometheus/Grafana observability."
+      fr: "Industrialisation CI/CD sécurisée (GitLab CI, Trivy, Ansible, Docker, K8s), maintien en condition opérationnelle (MCO) et observabilité Prometheus/Grafana.",
+      en: "End-to-end secured CI/CD (GitLab CI, Trivy, Ansible, Docker, Kubernetes), 24/7 high availability, and Prometheus/Grafana observability."
     },
     summary: {
-      fr: "Plus de 5 ans d'expérience au service de grands comptes et institutions publiques (Conseil Départemental des Yvelines, Publicis Groupe, Vocalcom, Orange). Automatisation complète des déploiements, administration de clusters Kubernetes/Docker, gestion de bases de données (PostgreSQL, Oracle, MySQL) et résolution d'incidents critiques N3.",
-      en: "Over 5 years of proven enterprise experience supporting Tier-1 clients and public institutions (Conseil Départemental, Publicis Groupe, Vocalcom, Orange). Led end-to-end deployment automation, Kubernetes/Docker cluster administration, relational database tuning, and N3 incident resolution."
+      fr: "Plus de 5 ans d'expérience au service de grands comptes et institutions publiques (Conseil Départemental des Yvelines, Publicis Groupe, Vocalcom, Orange). Automatisation complète des déploiements, administration de clusters Kubernetes/Docker, durcissement de sécurité (scans de vulnérabilités Trivy/SonarQube), gestion de bases de données et résolution d'incidents critiques N3.",
+      en: "Over 5 years of proven enterprise experience supporting Tier-1 clients and public institutions (Conseil Départemental, Publicis Groupe, Vocalcom, Orange). Led deployment automation, Kubernetes/Docker cluster security hardening (Trivy/SonarQube vulnerability scans), relational database tuning, and N3 incident resolution."
     },
     architecture: {
       fr: {
-        problem: "Gérer 150+ applications hétérogènes avec des déploiements manuels risqués, des fenêtres de mise en production complexes et un manque de visibilité en temps réel.",
-        solution: "Mise en place de pipelines GitLab CI/Jenkins standardisés avec playbooks Ansible, conteneurisation Docker/Kubernetes, ordonnancement automatisé et supervision unifiée avec Prometheus, Grafana et alertes dynamiques.",
-        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Ansible Playbooks & Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian, CentOS) & Windows Server", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Apache Tomcat, Apache HTTP, IIS, Traefik"],
+        problem: "Gérer 150+ applications hétérogènes avec des déploiements manuels risqués, des fenêtres de mise en production complexes et des exigences strictes de sécurité.",
+        solution: "Mise en place de pipelines GitLab CI standardisés avec scans de sécurité (Trivy/SAST), playbooks Ansible idempotents, conteneurisation Docker/Kubernetes durcie et supervision unifiée avec Prometheus, Grafana et alertes dynamiques.",
+        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Playbooks & Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Apache Tomcat, Traefik, Nginx"],
         diagram: `
 +-------------------------------------------------------------+
 |                 DEVELOPMENT & GIT REPOSITORIES              |
@@ -607,9 +703,10 @@ const projectsData = [
                                | (Git Push / Tag Trigger)
                                v
 +-------------------------------------------------------------+
-|               CI/CD AUTOMATION & TESTING PIPELINE           |
+|           DEVSECOPS CI/CD AUTOMATION & TESTING PIPELINE     |
 |  - GitLab CI / Jenkins Runners: Unit & Integration Tests    |
-|  - Docker Multi-Stage Image Build & Container Security Scan |
+|  - SAST & Container Vulnerability Scans (Trivy / SonarQube) |
+|  - Docker Multi-Stage Image Build & Container Hardening     |
 |  - Artifact Packaging & Registry Push                       |
 +------------------------------+------------------------------+
                                | (Automated Rollout via Ansible / ArgoCD)
@@ -629,9 +726,9 @@ const projectsData = [
 +-------------------------------------------------------------+`
       },
       en: {
-        problem: "Managing 150+ legacy and modern applications with manual, risky deployments, long maintenance windows, and fragmented observability.",
-        solution: "Engineered standardized GitLab CI/Jenkins pipelines paired with idempotent Ansible playbooks, container orchestration, zero-downtime rolling updates, and full-stack Prometheus/Grafana telemetry.",
-        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Ansible Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) & Windows Server", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Tomcat, Apache HTTP, Traefik"],
+        problem: "Managing 150+ legacy and modern applications with manual, risky deployments, long maintenance windows, and strict compliance/security requirements.",
+        solution: "Engineered standardized GitLab CI pipelines with integrated security scanning (Trivy/SAST), paired with idempotent Ansible playbooks, container hardening, zero-downtime rolling updates, and full-stack Prometheus/Grafana telemetry.",
+        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Tomcat, Apache HTTP, Traefik"],
         diagram: `
 +-------------------------------------------------------------+
 |                 DEVELOPMENT & GIT REPOSITORIES              |
@@ -640,8 +737,9 @@ const projectsData = [
                                | (Git Push / Tag Trigger)
                                v
 +-------------------------------------------------------------+
-|               CI/CD AUTOMATION & TESTING PIPELINE           |
+|           DEVSECOPS CI/CD AUTOMATION & TESTING PIPELINE     |
 |  - GitLab CI / Jenkins Runners: Automated Tests & Builds    |
+|  - SAST & Container Vulnerability Scanning (Trivy)          |
 |  - Docker Container Security & Base Image Hardening         |
 |  - Artifact Packaging & Container Registry Dispatch         |
 +------------------------------+------------------------------+

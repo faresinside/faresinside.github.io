@@ -172,27 +172,27 @@
                 <div class="hero-profile-avatar">FM</div>
                 <div class="hero-profile-info">
                   <h3>Fares METIDJI</h3>
-                  <p>DevOps & Full-Stack Engineer</p>
+                  <p>DevSecOps & Full-Stack AI Engineer</p>
                 </div>
               </div>
               <span class="status-dot" title="Actuellement disponible"></span>
             </div>
 
             <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
-              Compétences transversales associant développement d'applications web/mobiles modernes (TypeScript, Python, React, FastAPI) et automatisation d'infrastructures Cloud fiables.
+              Compétences transversales : intégration d'IA (LLMs/RAG), développement Full-Stack (Python 3.12, TypeScript, React) et industrialisation d'infrastructures Cloud sécurisées (DevSecOps, Docker, K8s).
             </p>
 
             <div class="hero-tech-badges-list">
-              <span class="tech-badge">☸️ Kubernetes</span>
-              <span class="tech-badge">🐳 Docker</span>
-              <span class="tech-badge">🦊 GitLab CI</span>
+              <span class="tech-badge">🛡️ DevSecOps</span>
+              <span class="tech-badge">🤖 LLMs & RAG</span>
               <span class="tech-badge">⚡ FastAPI</span>
+              <span class="tech-badge">🐳 Docker</span>
+              <span class="tech-badge">☸️ Kubernetes</span>
+              <span class="tech-badge">🔍 Trivy Scans</span>
               <span class="tech-badge">⚛️ React</span>
               <span class="tech-badge">📘 TypeScript</span>
               <span class="tech-badge">🐍 Python 3.12</span>
-              <span class="tech-badge">☁️ AWS</span>
-              <span class="tech-badge">🐘 PostgreSQL</span>
-              <span class="tech-badge">📊 Prometheus</span>
+              <span class="tech-badge">🐘 pgvector</span>
             </div>
 
             <div class="hero-trust-bar">
@@ -363,8 +363,9 @@
         <!-- Filter Buttons -->
         <div class="projects-filters reveal-init">
           <button class="filter-btn active" data-filter="all" data-i18n="projects_filter_all">Tous les Projets</button>
+          <button class="filter-btn" data-filter="ai" data-i18n="projects_filter_ai">IA & LLMs</button>
+          <button class="filter-btn" data-filter="devops" data-i18n="projects_filter_devops">DevSecOps & Cloud</button>
           <button class="filter-btn" data-filter="fullstack" data-i18n="projects_filter_fullstack">Web & SaaS</button>
-          <button class="filter-btn" data-filter="devops" data-i18n="projects_filter_devops">DevOps & Cloud</button>
           <button class="filter-btn" data-filter="automation" data-i18n="projects_filter_automation">Automatisation</button>
           <button class="filter-btn" data-filter="mobile" data-i18n="projects_filter_mobile">Mobile</button>
         </div>
@@ -440,11 +441,11 @@
         </div>
 
         <div class="skills-categories-grid">
-          <!-- 1. Cloud & DevOps -->
+          <!-- 1. DevSecOps & Cloud -->
           <div class="skill-category-card glass-panel reveal-init">
             <div class="skill-cat-header">
               <span class="skill-cat-icon">☸️</span>
-              <h3 data-i18n="skills_cat_devops">DevOps, Conteneurs & Cloud</h3>
+              <h3 data-i18n="skills_cat_devops">DevSecOps, Conteneurs & Cloud</h3>
             </div>
             <div class="skill-list">
               <div class="skill-item">
@@ -463,21 +464,21 @@
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">GitLab CI / Jenkins / GitHub Actions</span>
+                  <span class="skill-name">GitLab CI / GitHub Actions</span>
                   <span class="skill-level">Avancé</span>
                 </div>
                 <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">Ansible Playbooks</span>
+                  <span class="skill-name">Scans Sécurité Trivy & SonarQube</span>
                   <span class="skill-level">Solide</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">AWS Cloud & Serveurs Linux</span>
+                  <span class="skill-name">AWS Cloud & Durcissement Linux</span>
                   <span class="skill-level">Solide</span>
                 </div>
                 <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
@@ -485,19 +486,33 @@
             </div>
           </div>
 
-          <!-- 2. Backend & APIs -->
+          <!-- 2. AI, LLMs & Backend -->
           <div class="skill-category-card glass-panel reveal-init">
             <div class="skill-cat-header">
-              <span class="skill-cat-icon">⚡</span>
-              <h3 data-i18n="skills_cat_backend">Backend, APIs & Langages</h3>
+              <span class="skill-cat-icon">🤖</span>
+              <h3 data-i18n="skills_cat_backend">IA, LLMs & Backend APIs</h3>
             </div>
             <div class="skill-list">
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">Python 3.12 (FastAPI / Flask)</span>
+                  <span class="skill-name">Python 3.12 (FastAPI / Pydantic)</span>
                   <span class="skill-level">Avancé</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span class="skill-name">Intégration LLMs (OpenAI, Gemini, Ollama)</span>
+                  <span class="skill-level">Solide</span>
+                </div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span class="skill-name">Architectures RAG & Vector DB (pgvector)</span>
+                  <span class="skill-level">Solide</span>
+                </div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
@@ -508,24 +523,10 @@
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">Bash, Shell & PowerShell</span>
+                  <span class="skill-name">Scraping AsyncIO & Webhooks</span>
                   <span class="skill-level">Avancé</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-meta">
-                  <span class="skill-name">AsyncIO & Web Scraping</span>
-                  <span class="skill-level">Avancé</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-meta">
-                  <span class="skill-name">RESTful APIs & Webhooks</span>
-                  <span class="skill-level">Avancé</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
               </div>
             </div>
           </div>
@@ -542,7 +543,7 @@
                   <span class="skill-name">React & TypeScript</span>
                   <span class="skill-level">Solide</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
@@ -556,35 +557,35 @@
                   <span class="skill-name">Modern CSS3 & Interfaces Responsive</span>
                   <span class="skill-level">Avancé</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
                   <span class="skill-name">Redux Toolkit & State Management</span>
                   <span class="skill-level">Solide</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 86%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
               </div>
             </div>
           </div>
 
-          <!-- 4. Databases & Monitoring -->
+          <!-- 4. Databases, Security & Monitoring -->
           <div class="skill-category-card glass-panel reveal-init">
             <div class="skill-cat-header">
               <span class="skill-cat-icon">🐘</span>
-              <h3 data-i18n="skills_cat_db">Bases de Données & Caching</h3>
+              <h3 data-i18n="skills_cat_db">Bases de Données, Sécurité & Monitoring</h3>
             </div>
             <div class="skill-list">
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">PostgreSQL & SQLite (Drizzle ORM)</span>
+                  <span class="skill-name">PostgreSQL & pgvector (SQLAlchemy)</span>
                   <span class="skill-level">Avancé</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">Redis & Dragonfly Cache</span>
+                  <span class="skill-name">Gestion des Secrets (Vault, SOPS, .env)</span>
                   <span class="skill-level">Solide</span>
                 </div>
                 <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
@@ -598,10 +599,10 @@
               </div>
               <div class="skill-item">
                 <div class="skill-meta">
-                  <span class="skill-name">MariaDB, MySQL & Oracle Database</span>
+                  <span class="skill-name">Redis & Dragonfly Cache</span>
                   <span class="skill-level">Solide</span>
                 </div>
-                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
+                <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
               </div>
             </div>
           </div>
