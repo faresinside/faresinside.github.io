@@ -18,7 +18,6 @@ const translations = {
     nav_skills: "Compétences",
     nav_experience: "Références",
     nav_contact: "Contact",
-    nav_status_badge: "Disponible pour nouvelles missions",
     nav_cta: "Me contacter",
     
     // Hero Section
@@ -149,7 +148,7 @@ const translations = {
     contact_email_label: "Email :",
     contact_phone_label: "Téléphone :",
     contact_location_label: "Localisation :",
-    contact_location_val: "Paris, France (Disponible en Full Remote & Déplacements ponctuels en France)",
+    contact_location_val: "Paris, France (Full Remote & Déplacements ponctuels en France)",
     contact_btn_copy_email: "Copier l'email",
     contact_btn_copy_phone: "Copier le numéro",
     contact_form_name: "Votre Nom / Société :",
@@ -184,7 +183,6 @@ const translations = {
     nav_skills: "Skills",
     nav_experience: "Experience",
     nav_contact: "Contact",
-    nav_status_badge: "Available for New Projects",
     nav_cta: "Contact Me",
 
     // Hero Section
@@ -315,7 +313,7 @@ const translations = {
     contact_email_label: "Email:",
     contact_phone_label: "Phone:",
     contact_location_label: "Location:",
-    contact_location_val: "Paris, France (Available for Full Remote & Occasional Travel across France)",
+    contact_location_val: "Paris, France (Full Remote & Occasional Travel across France)",
     contact_btn_copy_email: "Copy Email",
     contact_btn_copy_phone: "Copy Phone",
     contact_form_name: "Your Name / Company:",

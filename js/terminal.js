@@ -61,16 +61,16 @@
 • <span class="term-yellow">Entreprises :</span> Conseil départemental des Yvelines, Publicis Groupe, Vocalcom, Orange
 • <span class="term-yellow">Formation :</span> Master 2 Informatique & Ingénierie des Systèmes (CY Cergy Paris Université)
 • <span class="term-yellow">Positionnement :</span> Développement Full-Stack (React, TypeScript, Python, FastAPI) + DevOps (Docker, K8s, CI/CD, AWS)
-• <span class="term-green">Statut :</span> 🟢 Disponible immédiatement pour missions Freelance (Forfait ou Régie)
+• <span class="term-cyan">Modalités :</span> Full Remote & Déplacements ponctuels (Forfait ou Régie)
 `
           : `
-<span class="term-bold term-cyan">Fares METIDJI</span> | Senior DevOps Engineer & Full-Stack Cloud Developer
+<span class="term-bold term-cyan">Fares METIDJI</span> | DevOps Engineer & Full-Stack Cloud Developer
 ----------------------------------------------------------------------
 • <span class="term-yellow">Experience:</span> 5+ years in application integration, production MCO & cloud architecture
 • <span class="term-yellow">Companies:</span> Conseil départemental des Yvelines, Publicis Groupe, Vocalcom, Orange
 • <span class="term-yellow">Education:</span> Master's Degree in Computer Science & Complex Systems (CY Cergy Paris University)
 • <span class="term-yellow">Core Focus:</span> Full-Stack Web/Mobile (React, TypeScript, Python, FastAPI) + Cloud DevOps (Docker, K8s, CI/CD, AWS)
-• <span class="term-green">Status:</span> 🟢 Available immediately for Freelance / Remote contracts
+• <span class="term-cyan">Mobility:</span> Full Remote & Occasional Travel (Fixed-Price or Daily Rate)
 `;
       }
     },
