@@ -20,7 +20,7 @@ const translations = {
     nav_experience: "Références",
     nav_contact: "Contact Freelance",
     nav_status_badge: "Disponible pour nouvelles missions Freelance",
-    nav_cta: "Discuter d'un projet",
+    nav_cta: "Me contacter",
     
     // Hero Section
     hero_greeting: "Bonjour, je suis",
@@ -191,7 +191,7 @@ const translations = {
     nav_experience: "Track Record",
     nav_contact: "Hire Me",
     nav_status_badge: "Available for Freelance & Remote Contracts",
-    nav_cta: "Discuss a Mission",
+    nav_cta: "Hire Me",
 
     // Hero Section
     hero_greeting: "Hello, I am",
