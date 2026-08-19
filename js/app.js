@@ -73,10 +73,7 @@
       openModal(activeModalProject);
     }
 
-    // Recalculate estimator
-    if (typeof window.recalculateEstimator === "function") {
-      window.recalculateEstimator();
-    }
+
   }
 
   // Language Switcher Events
