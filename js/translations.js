@@ -7,8 +7,8 @@
 const translations = {
   fr: {
     // Meta & Header
-    meta_title: "Fares METIDJI | Ingénieur DevOps & Développeur Full-Stack (IA & Cloud)",
-    meta_desc: "Ingénieur DevOps & Développeur Full-Stack (5+ ans d'expérience, Master 2). Développement d'APIs FastAPI/Node, interfaces React, intégration d'APIs IA et déploiements Docker/CI-CD.",
+    meta_title: "Fares METIDJI | Ingénieur DevSecOps & Développeur Full-Stack",
+    meta_desc: "Ingénieur DevSecOps & Développeur Full-Stack (5+ ans d'expérience, Master 2). Automatisation Cloud sécurisée (Docker, K8s, CI/CD), développement d'APIs FastAPI/Python, interfaces React et intégration IA.",
     
     // Navbar
     nav_home: "Accueil",
@@ -23,12 +23,12 @@ const translations = {
     // Hero Section
     hero_greeting: "Bonjour, je suis",
     hero_name: "Fares METIDJI",
-    hero_title: "Ingénieur Full-Stack & DevSecOps",
+    hero_title: "Ingénieur DevSecOps & Full-Stack",
     hero_chip_web: "⚡ Web & APIs (FastAPI / React)",
     hero_chip_devops: "🔒 DevSecOps & Cloud",
     hero_chip_ai: "🤖 Intégration IA (LLMs/RAG)",
     hero_chip_mco: "🛡️ Supervision & MCO",
-    hero_pitch: "Ingénieur logiciel & DevSecOps avec plus de 5 ans d'expérience en production et titulaire d'un Master en Réseaux & Sécurité. J'interviens sur le développement d'applications web robustes (Python, TypeScript, React), l'intégration de solutions IA (LLMs, RAG, pgvector) et l'automatisation d'infrastructures Cloud sécurisées (Docker, Kubernetes, CI/CD, scans Trivy).",
+    hero_pitch: "Ingénieur DevSecOps & logiciel avec plus de 5 ans d'expérience en production et titulaire d'un Master en Réseaux & Sécurité. J'interviens sur l'automatisation d'infrastructures Cloud sécurisées (Docker, Kubernetes, CI/CD, scans Trivy), le développement d'applications web fiables (Python, TypeScript, React) et l'intégration de solutions IA (LLMs, RAG, pgvector).",
     hero_cta_projects: "Voir mes réalisations",
     hero_cta_contact: "Me contacter",
     hero_stats_exp: "Ans d'expérience",
@@ -175,8 +175,8 @@ const translations = {
 
   en: {
     // Meta & Header
-    meta_title: "Fares METIDJI | DevOps Engineer & Full-Stack Developer (AI & Cloud)",
-    meta_desc: "DevOps Engineer & Full-Stack Developer (5+ years exp, Master's Degree). FastAPI/Node APIs, React interfaces, AI API integrations, and Docker/CI-CD workflows.",
+    meta_title: "Fares METIDJI | DevSecOps Engineer & Full-Stack Developer",
+    meta_desc: "DevSecOps Engineer & Full-Stack Developer (5+ years exp, Master's Degree in Networks & Security). Secure Cloud automation (Docker, K8s, CI/CD), FastAPI/Python APIs, React interfaces, and AI integration.",
     
     // Navbar
     nav_home: "Home",
@@ -191,12 +191,12 @@ const translations = {
     // Hero Section
     hero_greeting: "Hello, I am",
     hero_name: "Fares METIDJI",
-    hero_title: "Full-Stack & DevSecOps Engineer",
+    hero_title: "DevSecOps & Full-Stack Engineer",
     hero_chip_web: "⚡ Web & APIs (FastAPI / React)",
     hero_chip_devops: "🔒 DevSecOps & Cloud",
     hero_chip_ai: "🤖 AI Integration (LLMs/RAG)",
     hero_chip_mco: "🛡️ MCO & Production",
-    hero_pitch: "Software & DevSecOps Engineer with 5+ years of production experience and a Master's Degree in Networks & Security. I build dependable web applications (Python, TypeScript, React), integrate applied AI solutions (LLMs, RAG, pgvector), and automate secure Cloud infrastructure (Docker, Kubernetes, CI/CD, Trivy vulnerability scans).",
+    hero_pitch: "DevSecOps & Software Engineer with 5+ years of production experience and a Master's Degree in Networks & Security. I specialize in automating secure Cloud infrastructure (Docker, Kubernetes, CI/CD, Trivy scans), building reliable web applications (Python, TypeScript, React), and integrating applied AI solutions (LLMs, RAG, pgvector).",
     hero_cta_projects: "View My Work",
     hero_cta_contact: "Contact Me",
     hero_stats_exp: "Years Experience",
