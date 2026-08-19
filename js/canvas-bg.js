@@ -38,7 +38,7 @@
         vx: (Math.random() - 0.5) * 0.6,
         vy: (Math.random() - 0.5) * 0.6,
         radius: Math.random() * 1.8 + 1,
-        color: Math.random() > 0.4 ? "rgba(6, 182, 212, " : "rgba(139, 92, 246, " // Cyan or Violet
+        color: "rgba(100, 116, 160, "
       });
     }
   }
@@ -75,11 +75,8 @@
       // Draw particle circle
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = p.color + "0.65)";
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = p.color + "0.8)";
+      ctx.fillStyle = p.color + "0.45)";
       ctx.fill();
-      ctx.shadowBlur = 0; // reset
 
       // Connect nearby particles
       for (let j = i + 1; j < particles.length; j++) {
@@ -93,7 +90,7 @@
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
+          ctx.strokeStyle = `rgba(100, 116, 160, ${alpha})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }

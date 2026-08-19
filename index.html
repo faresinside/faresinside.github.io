@@ -142,12 +142,12 @@
                 <div class="hero-profile-avatar">FM</div>
                 <div class="hero-profile-info">
                   <h3>Fares METIDJI</h3>
-                  <p>Ingénieur DevSecOps & Full-Stack</p>
+                  <p data-i18n="hero_title">Ingénieur DevSecOps & Full-Stack</p>
                 </div>
               </div>
             </div>
 
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;" data-i18n="hero_card_desc">
               Compétences appliquées : développement d'applications web & APIs (FastAPI, React, TypeScript), intégration de LLMs / IA et industrialisation d'infrastructures Cloud sécurisées (Docker, K8s, CI/CD).
             </p>
 
@@ -165,12 +165,12 @@
             </div>
 
             <div class="hero-trust-bar">
-              <p>Domaines d'intervention clés :</p>
+              <p data-i18n="hero_card_domains_label">Domaines d'intervention clés :</p>
               <div class="hero-companies-logos">
-                <span class="company-pill">🤖 Intégration IA & RAG</span>
-                <span class="company-pill">🔒 DevSecOps & Sécurité</span>
-                <span class="company-pill">⚡ Backends & APIs</span>
-                <span class="company-pill">🐳 Docker & Kubernetes</span>
+                <span class="company-pill" data-i18n="hero_card_domain1">🤖 Intégration IA & RAG</span>
+                <span class="company-pill" data-i18n="hero_card_domain2">🔒 DevSecOps & Sécurité</span>
+                <span class="company-pill" data-i18n="hero_card_domain3">⚡ Backends & APIs</span>
+                <span class="company-pill" data-i18n="hero_card_domain4">🐳 Docker & Kubernetes</span>
               </div>
             </div>
           </div>
@@ -249,7 +249,7 @@
               <span class="deliv-chip">React / TypeScript</span>
               <span class="deliv-chip">FastAPI / Node.js</span>
               <span class="deliv-chip">PostgreSQL & Redis</span>
-              <span class="deliv-chip">Auth JWT / Sécurité</span>
+              <span class="deliv-chip" data-i18n="svc1_chip4">Auth JWT / Sécurité</span>
             </div>
           </div>
 
@@ -288,8 +288,8 @@
             <div class="service-deliverables">
               <span class="deliv-chip">Python AsyncIO</span>
               <span class="deliv-chip">Pipelines ETL</span>
-              <span class="deliv-chip">Parsers de données</span>
-              <span class="deliv-chip">Webhooks & Alertes</span>
+              <span class="deliv-chip" data-i18n="svc3_chip3">Parsers de données</span>
+              <span class="deliv-chip" data-i18n="svc3_chip4">Webhooks & Alertes</span>
             </div>
           </div>
 
@@ -307,9 +307,9 @@
             </div>
             <div class="service-deliverables">
               <span class="deliv-chip">Prometheus & Grafana</span>
-              <span class="deliv-chip">Support N3 Escalade</span>
-              <span class="deliv-chip">Analyse de logs</span>
-              <span class="deliv-chip">Optimisation Cloud</span>
+              <span class="deliv-chip" data-i18n="svc4_chip2">Support N3 Escalade</span>
+              <span class="deliv-chip" data-i18n="svc4_chip3">Analyse de logs</span>
+              <span class="deliv-chip" data-i18n="svc4_chip4">Optimisation Cloud</span>
             </div>
           </div>
         </div>
@@ -347,56 +347,6 @@
     </section>
 
     <!-- ========================================================================
-         6. DEVOPS INTERACTIVE TERMINAL
-         ======================================================================== -->
-    <section class="section" id="terminal">
-      <div class="container">
-        <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="terminal_badge">Terminal Interactif</div>
-          <h2 class="section-title" data-i18n="terminal_title">Aperçu Technique en Ligne de Commande</h2>
-          <p class="section-subtitle" data-i18n="terminal_subtitle">
-            Pour explorer mon profil et mes compétences via une interface CLI interactive.
-          </p>
-        </div>
-
-        <div class="terminal-window reveal-init">
-          <div class="terminal-titlebar">
-            <div class="term-dots">
-              <span class="term-dot red"></span>
-              <span class="term-dot yellow"></span>
-              <span class="term-dot green"></span>
-            </div>
-            <div class="term-title">user@fares-devops: ~ (zsh / bash)</div>
-            <div style="width: 40px;"></div>
-          </div>
-
-          <!-- Quick Action Command Chips -->
-          <div class="terminal-chips-bar">
-            <span data-i18n="terminal_prompt_text">Commandes suggérées :</span>
-            <button class="terminal-chip" data-cmd="help" data-i18n="terminal_chip_help">help</button>
-            <button class="terminal-chip" data-cmd="skills" data-i18n="terminal_chip_skills">skills</button>
-            <button class="terminal-chip" data-cmd="projects" data-i18n="terminal_chip_projects">projects</button>
-            <button class="terminal-chip" data-cmd="deploy --prod" data-i18n="terminal_chip_deploy">deploy --prod</button>
-            <button class="terminal-chip" data-cmd="status" data-i18n="terminal_chip_status">status</button>
-            <button class="terminal-chip" data-cmd="hire" data-i18n="terminal_chip_hire">hire</button>
-            <button class="terminal-chip" data-cmd="clear" data-i18n="terminal_chip_clear">clear</button>
-          </div>
-
-          <!-- Output Body -->
-          <div class="terminal-body" id="terminal-output">
-            <!-- Messages inserted by js/terminal.js -->
-          </div>
-
-          <!-- Input Row -->
-          <form class="terminal-input-row" id="terminal-form">
-            <span class="term-prompt" id="term-prompt-label">user@fares-devops:~$</span>
-            <input type="text" class="terminal-input" id="terminal-input" placeholder="Tapez une commande (ex: help, deploy, skills)..." autocomplete="off" spellcheck="false" />
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
          7. SKILLS MATRIX & STACK
          ======================================================================== -->
     <section class="section" id="skills">
@@ -429,21 +379,33 @@
             </div>
           </div>
 
-          <!-- 2. AI, LLMs & Backend -->
+          <!-- 2. Web & Backend Development -->
           <div class="skill-category-card glass-panel reveal-init">
             <div class="skill-cat-header">
               <span class="skill-cat-icon">⚡</span>
-              <h3 data-i18n="skills_cat_backend">Backend & Intégrations APIs</h3>
+              <h3 data-i18n="skills_cat_backend">Développement Web & Backend</h3>
             </div>
             <div class="skill-tags-cloud">
               <span class="skill-tag-item"><span class="tag-dot"></span>Python 3.12 (FastAPI)</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>TypeScript & Node.js</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Fastify Framework</span>
-              <span class="skill-tag-item"><span class="tag-dot"></span>APIs LLM (OpenAI, Gemini)</span>
-              <span class="skill-tag-item"><span class="tag-dot"></span>Inférence Locale (Ollama)</span>
-              <span class="skill-tag-item"><span class="tag-dot"></span>Vector Search (pgvector)</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>AsyncIO & Web Scraping</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>REST APIs & Webhooks</span>
+            </div>
+          </div>
+
+          <!-- 2b. AI & Model Deployment -->
+          <div class="skill-category-card glass-panel reveal-init">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon">🤖</span>
+              <h3 data-i18n="skills_cat_ai">Intelligence Artificielle & Déploiement de Modèles</h3>
+            </div>
+            <div class="skill-tags-cloud">
+              <span class="skill-tag-item"><span class="tag-dot"></span>APIs LLM (OpenAI, Gemini)</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>Inférence Locale (Ollama)</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>RAG & Recherche Vectorielle</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>Vector Search (pgvector)</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>Prompt Engineering</span>
             </div>
           </div>
 
@@ -464,20 +426,30 @@
             </div>
           </div>
 
-          <!-- 4. Databases, Security & Monitoring -->
+          <!-- 4. Databases -->
           <div class="skill-category-card glass-panel reveal-init">
             <div class="skill-cat-header">
               <span class="skill-cat-icon">🐘</span>
-              <h3 data-i18n="skills_cat_db">Bases de Données & Maintenance</h3>
+              <h3 data-i18n="skills_cat_db">Bases de Données</h3>
             </div>
             <div class="skill-tags-cloud">
               <span class="skill-tag-item"><span class="tag-dot"></span>PostgreSQL 16</span>
-              <span class="skill-tag-item"><span class="tag-dot"></span>Extension pgvector</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>SQLite (Drizzle ORM)</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Redis / Dragonfly Cache</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>Oracle & MariaDB</span>
+            </div>
+          </div>
+
+          <!-- 6. Security, Monitoring & Support -->
+          <div class="skill-category-card glass-panel reveal-init">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon">🛡️</span>
+              <h3 data-i18n="skills_cat_monitoring">Sécurité, Monitoring & Support</h3>
+            </div>
+            <div class="skill-tags-cloud">
               <span class="skill-tag-item"><span class="tag-dot"></span>Prometheus & Grafana</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Secrets (Vault, SOPS)</span>
-              <span class="skill-tag-item"><span class="tag-dot"></span>Oracle & MariaDB</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>Analyse de Logs</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Support & Diagnostic N3</span>
             </div>
           </div>
@@ -663,7 +635,7 @@
         <div class="contact-grid">
           <!-- Contact Info Left -->
           <div class="contact-info-panel glass-panel reveal-init">
-            <h3 style="font-size: 1.4rem; margin-bottom: 24px;">Coordonnées Directes</h3>
+            <h3 style="font-size: 1.4rem; margin-bottom: 24px;" data-i18n="contact_direct_title">Coordonnées Directes</h3>
 
             <div class="contact-direct-item">
               <div class="contact-direct-label" data-i18n="contact_email_label">Email :</div>
@@ -689,7 +661,7 @@
             </div>
 
             <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
-              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Profils Professionnels & Réseaux :</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;" data-i18n="contact_profiles_label">Profils Professionnels & Réseaux :</div>
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
                 <a href="https://www.linkedin.com/in/faresmetidji/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
                   <span>👔 LinkedIn</span>
@@ -824,7 +796,6 @@
   <script src="js/translations.js?v=20260819_4"></script>
   <script src="js/projects-data.js?v=20260819_4"></script>
   <script src="js/canvas-bg.js?v=20260819_4"></script>
-  <script src="js/terminal.js?v=20260819_4"></script>
   <script src="js/app.js?v=20260819_4"></script>
 </body>
 </html>

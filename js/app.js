@@ -87,7 +87,7 @@
   /* ==========================================================================
      THEME MANAGEMENT (DARK / LIGHT NORMAL MODE)
      ========================================================================== */
-  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  const themeToggleBtn = document.getElementById("theme-toggle");
   let currentTheme = localStorage.getItem("preferred_theme") || "dark";
 
   function applyTheme(theme) {
@@ -100,6 +100,7 @@
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
+    if (themeToggleBtn) themeToggleBtn.textContent = theme === "light" ? "🌙" : "☀️";
   }
 
   // Init theme immediately
