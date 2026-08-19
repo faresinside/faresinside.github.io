@@ -299,12 +299,12 @@ const projectsData = [
       ]
     },
     title: {
-      fr: "PortaPulse — Microservice de Surveillance de Stocks & Alerting IoT",
-      en: "PortaPulse — Real-Time IoT Stock Monitor & Multi-Channel Alerting"
+      fr: "PortaPulse — Microservice de Surveillance de Stocks & Alerting Multicanal",
+      en: "PortaPulse — Real-Time Stock Monitor & Multi-Channel Alerting"
     },
     subtitle: {
-      fr: "Système de scraping haute fréquence, dispatch d'alertes Webhooks multicanales et dashboard de supervision déployé sur Raspberry Pi avec Traefik.",
-      en: "High-frequency scraping engine, multi-channel webhook alerting, and glassmorphism monitoring dashboard containerized on Raspberry Pi edge hardware with Traefik."
+      fr: "Système de scraping haute fréquence avec alertes multicanales (Discord, Telegram, Ntfy) dès qu'un produit redevient disponible, et dashboard de suivi consultable en HTTPS depuis n'importe quel appareil, auto-hébergé sur Raspberry Pi.",
+      en: "High-frequency scraping engine with multi-channel alerts (Discord, Telegram, Ntfy) as soon as a product is back in stock, plus a monitoring dashboard accessible over HTTPS from any device, self-hosted on a Raspberry Pi."
     },
     summary: {
       fr: "Microservice événementiel développé pour surveiller en continu la disponibilité d'un équipement précis auprès de 6+ distributeurs majeurs, avec contournement d'anti-bot, dispatch instantané d'alertes (Discord, Telegram, Ntfy) et dashboard de monitoring en direct.",
@@ -849,17 +849,17 @@ const projectsData = [
       en: "Talent Match Radar — Automated Job Discovery & Matching (Client Project)"
     },
     subtitle: {
-      fr: "Outil sur-mesure développé pour un proche en recherche active dans un secteur spécialisé (santé / recherche clinique) : scraping automatisé d'offres, scoring de pertinence, notifications instantanées, déployé sur Raspberry Pi.",
-      en: "Bespoke tool built for an acquaintance actively job-hunting in a specialized field (healthcare / clinical research): automated job scraping, relevance scoring, instant notifications, deployed on a Raspberry Pi."
+      fr: "Outil sur-mesure de veille et de matching emploi pour un secteur spécialisé (santé / recherche clinique) : scraping automatisé d'offres, scoring de pertinence, notifications instantanées, déployé sur Raspberry Pi.",
+      en: "Bespoke job discovery and matching tool for a specialized field (healthcare / clinical research): automated job scraping, relevance scoring, instant notifications, deployed on a Raspberry Pi."
     },
     summary: {
-      fr: "Développement d'un outil de veille sur-mesure pour accompagner la recherche d'emploi d'un profil spécialisé : scrapers dédiés à des sites d'offres et d'entreprises ciblées du secteur, moteur de scoring pour évaluer la pertinence de chaque offre par rapport au profil, système de notification automatique et base de données locale de suivi des candidatures. Déployé en autonomie sur Raspberry Pi via Docker Compose, derrière un reverse-proxy Traefik.",
-      en: "Built a bespoke monitoring tool to support the job search of a specialized profile: dedicated scrapers for targeted job boards and sector companies, a scoring engine to evaluate each posting's relevance against the profile, automatic notifications, and a local application-tracking database. Deployed autonomously on a Raspberry Pi via Docker Compose, behind a Traefik reverse proxy."
+      fr: "Développement d'un outil de veille sur-mesure pour accompagner la recherche d'emploi d'un profil spécialisé : scrapers dédiés à des sites d'offres et d'entreprises ciblées du secteur, moteur de scoring pour évaluer la pertinence de chaque offre par rapport au profil, système de notification automatique et base de données locale de suivi des candidatures. Déployé en autonomie sur Raspberry Pi, avec un tableau de suivi consultable en HTTPS depuis n'importe quel appareil (Traefik).",
+      en: "Built a bespoke monitoring tool to support the job search of a specialized profile: dedicated scrapers for targeted job boards and sector companies, a scoring engine to evaluate each posting's relevance against the profile, automatic notifications, and a local application-tracking database. Deployed autonomously on a Raspberry Pi, with an HTTPS tracking dashboard reachable from any device (Traefik)."
     },
     architecture: {
       fr: {
-        problem: "Un proche en recherche active dans un secteur de niche avait besoin de surveiller en continu plusieurs sources d'offres et listes d'entreprises ciblées, sans y passer des heures chaque jour.",
-        solution: "Mise en place de scrapers dédiés, d'un moteur de matching/scoring et d'un système de notification automatique, packagés et déployés en autonomie sur un serveur personnel (Raspberry Pi, Docker Compose, Traefik) pour un fonctionnement sans intervention manuelle.",
+        problem: "Surveiller en continu plusieurs sources d'offres et listes d'entreprises ciblées dans un secteur de niche, sans y passer des heures chaque jour, avec un suivi consultable facilement depuis n'importe quel appareil.",
+        solution: "Mise en place de scrapers dédiés, d'un moteur de matching/scoring et d'un système de notification automatique, packagés et déployés en autonomie sur un serveur personnel (Raspberry Pi, Docker Compose) ; le tableau de suivi des candidatures est exposé en HTTPS via Traefik pour rester consultable depuis un téléphone, sans intervention manuelle au quotidien.",
         stack: ["Python", "Scrapers Dédiés (Requests / BeautifulSoup)", "Moteur de Scoring & Matching", "SQLite", "Docker & Docker Compose", "Traefik (Reverse Proxy)", "Raspberry Pi (Déploiement Edge)", "Notifications Automatiques"],
         diagram: `
 +-------------------------------------------------------------+
@@ -875,13 +875,14 @@ const projectsData = [
                                |
                                v
 +-------------------------------------------------------------+
-|         RASPBERRY PI (Docker Compose + Traefik)             |
+|              RASPBERRY PI (Docker Compose)                  |
 |  - Notifications automatiques instantanées                  |
+|  - Tableau de suivi HTTPS via Traefik (accès mobile)         |
 +-------------------------------------------------------------+`
       },
       en: {
-        problem: "An acquaintance actively job-hunting in a niche sector needed to continuously monitor several job boards and targeted company lists without spending hours on it every day.",
-        solution: "Built dedicated scrapers, a matching/scoring engine and an automatic notification system, packaged and deployed autonomously on a personal server (Raspberry Pi, Docker Compose, Traefik) for hands-off operation.",
+        problem: "Continuously monitoring several job boards and targeted company lists in a niche sector, without spending hours on it every day, with tracking easily reachable from any device.",
+        solution: "Built dedicated scrapers, a matching/scoring engine and an automatic notification system, packaged and deployed autonomously on a personal server (Raspberry Pi, Docker Compose); the application-tracking dashboard is exposed over HTTPS via Traefik so it stays reachable from a phone, with no day-to-day manual intervention.",
         stack: ["Python", "Dedicated Scrapers (Requests / BeautifulSoup)", "Matching & Scoring Engine", "SQLite", "Docker & Docker Compose", "Traefik (Reverse Proxy)", "Raspberry Pi (Edge Deployment)", "Automatic Notifications"],
         diagram: `
 +-------------------------------------------------------------+
@@ -897,8 +898,9 @@ const projectsData = [
                                |
                                v
 +-------------------------------------------------------------+
-|         RASPBERRY PI (Docker Compose + Traefik)             |
+|                RASPBERRY PI (Docker Compose)                |
 |  - Instant automatic notifications                          |
+|  - HTTPS tracking dashboard via Traefik (mobile access)      |
 +-------------------------------------------------------------+`
       }
     },
