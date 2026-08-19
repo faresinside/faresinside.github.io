@@ -47,7 +47,7 @@ const translations = {
     pillar2_title: "Culture DevSecOps & Fiabilité",
     pillar2_desc: "Conteneurisation Docker durcie, scans de vulnérabilités (Trivy), gestion des secrets et pipelines CI/CD automatisés pour des mises en production sereines.",
     pillar3_title: "Flexibilité & Sécurité Contractuelle",
-    pillar3_desc: "Intervention au forfait ou au TJM, en direct ou via plateformes sécurisées (Codeur.com, Malt, Upwork). Réactivité sous 24h et points d'étape réguliers.",
+    pillar3_desc: "Intervention au forfait (livrables clés en main) ou au TJM (renfort d'équipe). Facturation claire, réactivité sous 24h et points d'étape réguliers.",
 
     // Services
     services_title: "Prestations & Domaines d'Intervention",
@@ -142,8 +142,8 @@ const translations = {
     faq1_a: "Nous commençons par un échange pour comprendre vos attentes, les contraintes techniques et les délais. Je vous propose ensuite un découpage clair des étapes avec des livrables concrets.",
     faq2_q: "Quel est votre mode de facturation ?",
     faq2_a: "Selon la nature du projet : au forfait pour les périmètres bien définis, ou au temps passé (TJM) pour les missions de conseil, DevOps continu ou développement itératif.",
-    faq3_q: "Pouvons-nous passer par Codeur.com, Upwork ou Malt ?",
-    faq3_a: "Oui, sans aucun problème. Nous pouvons collaborer via la plateforme de votre choix (Upwork, Codeur.com, Malt) ou en direct par contrat de prestation.",
+    faq3_q: "Comment se déroule la contractualisation et la facturation ?",
+    faq3_a: "Nous cadrons le projet avec un devis détaillé et un contrat clair (au forfait avec jalons de livraison ou au temps passé TJM). Facturation professionnelle avec mentions légales et modalités de règlement transparentes.",
     faq4_q: "Assurez-vous un suivi après la livraison ?",
     faq4_a: "Oui, je prévois systématiquement une documentation claire, des scripts de déploiement automatisés et une période de suivi pour garantir une transition fluide.",
 
@@ -218,7 +218,7 @@ const translations = {
     pillar2_title: "DevSecOps & Production Reliability",
     pillar2_desc: "Hardened Docker containers, vulnerability scanning (Trivy), automated secrets management, and robust CI/CD pipelines for smooth zero-downtime releases.",
     pillar3_title: "Flexibility & Seamless Invoicing",
-    pillar3_desc: "Fixed-price project scopes or daily rate (TJM) consulting. Direct contractual agreements or via Upwork, Malt, and Codeur.com with 24h response time.",
+    pillar3_desc: "Fixed-price project scopes (turnkey deliverables) or daily rate (TJM) consulting. Transparent billing, 24h response time, and regular progress updates.",
 
     // Services
     services_title: "Freelance Services & Expertise",
@@ -313,8 +313,8 @@ const translations = {
     faq1_a: "We begin with a brief scoping discussion to clarify your goals, technical constraints, and timeline. I then provide a clear breakdown of milestones with concrete deliverables.",
     faq2_q: "What is your pricing structure?",
     faq2_a: "Depending on your project: fixed-price milestones for well-defined scopes, or daily rate (TJM) for ongoing DevOps consulting and iterative development.",
-    faq3_q: "Can we work via Codeur.com, Upwork, or Malt?",
-    faq3_a: "Yes, absolutely. We can collaborate through your preferred platform (Upwork, Codeur.com, Malt) or via direct business invoicing.",
+    faq3_q: "How do contracting and invoicing work?",
+    faq3_a: "We define a clear agreement and scope (either fixed-price deliverables or daily consulting rate). Standard corporate invoices are issued with transparent payment milestones and full business compliance.",
     faq4_q: "Do you provide post-delivery support?",
     faq4_a: "Yes, I provide clear documentation, automated deployment scripts, and a follow-up warranty window to ensure a smooth transition.",
 

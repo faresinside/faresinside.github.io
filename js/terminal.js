@@ -156,9 +156,9 @@
    - Automated ingestion of 50,000+ complex public records into normalized PostgreSQL models.
    - <em>Stack: Python, pdfminer.six, pdfrw, PostgreSQL, Regex Engine</em>
 
-6. <span class="term-green">Enterprise Infrastructure & MCO</span> [Enterprise Tier-1 DevOps]
+6. <span class="term-green">Enterprise DevSecOps & MCO</span> [Enterprise Tier-1 DevOps]
    - 150+ mission-critical applications deployed and maintained with 99.9% uptime SLA.
-   - <em>Stack: Kubernetes, GitLab CI, Ansible, Prometheus, Grafana</em>
+   - <em>Stack: Kubernetes, GitLab CI, Trivy, Ansible, Prometheus, Grafana</em>
 `;
       }
     },
@@ -185,24 +185,24 @@
         const lang = window.currentLang || "fr";
         return lang === "fr"
           ? `
-<span class="term-bold term-green">COLLABORATION & MISSIONS FREELANCE :</span>
+<span class="term-bold term-green">COLLABORATION & MODALITÉS D'INTERVENTION :</span>
 ----------------------------------------------------------------------
-• <span class="term-yellow">Types de contrats :</span> Forfait clé en main (Sprint MVP / CI-CD) ou Régie (TJM)
-• <span class="term-yellow">Plateformes :</span> Codeur.com, Upwork, Malt, ou Contrat direct
-• <span class="term-yellow">Garanties :</span> Code documenté, tests automatisés, support post-livraison
-• <span class="term-yellow">Localisation :</span> Full Remote (Monde) ou Hybride Paris / Île-de-France
+• <span class="term-yellow">Types d'engagement :</span> Forfait clé en main (Sprint MVP / CI-CD) ou Régie (TJM)
+• <span class="term-yellow">Facturation :</span> Devis détaillé, contrat clair & facturation conforme
+• <span class="term-yellow">Garanties :</span> Code documenté, zéro dette technique, support post-livraison
+• <span class="term-yellow">Localisation :</span> Full Remote (France / International) & déplacements ponctuels
 
 👉 Tapez <span class="term-green">contact</span> pour ouvrir le formulaire ou contactez-moi :
    📧 Email : <span class="term-cyan">fares.metidji@outlook.fr</span>
    📱 Téléphone : <span class="term-cyan">+33 7 62 46 83 12</span>
 `
           : `
-<span class="term-bold term-green">FREELANCE & CONTRACT ENGAGEMENT :</span>
+<span class="term-bold term-green">COLLABORATION & ENGAGEMENT MODES :</span>
 ----------------------------------------------------------------------
-• <span class="term-yellow">Contract Types:</span> Fixed-price milestones (MVP Sprint / CI-CD) or Daily Rate (TJM)
-• <span class="term-yellow">Platforms:</span> Upwork, Codeur.com, Malt, or Direct Business Invoicing
+• <span class="term-yellow">Contract Types:</span> Fixed-price deliverables (Sprint MVP / CI-CD) or Daily Rate (TJM)
+• <span class="term-yellow">Billing:</span> Transparent SOW, corporate invoices & milestones compliance
 • <span class="term-yellow">Guarantees:</span> Fully documented code, automated CI/CD, post-delivery warranty
-• <span class="term-yellow">Location:</span> Full Remote (Worldwide) or Hybrid Paris, France
+• <span class="term-yellow">Location:</span> Full Remote (Worldwide) & occasional on-site travels in France
 
 👉 Type <span class="term-green">contact</span> to open the inquiry form or reach out directly:
    📧 Email: <span class="term-cyan">fares.metidji@outlook.fr</span>
