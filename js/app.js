@@ -72,11 +72,6 @@
     if (activeModalProject) {
       openModal(activeModalProject);
     }
-
-    // Reset Typewriter immediately for new language
-    if (typeof restartTypewriter === "function") {
-      restartTypewriter();
-    }
   }
 
   // Language Switcher Events
@@ -115,49 +110,6 @@
       const nextTheme = currentTheme === "dark" ? "light" : "dark";
       applyTheme(nextTheme);
     });
-  }
-
-  /* ==========================================================================
-     2. DYNAMIC HERO TYPEWRITER ANIMATION
-     ========================================================================== */
-  let typeIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typeTimer = null;
-
-  function typeWriter() {
-    if (!heroRoleText) return;
-    const dict = translations[window.currentLang] || translations.fr;
-    const roles = dict.hero_roles;
-    const currentRole = roles[typeIndex % roles.length];
-
-    if (isDeleting) {
-      charIndex--;
-      heroRoleText.textContent = currentRole.substring(0, charIndex);
-    } else {
-      charIndex++;
-      heroRoleText.textContent = currentRole.substring(0, charIndex);
-    }
-
-    let speed = isDeleting ? 38 : 75;
-
-    if (!isDeleting && charIndex === currentRole.length) {
-      speed = 3800; // Comfortable 3.8s pause so the client can easily read the full sentence
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      typeIndex++;
-      speed = 750; // 750ms gentle pause before starting the next role
-    }
-
-    typeTimer = setTimeout(typeWriter, speed);
-  }
-
-  function restartTypewriter() {
-    clearTimeout(typeTimer);
-    charIndex = 0;
-    isDeleting = false;
-    typeWriter();
   }
 
   /* ==========================================================================
@@ -448,7 +400,6 @@
      ========================================================================== */
   document.addEventListener("DOMContentLoaded", () => {
     applyLanguage(window.currentLang);
-    typeWriter();
     initScrollReveal();
   });
 })();

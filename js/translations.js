@@ -24,14 +24,9 @@ const translations = {
     // Hero Section
     hero_greeting: "Bonjour, je suis",
     hero_name: "Fares METIDJI",
-    hero_role_prefix: "Ingénieur intervenant en",
-    hero_roles: [
-      "Développement Full-Stack (Python 3.12, FastAPI, TypeScript, React)",
-      "DevOps & Déploiement Cloud (Docker, Kubernetes, CI/CD, Linux)",
-      "Intégration d'APIs & IA (LLMs, Vector Search, Webhooks)",
-      "Support Opérationnel & Maintenance Applicative (MCO)"
-    ],
-    hero_pitch: "Ingénieur diplômé d'un Master 2 en Réseaux & Sécurité avec 5+ ans d'expérience en entreprise (Conseil Départemental, Publicis, Vocalcom, Orange). J'accompagne les équipes et porteurs de projet pour développer des applications web/mobiles fiables et automatiser leurs déploiements Cloud.",
+    hero_title: "Ingénieur DevOps & Développeur Full-Stack",
+    hero_specialties: "Cloud & Conteneurs • Pipelines CI/CD • APIs Python & React • Support & MCO",
+    hero_pitch: "Ingénieur diplômé d'un Master 2 en Réseaux & Sécurité avec plus de 5 ans d'expérience en entreprise (Conseil Départemental, Publicis, Vocalcom, Orange). J'accompagne les équipes et porteurs de projet pour développer des applications web/mobiles fiables et automatiser leurs déploiements Cloud.",
     hero_cta_projects: "Voir mes réalisations",
     hero_cta_contact: "Me contacter",
     hero_stats_exp: "Ans d'expérience",
@@ -195,13 +190,8 @@ const translations = {
     // Hero Section
     hero_greeting: "Hello, I am",
     hero_name: "Fares METIDJI",
-    hero_role_prefix: "Engineer working across",
-    hero_roles: [
-      "Full-Stack Development (Python 3.12, FastAPI, TypeScript, React)",
-      "DevOps & Cloud Deployments (Docker, Kubernetes, CI/CD, Linux)",
-      "API & AI Integrations (LLMs, Vector Search, Webhooks)",
-      "Operational Support & Application Maintenance (MCO)"
-    ],
+    hero_title: "DevOps Engineer & Full-Stack Developer",
+    hero_specialties: "Cloud & Containers • CI/CD Pipelines • Python & React APIs • Operational Maintenance (MCO)",
     hero_pitch: "Engineer holding a Master's Degree in Networks & Security with 5+ years of enterprise experience (Conseil Départemental, Publicis, Vocalcom, Orange). I partner with teams and founders to build dependable web/mobile applications and automate Cloud infrastructure.",
     hero_cta_projects: "View My Work",
     hero_cta_contact: "Contact Me",
