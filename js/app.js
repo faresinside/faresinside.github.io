@@ -139,15 +139,15 @@
       heroRoleText.textContent = currentRole.substring(0, charIndex);
     }
 
-    let speed = isDeleting ? 30 : 65;
+    let speed = isDeleting ? 38 : 75;
 
     if (!isDeleting && charIndex === currentRole.length) {
-      speed = 2200; // Pause at end of word
+      speed = 3800; // Comfortable 3.8s pause so the client can easily read the full sentence
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       typeIndex++;
-      speed = 400; // Pause before typing next
+      speed = 750; // 750ms gentle pause before starting the next role
     }
 
     typeTimer = setTimeout(typeWriter, speed);
