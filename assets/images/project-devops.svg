@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgDevOps" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="blueCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" rx="16" fill="url(#bgDevOps)" stroke="rgba(59, 130, 246, 0.35)" stroke-width="2" />
+  <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600 M60 0 V360 M120 0 V360 M180 0 V360 M240 0 V360 M300 0 V360 M360 0 V360 M420 0 V360 M480 0 V360 M540 0 V360" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+  <!-- Top bar -->
+  <rect x="24" y="20" width="552" height="36" rx="8" fill="#1e293b" stroke="rgba(59, 130, 246, 0.3)" />
+  <circle cx="44" cy="38" r="5" fill="#ef4444" />
+  <circle cx="60" cy="38" r="5" fill="#f59e0b" />
+  <circle cx="76" cy="38" r="5" fill="#10b981" />
+  <text x="100" y="43" fill="#93c5fd" font-family="'Fira Code', monospace" font-size="12">enterprise-infra.k8s.prod :: 150+ Applications in High Availability</text>
+  <rect x="470" y="26" width="94" height="24" rx="12" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1" />
+  <text x="485" y="42" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="bold">99.9% SLA</text>
+
+  <!-- Left: CI/CD Pipeline Automation -->
+  <g transform="translate(30, 75)">
+    <rect width="165" height="250" rx="10" fill="#1e293b" stroke="rgba(59,130,246,0.3)" />
+    <text x="14" y="26" fill="#60a5fa" font-family="sans-serif" font-size="12" font-weight="bold">AUTOMATED CI/CD</text>
+
+    <rect x="12" y="42" width="141" height="42" rx="6" fill="#0f172a" />
+    <text x="20" y="60" fill="#f8fafc" font-family="sans-serif" font-size="11">GitLab CI / Jenkins</text>
+    <text x="20" y="74" fill="#10b981" font-family="sans-serif" font-size="9">● Test &amp; Build Runners OK</text>
+
+    <rect x="12" y="92" width="141" height="42" rx="6" fill="#0f172a" />
+    <text x="20" y="110" fill="#f8fafc" font-family="sans-serif" font-size="11">Ansible Playbooks</text>
+    <text x="20" y="124" fill="#10b981" font-family="sans-serif" font-size="9">● 150+ Apps Orchestrated</text>
+
+    <rect x="12" y="142" width="141" height="42" rx="6" fill="#0f172a" />
+    <text x="20" y="160" fill="#f8fafc" font-family="sans-serif" font-size="11">Docker Multi-Stage</text>
+    <text x="20" y="174" fill="#10b981" font-family="sans-serif" font-size="9">● Hardened Base Images</text>
+
+    <rect x="12" y="192" width="141" height="46" rx="6" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" />
+    <text x="20" y="212" fill="#60a5fa" font-family="sans-serif" font-size="10" font-weight="bold">-60% Manual Overhead</text>
+    <text x="20" y="226" fill="#94a3b8" font-family="sans-serif" font-size="8">Zero-downtime MEP</text>
+  </g>
+
+  <!-- Center: Kubernetes Cluster & High Availability -->
+  <g transform="translate(210, 75)">
+    <rect width="180" height="250" rx="10" fill="#1e293b" stroke="rgba(6,182,212,0.4)" />
+    <text x="14" y="26" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="bold">KUBERNETES &amp; CLOUD</text>
+
+    <rect x="14" y="42" width="152" height="92" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="24" y="66" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="bold">☸️ Kubernetes Cluster</text>
+    <text x="24" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="9">Rolling MEP Updates</text>
+    <text x="24" y="100" fill="#10b981" font-family="sans-serif" font-size="9">● Self-Healing Pods</text>
+    <text x="24" y="116" fill="#94a3b8" font-family="sans-serif" font-size="8">Auto-scaling &amp; Load Balancing</text>
+
+    <rect x="14" y="144" width="152" height="86" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" />
+    <text x="24" y="168" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="bold">☁️ AWS &amp; On-Premise</text>
+    <text x="24" y="186" fill="#cbd5e1" font-family="sans-serif" font-size="9">VMware vSphere + Linux</text>
+    <text x="24" y="202" fill="#10b981" font-family="sans-serif" font-size="9">Postgres / Oracle / MariaDB</text>
+    <text x="24" y="218" fill="#94a3b8" font-family="sans-serif" font-size="8">Tomcat WAR &amp; Reverse Proxies</text>
+  </g>
+
+  <!-- Right: Prometheus & Grafana Observability -->
+  <g transform="translate(405, 75)">
+    <rect width="165" height="250" rx="10" fill="#1e293b" stroke="rgba(16,185,129,0.3)" />
+    <text x="14" y="26" fill="#34d399" font-family="sans-serif" font-size="12" font-weight="bold">OBSERVABILITY &amp; N3</text>
+
+    <rect x="12" y="44" width="141" height="60" rx="6" fill="#0f172a" stroke="rgba(245,158,11,0.4)" />
+    <text x="20" y="66" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="bold">🔥 Prometheus &amp; Grafana</text>
+    <text x="20" y="82" fill="#cbd5e1" font-family="sans-serif" font-size="9">Real-time metrics &amp; alerts</text>
+    <text x="20" y="94" fill="#10b981" font-family="sans-serif" font-size="8">● 100% telemetry active</text>
+
+    <rect x="12" y="112" width="141" height="60" rx="6" fill="#0f172a" stroke="rgba(16,185,129,0.4)" />
+    <text x="20" y="134" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="bold">🛡️ N3 Incident Resolution</text>
+    <text x="20" y="150" fill="#cbd5e1" font-family="sans-serif" font-size="9">Log Analysis &amp; Root Cause</text>
+    <text x="20" y="162" fill="#10b981" font-family="sans-serif" font-size="8">&lt;15min Critical Triage</text>
+
+    <rect x="12" y="180" width="141" height="48" rx="6" fill="rgba(16,185,129,0.15)" stroke="#10b981" />
+    <text x="20" y="200" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">Publicis / Yvelines / Vocalcom</text>
+    <text x="20" y="216" fill="#94a3b8" font-family="sans-serif" font-size="8">Tier-1 Enterprise Trust</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 195 200 L 210 200" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4" />
+  <path d="M 390 200 L 405 200" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4" />
+</svg>

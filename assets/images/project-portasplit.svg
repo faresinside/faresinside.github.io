@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgPorta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141124" />
+      <stop offset="100%" stop-color="#090712" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" rx="16" fill="url(#bgPorta)" stroke="rgba(245, 158, 11, 0.3)" stroke-width="2" />
+  <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600 M60 0 V360 M120 0 V360 M180 0 V360 M240 0 V360 M300 0 V360 M360 0 V360 M420 0 V360 M480 0 V360 M540 0 V360" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+  <!-- Top bar -->
+  <rect x="24" y="20" width="552" height="36" rx="8" fill="#201a38" stroke="rgba(245, 158, 11, 0.3)" />
+  <circle cx="44" cy="38" r="5" fill="#ef4444" />
+  <circle cx="60" cy="38" r="5" fill="#f59e0b" />
+  <circle cx="76" cy="38" r="5" fill="#10b981" />
+  <text x="100" y="43" fill="#fcd34d" font-family="'Fira Code', monospace" font-size="12">portapulse-monitor.daemon :: Raspberry Pi Edge Cluster + Traefik</text>
+  <rect x="470" y="26" width="94" height="24" rx="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1" />
+  <text x="485" y="42" fill="#f59e0b" font-family="sans-serif" font-size="11" font-weight="bold">● 30s CADENCE</text>
+
+  <!-- Left: E-Commerce Store Monitors -->
+  <g transform="translate(30, 75)">
+    <rect width="160" height="250" rx="10" fill="#1b1633" stroke="rgba(245,158,11,0.2)" />
+    <text x="14" y="26" fill="#fbbf24" font-family="sans-serif" font-size="12" font-weight="bold">TARGET RETAILERS</text>
+
+    <rect x="12" y="40" width="136" height="32" rx="6" fill="#261f45" />
+    <text x="20" y="58" fill="#f1f5f9" font-family="sans-serif" font-size="11">Optimea Official Store</text>
+    <circle cx="136" cy="56" r="4" fill="#10b981" />
+
+    <rect x="12" y="78" width="136" height="32" rx="6" fill="#261f45" />
+    <text x="20" y="96" fill="#f1f5f9" font-family="sans-serif" font-size="11">Boulanger &amp; Darty</text>
+    <circle cx="136" cy="94" r="4" fill="#10b981" />
+
+    <rect x="12" y="116" width="136" height="32" rx="6" fill="#261f45" />
+    <text x="20" y="134" fill="#f1f5f9" font-family="sans-serif" font-size="11">Castorama &amp; Leroy</text>
+    <circle cx="136" cy="132" r="4" fill="#10b981" />
+
+    <rect x="12" y="154" width="136" height="32" rx="6" fill="#261f45" />
+    <text x="20" y="172" fill="#f1f5f9" font-family="sans-serif" font-size="11">Amazon France</text>
+    <circle cx="136" cy="170" r="4" fill="#10b981" />
+
+    <rect x="12" y="196" width="136" height="42" rx="6" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" />
+    <text x="20" y="214" fill="#fcd34d" font-family="sans-serif" font-size="10" font-weight="bold">Anti-Bot Bypass Engine</text>
+    <text x="20" y="228" fill="#94a3b8" font-family="sans-serif" font-size="9">Dynamic Header Rotation</text>
+  </g>
+
+  <!-- Center: Edge Raspberry Pi & Traefik -->
+  <g transform="translate(210, 75)">
+    <rect width="180" height="250" rx="10" fill="#1e1538" stroke="rgba(245,158,11,0.4)" />
+    <text x="14" y="26" fill="#f59e0b" font-family="sans-serif" font-size="12" font-weight="bold">EDGE HARDWARE STACK</text>
+
+    <!-- Raspberry Pi Box -->
+    <rect x="14" y="42" width="152" height="90" rx="8" fill="#2d1c4f" stroke="#ec4899" stroke-width="1.5" />
+    <text x="24" y="66" fill="#f472b6" font-family="sans-serif" font-size="11" font-weight="bold">🍓 Raspberry Pi Cluster</text>
+    <text x="24" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="9">Debian Linux / ARM64</text>
+    <text x="24" y="100" fill="#10b981" font-family="sans-serif" font-size="9">● Docker Compose Running</text>
+    <text x="24" y="116" fill="#94a3b8" font-family="sans-serif" font-size="8">Uptime: 99.99% • CPU: 12%</text>
+
+    <!-- Traefik Reverse Proxy Box -->
+    <rect x="14" y="142" width="152" height="88" rx="8" fill="#2a1f47" stroke="#06b6d4" stroke-width="1.5" />
+    <text x="24" y="166" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="bold">🌐 Traefik v3 Proxy</text>
+    <text x="24" y="184" fill="#cbd5e1" font-family="sans-serif" font-size="9">HTTPS Auto-SSL (Let's Encrypt)</text>
+    <text x="24" y="200" fill="#10b981" font-family="sans-serif" font-size="9">Glassmorphism Web Dashboard</text>
+    <text x="24" y="216" fill="#94a3b8" font-family="sans-serif" font-size="8">Port 443 TLS 1.3 Active</text>
+  </g>
+
+  <!-- Right: Instant Webhook & Notifications -->
+  <g transform="translate(410, 75)">
+    <rect width="160" height="250" rx="10" fill="#1b1633" stroke="rgba(245,158,11,0.2)" />
+    <text x="14" y="26" fill="#fbbf24" font-family="sans-serif" font-size="12" font-weight="bold">ALERT CHANNELS</text>
+
+    <rect x="12" y="44" width="136" height="56" rx="6" fill="#261f45" stroke="rgba(139,92,246,0.4)" />
+    <text x="20" y="66" fill="#a78bfa" font-family="sans-serif" font-size="11" font-weight="bold">🎮 Discord Webhook</text>
+    <text x="20" y="82" fill="#cbd5e1" font-family="sans-serif" font-size="9">Instant Embed &amp; Store Links</text>
+    <text x="20" y="94" fill="#10b981" font-family="sans-serif" font-size="8">&lt;600ms latency</text>
+
+    <rect x="12" y="112" width="136" height="56" rx="6" fill="#261f45" stroke="rgba(56,189,248,0.4)" />
+    <text x="20" y="134" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="bold">📲 Mobile Ntfy / Telegram</text>
+    <text x="20" y="150" fill="#cbd5e1" font-family="sans-serif" font-size="9">High Priority Push</text>
+    <text x="20" y="162" fill="#10b981" font-family="sans-serif" font-size="8">Zero-delay broadcast</text>
+
+    <rect x="12" y="180" width="136" height="48" rx="6" fill="rgba(16,185,129,0.15)" stroke="#10b981" />
+    <text x="20" y="200" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">⚡ 0 Stock Missed</text>
+    <text x="20" y="216" fill="#94a3b8" font-family="sans-serif" font-size="9">100% Reliable Delivery</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 190 200 L 210 200" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4" />
+  <path d="M 390 200 L 410 200" stroke="#a855f7" stroke-width="2" stroke-dasharray="4" />
+</svg>

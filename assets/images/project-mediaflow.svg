@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgMedia" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180b26" />
+      <stop offset="100%" stop-color="#080310" />
+    </linearGradient>
+    <linearGradient id="purplePink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" rx="16" fill="url(#bgMedia)" stroke="rgba(168, 85, 247, 0.35)" stroke-width="2" />
+  <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600 M60 0 V360 M120 0 V360 M180 0 V360 M240 0 V360 M300 0 V360 M360 0 V360 M420 0 V360 M480 0 V360 M540 0 V360" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+  <!-- Top bar -->
+  <rect x="24" y="20" width="552" height="36" rx="8" fill="#281140" stroke="rgba(168, 85, 247, 0.3)" />
+  <circle cx="44" cy="38" r="5" fill="#ef4444" />
+  <circle cx="60" cy="38" r="5" fill="#f59e0b" />
+  <circle cx="76" cy="38" r="5" fill="#10b981" />
+  <text x="100" y="43" fill="#e9d5ff" font-family="'Fira Code', monospace" font-size="12">mediaflow.render.pipeline :: Python + FFmpeg Multi-Layer Batch Compositor</text>
+  <rect x="470" y="26" width="94" height="24" rx="12" fill="rgba(168,85,247,0.2)" stroke="#a855f7" stroke-width="1" />
+  <text x="485" y="42" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="bold">10x SPEED</text>
+
+  <!-- Left: Metadata & Asset Queue -->
+  <g transform="translate(30, 75)">
+    <rect width="160" height="250" rx="10" fill="#200d36" stroke="rgba(168,85,247,0.25)" />
+    <text x="14" y="26" fill="#c084fc" font-family="sans-serif" font-size="12" font-weight="bold">ASSETS &amp; METADATA</text>
+
+    <rect x="12" y="42" width="136" height="40" rx="6" fill="#130822" />
+    <text x="20" y="60" fill="#f5f3ff" font-family="sans-serif" font-size="11">JSON Timing Cues</text>
+    <text x="20" y="74" fill="#a855f7" font-family="sans-serif" font-size="9">Sub-millisecond cues</text>
+
+    <rect x="12" y="90" width="136" height="40" rx="6" fill="#130822" />
+    <text x="20" y="108" fill="#f5f3ff" font-family="sans-serif" font-size="11">Dynamic Typography</text>
+    <text x="20" y="122" fill="#a855f7" font-family="sans-serif" font-size="9">Pillow Vector Engine</text>
+
+    <rect x="12" y="138" width="136" height="40" rx="6" fill="#130822" />
+    <text x="20" y="156" fill="#f5f3ff" font-family="sans-serif" font-size="11">Audio Synthesizer</text>
+    <text x="20" y="170" fill="#a855f7" font-family="sans-serif" font-size="9">DSP Waveform Generation</text>
+
+    <rect x="12" y="188" width="136" height="50" rx="6" fill="rgba(168,85,247,0.15)" stroke="#a855f7" />
+    <text x="20" y="208" fill="#e9d5ff" font-family="sans-serif" font-size="10" font-weight="bold">Zero-Touch Batch Queue</text>
+    <text x="20" y="224" fill="#94a3b8" font-family="sans-serif" font-size="8">Automated Directory Watcher</text>
+  </g>
+
+  <!-- Center: MoviePy & Pillow Compositor -->
+  <g transform="translate(210, 75)">
+    <rect width="180" height="250" rx="10" fill="#250f3d" stroke="rgba(236,72,153,0.4)" />
+    <text x="14" y="26" fill="#f472b6" font-family="sans-serif" font-size="12" font-weight="bold">COMPOSITING CORE</text>
+
+    <!-- Visual Audio Waveform box -->
+    <rect x="14" y="42" width="152" height="92" rx="8" fill="#150824" stroke="#ec4899" stroke-width="1.5" />
+    <text x="24" y="64" fill="#f472b6" font-family="sans-serif" font-size="11" font-weight="bold">🎬 MoviePy + Pillow</text>
+    
+    <!-- Animated Waveform Bars -->
+    <g transform="translate(24, 76)">
+      <rect x="0" y="12" width="4" height="20" rx="2" fill="#a855f7" />
+      <rect x="8" y="4" width="4" height="28" rx="2" fill="#ec4899" />
+      <rect x="16" y="8" width="4" height="24" rx="2" fill="#c084fc" />
+      <rect x="24" y="0" width="4" height="32" rx="2" fill="#f472b6" />
+      <rect x="32" y="10" width="4" height="22" rx="2" fill="#a855f7" />
+      <rect x="40" y="6" width="4" height="26" rx="2" fill="#ec4899" />
+      <rect x="48" y="2" width="4" height="30" rx="2" fill="#c084fc" />
+      <rect x="56" y="8" width="4" height="24" rx="2" fill="#f472b6" />
+      <rect x="64" y="14" width="4" height="18" rx="2" fill="#a855f7" />
+      <rect x="72" y="4" width="4" height="28" rx="2" fill="#ec4899" />
+      <rect x="80" y="10" width="4" height="22" rx="2" fill="#c084fc" />
+      <rect x="88" y="0" width="4" height="32" rx="2" fill="#f472b6" />
+      <rect x="96" y="8" width="4" height="24" rx="2" fill="#a855f7" />
+      <rect x="104" y="16" width="4" height="16" rx="2" fill="#ec4899" />
+    </g>
+    <text x="24" y="124" fill="#94a3b8" font-family="sans-serif" font-size="8">Multi-Track Synchronizer</text>
+
+    <!-- Subtitles & Overlays Box -->
+    <rect x="14" y="144" width="152" height="86" rx="8" fill="#150824" stroke="#a855f7" stroke-width="1.5" />
+    <text x="24" y="168" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="bold">✨ Subtitles &amp; Overlays</text>
+    <text x="24" y="186" fill="#cbd5e1" font-family="sans-serif" font-size="9">Dynamic Stroke &amp; Shadow</text>
+    <text x="24" y="202" fill="#10b981" font-family="sans-serif" font-size="9">● Zero Artifact Rendering</text>
+    <text x="24" y="218" fill="#94a3b8" font-family="sans-serif" font-size="8">Sub-pixel precision alignment</text>
+  </g>
+
+  <!-- Right: FFmpeg Hardware Encoding Output -->
+  <g transform="translate(410, 75)">
+    <rect width="160" height="250" rx="10" fill="#200d36" stroke="rgba(168,85,247,0.25)" />
+    <text x="14" y="26" fill="#c084fc" font-family="sans-serif" font-size="12" font-weight="bold">FFMPEG EXPORT</text>
+
+    <rect x="12" y="44" width="136" height="58" rx="6" fill="#130822" stroke="rgba(236,72,153,0.4)" />
+    <text x="20" y="66" fill="#f472b6" font-family="sans-serif" font-size="11" font-weight="bold">⚡ H.264 / AAC MP4</text>
+    <text x="20" y="82" fill="#cbd5e1" font-family="sans-serif" font-size="9">2-Pass Hardware Accel</text>
+    <text x="20" y="94" fill="#10b981" font-family="sans-serif" font-size="8">● 60 FPS Crystal Clear</text>
+
+    <rect x="12" y="112" width="136" height="58" rx="6" fill="#130822" stroke="rgba(168,85,247,0.4)" />
+    <text x="20" y="134" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="bold">📦 Artifact Dispatch</text>
+    <text x="20" y="150" fill="#cbd5e1" font-family="sans-serif" font-size="9">Automated cloud storage</text>
+    <text x="20" y="162" fill="#10b981" font-family="sans-serif" font-size="8">● Webhook completion event</text>
+
+    <rect x="12" y="180" width="136" height="48" rx="6" fill="rgba(16,185,129,0.15)" stroke="#10b981" />
+    <text x="20" y="200" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">100% Headless</text>
+    <text x="20" y="216" fill="#94a3b8" font-family="sans-serif" font-size="8">CLI &amp; Docker Production</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 190 200 L 210 200" stroke="#a855f7" stroke-width="2" stroke-dasharray="4" />
+  <path d="M 390 200 L 410 200" stroke="#ec4899" stroke-width="2" stroke-dasharray="4" />
+</svg>
