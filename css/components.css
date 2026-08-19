@@ -214,21 +214,37 @@
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--cyan-primary);
-  margin-bottom: 12px;
-  line-height: 1.3;
+  margin-bottom: 16px;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
-.hero-specialties-bar {
-  display: inline-block;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
+.hero-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 24px;
-  max-width: 100%;
+}
+
+.hero-chip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.hero-chip-item:hover {
+  border-color: var(--cyan-primary);
+  background: rgba(6, 182, 212, 0.08);
+  color: var(--cyan-light);
+  transform: translateY(-2px);
 }
 
 .hero-pitch {
