@@ -27,6 +27,7 @@
 .nav-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
   max-width: var(--container-max);
@@ -44,7 +45,7 @@
   color: var(--text-heading);
   white-space: nowrap;
   flex-shrink: 0;
-  margin-right: 36px;
+  margin-right: 24px;
 }
 
 .nav-logo-icon {
@@ -107,7 +108,7 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
-  margin-left: 20px;
+  margin-left: auto;
 }
 
 .nav-actions .btn-cta-nav {
@@ -163,6 +164,8 @@
   background: rgba(16, 24, 43, 0.8);
   border: 1px solid var(--border-glass);
   padding: 8px;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 .mobile-toggle span {
@@ -171,7 +174,29 @@
   width: 100%;
   background: var(--text-main);
   border-radius: 2px;
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal), opacity var(--transition-fast);
+}
+
+.mobile-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+html.light .mobile-toggle {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(15, 23, 42, 0.15);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+html.light .mobile-toggle span {
+  background: #0f172a;
 }
 
 /* --------------------------------------------------------------------------
@@ -216,7 +241,8 @@
   color: var(--cyan-primary);
   margin-bottom: 16px;
   line-height: 1.25;
-  white-space: nowrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .hero-chips-wrap {
@@ -569,7 +595,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 32px;
 }
 
@@ -1035,7 +1061,7 @@
    -------------------------------------------------------------------------- */
 .skills-categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
 }
 
@@ -1306,6 +1332,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact-form-panel {

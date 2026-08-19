@@ -1,0 +1,52 @@
+﻿<svg width="800" height="170" viewBox="0 0 800 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #f8fafc; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; fill: #94a3b8; }
+    .stat-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; fill: #e2e8f0; }
+    .stat-pct { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #94a3b8; }
+    .card-border { stroke: rgba(6, 182, 212, 0.25); stroke-width: 1; }
+  </style>
+
+  <!-- Background Card -->
+  <rect x="1" y="1" width="798" height="168" rx="12" fill="#070a13" class="card-border" />
+
+  <!-- Title & Subtitle -->
+  <text x="24" y="34" class="title">📊 Répartition Technologique &amp; Domaines Clés</text>
+  <text x="24" y="52" class="subtitle">Expertise éprouvée sur environnements d'entreprise à haute criticité</text>
+
+  <!-- Multi-color Segmented Progress Bar -->
+  <g transform="translate(24, 70)">
+    <!-- Total width: 752px -->
+    <!-- Python: 35% -> 263.2px -->
+    <rect x="0" y="0" width="263" height="12" rx="6" fill="#06b6d4" />
+    <!-- DevSecOps: 30% -> 225.6px -->
+    <rect x="267" y="0" width="225" height="12" rx="6" fill="#8b5cf6" />
+    <!-- TypeScript/React: 20% -> 150.4px -->
+    <rect x="496" y="0" width="150" height="12" rx="6" fill="#3b82f6" />
+    <!-- Postgres/Data: 15% -> 102px -->
+    <rect x="650" y="0" width="102" height="12" rx="6" fill="#10b981" />
+  </g>
+
+  <!-- Legend Items -->
+  <g transform="translate(24, 110)">
+    <!-- Item 1: Python -->
+    <circle cx="6" cy="6" r="5" fill="#06b6d4" />
+    <text x="18" y="10" class="stat-label">Python &amp; FastAPI (Backends / RAG)</text>
+    <text x="18" y="26" class="stat-pct">35% • APIs asynchrones &amp; IA</text>
+
+    <!-- Item 2: DevSecOps -->
+    <circle cx="216" cy="6" r="5" fill="#8b5cf6" />
+    <text x="228" y="10" class="stat-label">DevSecOps &amp; Cloud (CI/CD / K8s)</text>
+    <text x="228" y="26" class="stat-pct">30% • Hardening, Trivy &amp; Docker</text>
+
+    <!-- Item 3: TypeScript -->
+    <circle cx="436" cy="6" r="5" fill="#3b82f6" />
+    <text x="448" y="10" class="stat-label">TypeScript &amp; React (Web / Mobile)</text>
+    <text x="448" y="26" class="stat-pct">20% • Front-end réactif &amp; Expo</text>
+
+    <!-- Item 4: Data -->
+    <circle cx="646" cy="6" r="5" fill="#10b981" />
+    <text x="658" y="10" class="stat-label">PostgreSQL &amp; pgvector</text>
+    <text x="658" y="26" class="stat-pct">15% • SQL &amp; Embeddings</text>
+  </g>
+</svg>

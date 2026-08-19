@@ -1,6 +1,6 @@
 /* ==========================================================================
    RESPONSIVE STYLES - Fares METIDJI Portfolio
-   Pixel-Perfect Layout & Zero Shift between FR and EN
+   Pixel-Perfect Layout & Ergonomie Tactile Mobile/Tablette (Dark & Light Mode)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -11,9 +11,51 @@
     --header-height: 72px;
   }
 
-  /* Navigation Drawer Activation at 1024px for safe international layout */
+  .nav-container {
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+  }
+
+  .nav-logo {
+    margin-right: 0;
+    font-size: 1.1rem;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .lang-btn {
+    padding: 4px 7px;
+    font-size: 0.76rem;
+  }
+
+  .theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  /* Navigation Drawer Activation */
   .mobile-toggle {
     display: flex;
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    flex-shrink: 0;
   }
 
   .nav-links {
@@ -27,13 +69,14 @@
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     align-items: flex-start;
-    padding: 36px 28px;
-    gap: 20px;
+    padding: 32px 24px;
+    gap: 16px;
     transform: translateX(100%);
     transition: transform var(--transition-normal);
     border-top: 1px solid var(--border-glass);
     overflow-y: auto;
     z-index: 999;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   }
 
   .nav-links.open {
@@ -46,13 +89,14 @@
   }
 
   .nav-link {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     width: 100%;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   html.light .nav-link {
+    color: #334155;
     border-bottom-color: rgba(15, 23, 42, 0.06);
   }
 
@@ -63,7 +107,7 @@
   /* Hero Section */
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
 
   .hero-content {
@@ -74,10 +118,6 @@
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
-  }
-
-  .hero-role-wrapper {
-    min-height: 3.8rem;
   }
 
   /* Grids */
@@ -107,39 +147,69 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   :root {
-    --header-height: 68px;
+    --header-height: 66px;
+  }
+
+  .nav-container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .nav-logo-text {
+    font-size: 1.05rem;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .section {
-    padding: 60px 0;
+    padding: 50px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5vw, 2.2rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.98rem;
   }
 
   /* Hero Section */
   .hero-section {
-    padding-top: calc(var(--header-height) + 20px);
-    padding-bottom: 60px;
+    padding-top: calc(var(--header-height) + 16px);
+    padding-bottom: 50px;
     min-height: auto;
   }
 
   .hero-name {
-    font-size: clamp(2.2rem, 7vw, 3.2rem);
+    font-size: clamp(2rem, 6.5vw, 3rem);
   }
 
-  .hero-role-wrapper {
-    min-height: 4.4rem;
-    font-size: 1.25rem;
+  .hero-title-main {
+    font-size: clamp(1.2rem, 4.2vw, 1.6rem);
   }
 
   .hero-pitch {
-    font-size: 1rem;
-    margin-bottom: 28px;
+    font-size: 0.98rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
   }
 
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
     gap: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
 
   .hero-cta-group .btn {
@@ -147,25 +217,26 @@
     text-align: center;
     justify-content: center;
     padding: 14px 20px;
+    min-height: 46px;
   }
 
   .hero-stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 16px 14px;
+    gap: 10px;
+    padding: 14px 12px;
   }
 
   .stat-item {
-    min-height: 75px;
+    min-height: 70px;
   }
 
   .stat-number {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .stat-label {
-    font-size: 0.76rem;
-    min-height: 2.4em;
+    font-size: 0.75rem;
+    min-height: 2.2em;
   }
 
   /* Pillars & Services */
@@ -174,21 +245,29 @@
   }
 
   .pillar-card {
-    padding: 26px 20px;
+    padding: 24px 20px;
   }
 
   .service-card {
-    padding: 26px 20px;
+    padding: 24px 20px;
   }
 
   /* Projects Showcase */
   .projects-filters {
     gap: 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
   }
 
   .filter-btn {
     padding: 8px 16px;
     font-size: 0.82rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-height: 38px;
   }
 
   .projects-grid {
@@ -197,7 +276,7 @@
   }
 
   .project-body {
-    padding: 20px;
+    padding: 20px 18px;
   }
 
   .project-footer-actions {
@@ -209,6 +288,54 @@
   .project-footer-actions .btn {
     width: 100%;
     padding: 12px 16px;
+    min-height: 42px;
+  }
+
+  /* DevOps Terminal */
+  .terminal-window {
+    border-radius: var(--radius-md);
+  }
+
+  .terminal-chips-bar {
+    padding: 10px 12px;
+    gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .terminal-chips-bar span {
+    display: none;
+  }
+
+  .terminal-chip {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-height: 34px;
+  }
+
+  .terminal-body {
+    padding: 16px 14px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    min-height: 220px;
+    max-height: 380px;
+  }
+
+  .terminal-input-row {
+    padding: 10px 14px;
+  }
+
+  .term-prompt {
+    font-size: 0.82rem;
+    margin-right: 6px;
+  }
+
+  .terminal-input {
+    font-size: 0.84rem;
+    min-width: 0;
   }
 
   /* Form & Contact */
@@ -218,7 +345,7 @@
   }
 
   .contact-info-panel, .contact-form-panel {
-    padding: 24px 20px;
+    padding: 24px 18px;
   }
 
   .contact-direct-val {
@@ -237,11 +364,15 @@
   }
 
   .timeline-wrapper::before {
-    left: 4px;
+    left: 5px;
+    width: 2px;
   }
 
   .timeline-dot {
-    left: -22px;
+    left: -25px;
+    width: 14px;
+    height: 14px;
+    top: 6px;
   }
 
   .timeline-card {
@@ -256,15 +387,16 @@
 
   /* Modal */
   .modal-backdrop {
-    padding: 12px;
+    padding: 10px;
   }
 
   .modal-window {
-    max-height: 94vh;
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
   }
 
   .modal-header {
-    padding: 18px 20px;
+    padding: 16px 18px;
   }
 
   .modal-title-group h3 {
@@ -272,15 +404,19 @@
   }
 
   .modal-content {
-    padding: 20px 18px;
+    padding: 18px 16px;
   }
 
   .modal-diagram-box {
     font-size: 0.72rem;
-    padding: 14px;
+    padding: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre;
+    line-height: 1.4;
   }
 
-  /* Footer */
+  /* Footer & Floating Elements */
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -292,50 +428,114 @@
     justify-content: center;
     gap: 14px;
   }
+
+  .toast-msg {
+    left: 16px;
+    right: 16px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    font-size: 0.84rem;
+    padding: 12px 18px;
+  }
+
+  .back-to-top {
+    left: 16px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* --------------------------------------------------------------------------
    3. EXTRA SMALL MOBILE DEVICES (Max Width: 480px)
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
-  .hero-name {
-    font-size: 2rem;
+  .nav-container {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
-  .hero-role-wrapper {
-    font-size: 1.1rem;
-    min-height: 4.8rem;
-  }
-
-  .hero-card-preview {
-    padding: 20px 16px;
-  }
-
-  .hero-profile-avatar {
-    width: 52px;
-    height: 52px;
-    font-size: 1.4rem;
-  }
-
-  .stat-number {
-    font-size: 1.45rem;
-  }
-
-  .terminal-chips-bar {
-    padding: 8px 10px;
+  .nav-logo {
     gap: 6px;
   }
 
-  .terminal-chip {
-    font-size: 0.75rem;
-    padding: 4px 8px;
+  .nav-logo-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
   }
 
-  .toast-msg {
-    left: 16px;
-    right: 16px;
-    bottom: 20px;
-    font-size: 0.84rem;
-    padding: 12px 18px;
+  .nav-logo-text {
+    font-size: 1rem;
+  }
+
+  .hero-name {
+    font-size: 1.95rem;
+  }
+
+  .hero-title-main {
+    font-size: 1.15rem;
+  }
+
+  .hero-card-preview {
+    padding: 18px 14px;
+  }
+
+  .hero-profile-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+
+  .hero-profile-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero-profile-info p {
+    font-size: 0.78rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+  }
+
+  .skill-category-card {
+    padding: 20px 16px;
+  }
+
+  .skill-tag-item {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .edu-card {
+    padding: 20px 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. ULTRA-NARROW SMARTPHONES (Max Width: 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .nav-logo-text span {
+    display: none;
+  }
+
+  .hero-name {
+    font-size: 1.75rem;
+  }
+
+  .hero-cta-group .btn {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .project-body {
+    padding: 16px 12px;
+  }
+
+  .contact-info-panel, .contact-form-panel {
+    padding: 18px 14px;
   }
 }

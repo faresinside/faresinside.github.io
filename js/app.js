@@ -153,7 +153,7 @@
 
       card.innerHTML = `
         <div class="project-img-wrap">
-          <img src="${p.image}" alt="${title}" loading="lazy" />
+          <img src="${p.image}" alt="${title}" loading="lazy" onerror="this.onerror=null; this.src='assets/images/project-devops.svg';" />
         </div>
         <div class="project-body">
           <div class="project-badges">${badgesHtml}</div>
@@ -164,9 +164,6 @@
             <button class="btn btn-outline btn-sm btn-view-arch" data-id="${p.id}">
               <span>⚙️ ${dict.projects_btn_arch}</span>
             </button>
-            <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-              <span>🐙 ${dict.projects_btn_github}</span>
-            </a>
           </div>
         </div>
       `;
@@ -366,14 +363,37 @@
 
   // Mobile drawer toggle
   if (mobileToggle && navLinksContainer) {
-    mobileToggle.addEventListener("click", () => {
-      navLinksContainer.classList.toggle("open");
+    function closeMobileMenu() {
+      navLinksContainer.classList.remove("open");
+      mobileToggle.classList.remove("open");
+      mobileToggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    mobileToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = navLinksContainer.classList.toggle("open");
+      mobileToggle.classList.toggle("open", isOpen);
+      mobileToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinksContainer.classList.remove("open");
-      });
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    // Close menu when clicking outside navbar
+    document.addEventListener("click", (e) => {
+      if (navLinksContainer.classList.contains("open") && !navbar.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Reset drawer state on window resize to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1140 && navLinksContainer.classList.contains("open")) {
+        closeMobileMenu();
+      }
     });
   }
 

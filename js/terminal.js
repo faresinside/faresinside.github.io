@@ -113,23 +113,31 @@
    - Scraping 30+ sources, scoring IA Gemini Pro, génération CV PDF temps réel.
    - <em>Stack: FastAPI, Python, Docker, AsyncIO, Webhooks</em>
 
-2. <span class="term-green">ScanCraft / NutriSense</span> [Mobile Offline-First / Cloud API]
-   - Scanner mobile ML Kit, architecture offline-first SQLite, Fastify + PostgreSQL + Redis.
+2. <span class="term-green">Smart Cast Scheduler</span> [IoT / Domotique / Open Source]
+   - Automatisation domotique programmée sur appareils connectés, dépôt GitHub public (MIT).
+   - <em>Stack: FastAPI, React, APScheduler, Docker, i18n RTL</em>
+
+3. <span class="term-green">ScanCraft</span> [Mobile Offline-First / Cloud API]
+   - Scanner mobile (code-barres/OCR), architecture offline-first, Fastify + PostgreSQL + Redis.
    - <em>Stack: React Native, Expo, TypeScript, Drizzle, Redis, Docker</em>
 
-3. <span class="term-green">PortaPulse Monitor</span> [DevOps / IoT / Microservices]
+4. <span class="term-green">PortaPulse Monitor</span> [DevOps / IoT / Microservices]
    - Surveillance de stock multi-boutiques, webhooks Discord/Telegram, cluster Raspberry Pi.
    - <em>Stack: Python, Traefik, Docker Compose, Linux, Glassmorphism UI</em>
 
-4. <span class="term-green">MediaFlow Engine</span> [Automatisation & Batch Processing]
+5. <span class="term-green">MediaFlow Engine</span> [Automatisation & Batch Processing]
    - Pipeline de génération et compositing vidéo multi-pistes automatisé.
-   - <em>Stack: Python, FFmpeg, MoviePy, Pillow, Audio DSP</em>
+   - <em>Stack: Python, Flask, FFmpeg, MoviePy, Pillow</em>
 
-5. <span class="term-green">DataInsight ETL</span> [Data Engineering & Parsing PDF]
-   - Ingestion et extraction de 50,000+ publications officielles complexes vers PostgreSQL.
+6. <span class="term-green">DataInsight ETL</span> [Data Engineering & Parsing PDF]
+   - Ingestion et extraction de publications officielles complexes vers PostgreSQL.
    - <em>Stack: Python, pdfminer.six, pdfrw, PostgreSQL, Regex Engine</em>
 
-6. <span class="term-green">Infrastructure Entreprise & MCO</span> [DevOps Grands Comptes]
+7. <span class="term-green">Talent Match Radar</span> [Projet Client / Automatisation]
+   - Veille emploi sur-mesure pour un profil spécialisé, scoring, notifications, Raspberry Pi.
+   - <em>Stack: Python, Scrapers, Docker, Traefik, Notifications</em>
+
+8. <span class="term-green">Infrastructure Entreprise & MCO</span> [DevOps Grands Comptes]
    - 150+ applications déployées et supervisées en haute disponibilité.
    - <em>Stack: Kubernetes, GitLab CI, Ansible, Prometheus, Grafana</em>
 `
@@ -140,23 +148,31 @@
    - Multi-source scraper (30+ platforms), Gemini Pro AI scoring, real-time PDF CV engine.
    - <em>Stack: FastAPI, Python, Docker, AsyncIO, Webhooks</em>
 
-2. <span class="term-green">ScanCraft / NutriSense</span> [Mobile Offline-First / Cloud API]
-   - ML Kit camera scanner, local SQLite offline persistence, Fastify + PostgreSQL + Redis cache.
+2. <span class="term-green">Smart Cast Scheduler</span> [IoT / Home Automation / Open Source]
+   - Scheduled home automation broadcast on connected devices, public GitHub repo (MIT).
+   - <em>Stack: FastAPI, React, APScheduler, Docker, i18n RTL</em>
+
+3. <span class="term-green">ScanCraft</span> [Mobile Offline-First / Cloud API]
+   - Barcode/OCR mobile scanner, offline-first architecture, Fastify + PostgreSQL + Redis cache.
    - <em>Stack: React Native, Expo, TypeScript, Drizzle, Redis, Docker</em>
 
-3. <span class="term-green">PortaPulse Monitor</span> [DevOps / IoT / Microservices]
+4. <span class="term-green">PortaPulse Monitor</span> [DevOps / IoT / Microservices]
    - Real-time stock monitor, multi-channel webhook dispatcher, Raspberry Pi edge cluster.
    - <em>Stack: Python, Traefik, Docker Compose, Linux, Glassmorphism UI</em>
 
-4. <span class="term-green">MediaFlow Engine</span> [Automation & Batch Compositing]
-   - Headless automated video orchestration and multi-layer rendering pipeline.
-   - <em>Stack: Python, FFmpeg, MoviePy, Pillow, Audio DSP</em>
+5. <span class="term-green">MediaFlow Engine</span> [Automation & Batch Compositing]
+   - Automated video orchestration and multi-layer rendering pipeline.
+   - <em>Stack: Python, Flask, FFmpeg, MoviePy, Pillow</em>
 
-5. <span class="term-green">DataInsight ETL</span> [Data Engineering & PDF Parser]
-   - Automated ingestion of 50,000+ complex public records into normalized PostgreSQL models.
+6. <span class="term-green">DataInsight ETL</span> [Data Engineering & PDF Parser]
+   - Automated ingestion of complex public records into normalized PostgreSQL models.
    - <em>Stack: Python, pdfminer.six, pdfrw, PostgreSQL, Regex Engine</em>
 
-6. <span class="term-green">Enterprise DevSecOps & MCO</span> [Enterprise Tier-1 DevOps]
+7. <span class="term-green">Talent Match Radar</span> [Client Project / Automation]
+   - Bespoke job discovery for a specialized profile, AI scoring, notifications, Raspberry Pi.
+   - <em>Stack: Python, Scrapers, Docker, Traefik, Notifications</em>
+
+8. <span class="term-green">Enterprise DevSecOps & MCO</span> [Enterprise Tier-1 DevOps]
    - 150+ mission-critical applications deployed and maintained with 99.9% uptime SLA.
    - <em>Stack: Kubernetes, GitLab CI, Trivy, Ansible, Prometheus, Grafana</em>
 `;
@@ -268,9 +284,23 @@ LinkedIn: linkedin.com/in/faresmetidji
     }
   };
 
+  function getPromptPrefix() {
+    return window.innerWidth < 576 ? "fares@devops:~$" : "user@fares-devops:~$";
+  }
+
+  function updatePromptLabel() {
+    const label = document.getElementById("term-prompt-label");
+    if (label) {
+      label.textContent = getPromptPrefix();
+    }
+  }
+
+  window.addEventListener("resize", updatePromptLabel);
+  updatePromptLabel();
+
   // Async multi-step deploy simulation
   async function runDeploySimulation() {
-    printLine("user@fares-devops:~$ deploy --prod", "term-cmd");
+    printLine(`${getPromptPrefix()} deploy --prod`, "term-cmd");
     printLine("<span class=\"term-yellow\">🚀 Déclenchement du pipeline CI/CD automatisé vers la production...</span>");
 
     const steps = [
@@ -311,7 +341,7 @@ LinkedIn: linkedin.com/in/faresmetidji
       return;
     }
 
-    printLine(`user@fares-devops:~$ ${escapeHtml(cmd)}`, "term-cmd");
+    printLine(`${getPromptPrefix()} ${escapeHtml(cmd)}`, "term-cmd");
 
     const lowerCmd = cmd.toLowerCase();
     if (COMMANDS[lowerCmd]) {

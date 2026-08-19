@@ -97,96 +97,180 @@ const projectsData = [
     image: "assets/images/project-remoteradar.svg"
   },
   {
+    id: "smart-cast-scheduler",
+    category: "fullstack",
+    categories: ["fullstack", "devops", "automation"],
+    featured: true,
+    badges: ["FastAPI", "React", "Docker", "APScheduler", "SQLite", "i18n RTL", "Open Source"],
+    metrics: {
+      fr: [
+        { label: "Emplacements calendaires", value: "~10 000" },
+        { label: "Déploiement", value: "Docker / Raspberry Pi" },
+        { label: "Langues supportées", value: "FR / EN / AR (RTL)" },
+        { label: "Licence", value: "Open Source (MIT)" }
+      ],
+      en: [
+        { label: "Calendar Locations", value: "~10,000" },
+        { label: "Deployment", value: "Docker / Raspberry Pi" },
+        { label: "Supported Languages", value: "FR / EN / AR (RTL)" },
+        { label: "License", value: "Open Source (MIT)" }
+      ]
+    },
+    title: {
+      fr: "Smart Cast Scheduler — Automatisation Domotique IoT & Diffusion Programmée",
+      en: "Smart Cast Scheduler — Scheduled IoT Home Automation & Device Broadcast Engine"
+    },
+    subtitle: {
+      fr: "Application auto-hébergée qui déclenche la diffusion audio sur des appareils connectés (Google Home / Chromecast) à des horaires précis calculés à partir d'un calendrier de données, avec interface web multilingue (FR/EN/AR, support RTL complet).",
+      en: "Self-hosted app that triggers audio broadcast on connected devices (Google Home / Chromecast) at precise scheduled times computed from a calendar dataset, with a multilingual web UI (FR/EN/AR, full RTL support)."
+    },
+    summary: {
+      fr: "Projet open source (dépôt GitHub public, licence MIT) : backend FastAPI avec scheduler interne (APScheduler) qui recalcule les horaires du jour au démarrage et déclenche automatiquement la diffusion sur les appareils connectés découverts par mDNS sur le réseau local. Frontend React/Vite servant une interface de configuration complète (sélection parmi ~10 000 emplacements, gestion multi-appareils, calendrier mensuel), 100% auto-hébergée et sans dépendance à une API externe au runtime.",
+      en: "Open-source project (public GitHub repo, MIT license): FastAPI backend with an internal scheduler (APScheduler) that recomputes the day's schedule on startup and automatically triggers broadcast on connected devices discovered via mDNS on the local network. React/Vite frontend serving a full configuration UI (location picker across ~10,000 entries, multi-device management, monthly calendar), fully self-hosted with zero runtime dependency on external APIs."
+    },
+    architecture: {
+      fr: {
+        problem: "Déclencher fiablement une diffusion audio sur des appareils connectés à des horaires calculés dynamiquement, sans dépendre d'un service cloud tiers au runtime, avec découverte automatique des appareils sur le réseau local — un vrai défi réseau (mDNS derrière Docker) et de robustesse (redémarrages, changements d'horaires).",
+        solution: "Backend FastAPI + scheduler interne (APScheduler) qui reprogramme les déclenchements du jour au démarrage ; découverte des appareils connectés par mDNS (conteneur Docker en `network_mode: host`, indispensable car le bridge Docker par défaut bloque la découverte mDNS) et diffusion pilotée en subprocess ; données calendaires 100% statiques et pré-générées (aucun appel réseau au runtime) ; frontend React/Vite multilingue avec support RTL complet.",
+        stack: ["FastAPI (Python)", "React & Vite (Frontend)", "APScheduler (Scheduler Interne)", "SQLite", "Docker (network_mode: host + mDNS)", "i18n FR/EN/AR (RTL)", "GitHub Public + Licence MIT"],
+        diagram: `
++-------------------------------------------------------------+
+|                 SERVEUR AUTO-HÉBERGÉ (Docker)                |
+|                                                               |
+|  +----------------------+       +------------------------+  |
+|  |  FRONTEND REACT/VITE |------>|   BACKEND FASTAPI       |  |
+|  |  (Build statique)    |       |   - Config & Réglages   |  |
+|  +----------------------+       |   - Données calendaires |  |
+|                                  |     statiques (JSON)   |  |
+|                                  +-----------+------------+  |
+|                                              |                |
+|                          +-------------------+------------+  |
+|                          |   SCHEDULER (APScheduler)      |  |
+|                          |   - Recalcule les horaires du  |  |
+|                          |     jour au démarrage          |  |
+|                          +-------------------+------------+  |
++------------------------------------------------|-------------+
+                                                   | (mDNS + subprocess)
+                                                   v
+                                   +--------------------------------+
+                                   |   APPAREILS CONNECTÉS DU RÉSEAU |
+                                   |   (Google Home / Chromecast)    |
+                                   +--------------------------------+`
+      },
+      en: {
+        problem: "Reliably trigger audio broadcast on connected devices at dynamically computed schedules, without a runtime dependency on a third-party cloud service, with automatic device discovery on the local network — a real networking challenge (mDNS behind Docker) and a robustness one (restarts, schedule changes).",
+        solution: "FastAPI backend + internal scheduler (APScheduler) that recomputes the day's triggers on startup; connected-device discovery via mDNS (Docker container in `network_mode: host`, required since Docker's default bridge network blocks mDNS discovery) and subprocess-driven broadcast; 100% static, pre-generated calendar data (zero network calls at runtime); multilingual React/Vite frontend with full RTL support.",
+        stack: ["FastAPI (Python)", "React & Vite (Frontend)", "APScheduler (Internal Scheduler)", "SQLite", "Docker (network_mode: host + mDNS)", "i18n FR/EN/AR (RTL)", "Public GitHub Repo + MIT License"],
+        diagram: `
++-------------------------------------------------------------+
+|                 SELF-HOSTED SERVER (Docker)                  |
+|                                                               |
+|  +----------------------+       +------------------------+  |
+|  |  REACT/VITE FRONTEND |------>|   FASTAPI BACKEND       |  |
+|  |  (Static Build)      |       |   - Config & Settings   |  |
+|  +----------------------+       |   - Static calendar     |  |
+|                                  |     data (JSON)         |  |
+|                                  +-----------+------------+  |
+|                                              |                |
+|                          +-------------------+------------+  |
+|                          |   SCHEDULER (APScheduler)      |  |
+|                          |   - Recomputes the day's       |  |
+|                          |     triggers on startup        |  |
+|                          +-------------------+------------+  |
++------------------------------------------------|-------------+
+                                                   | (mDNS + subprocess)
+                                                   v
+                                   +--------------------------------+
+                                   |   CONNECTED DEVICES ON NETWORK  |
+                                   |   (Google Home / Chromecast)    |
+                                   +--------------------------------+`
+      }
+    },
+    demoUrl: null,
+    githubUrl: "https://github.com/faresinside/athan-app",
+    image: "assets/images/project-devops.svg"
+  },
+  {
     id: "scancraft-mobile",
     category: "mobile",
-    categories: ["mobile", "backend", "fullstack"],
+    categories: ["mobile", "fullstack", "ai"],
     featured: true,
-    badges: ["React Native", "Expo", "TypeScript", "Fastify", "PostgreSQL", "Drizzle ORM", "Redis", "ML Kit", "Docker"],
+    badges: ["React Native", "Expo", "TypeScript", "Fastify", "PostgreSQL", "Drizzle ORM", "Redis", "LLM Classification", "Docker"],
     metrics: {
       fr: [
         { label: "Temps réponse cache", value: "<10ms" },
         { label: "Architecture", value: "Offline-First" },
         { label: "Typage de bout en bout", value: "100% Strict" },
-        { label: "Déploiement", value: "Docker / Caddy" }
+        { label: "Déploiement", value: "Docker" }
       ],
       en: [
         { label: "Cache Response Time", value: "<10ms" },
         { label: "Architecture", value: "Offline-First" },
         { label: "End-to-End Typing", value: "100% Strict" },
-        { label: "Deployment", value: "Docker / Caddy" }
+        { label: "Deployment", value: "Docker" }
       ]
     },
     title: {
-      fr: "ScanCraft / NutriSense — App Mobile Offline-First & API Microservices",
-      en: "ScanCraft — Offline-First Mobile Scanner & Ingredient API"
+      fr: "ScanCraft — App Mobile Offline-First de Scan & Analyse de Produits",
+      en: "ScanCraft — Offline-First Mobile Product Scanner & Ingredient Intelligence App"
     },
     subtitle: {
-      fr: "Application mobile React Native avec vision ML Kit, stockage local SQLite, synchronisation backend Fastify/PostgreSQL et cache Redis Dragonfly.",
-      en: "React Native mobile app with ML Kit computer vision, local SQLite storage, Fastify/PostgreSQL backend sync, and Redis Dragonfly caching."
+      fr: "Application mobile React Native pour scanner un produit (code-barres / OCR) et obtenir instantanément une analyse détaillée de sa composition (additifs, allergènes, certifications) via un pipeline de classification par IA.",
+      en: "React Native mobile app that scans a product (barcode / OCR) and instantly returns a detailed composition analysis (additives, allergens, certifications) powered by an AI classification pipeline."
     },
     summary: {
-      fr: "Application mobile et API cloud haute performance dédiée à l'analyse instantanée de produits et à la détection d'ingrédients par scan optique (code-barres et OCR). Conçue pour une disponibilité absolue même sans connexion internet grâce à un système offline-first natif.",
-      en: "High-performance mobile application and cloud microservices platform for real-time product intelligence, barcode scanning, and optical ingredient analysis. Engineered for 100% offline availability with local SQLite persistence and ultra-fast backend sync."
+      fr: "Application mobile et API cloud dédiées à la transparence produit : scan instantané par caméra, extraction et classification automatique des ingrédients via un pipeline LLM, et restitution claire du résultat et des certifications associées. Architecture Offline-First pensée pour une disponibilité quasi totale même en zone de faible couverture réseau.",
+      en: "Mobile application and cloud API dedicated to product transparency: instant camera scanning, automatic ingredient extraction and classification through an LLM pipeline, and clear result/certification reporting. Offline-First architecture engineered for near-full availability even in low-connectivity retail environments."
     },
     architecture: {
       fr: {
-        problem: "Les utilisateurs dans les supermarchés ont souvent une mauvaise couverture réseau 4G/5G, rendant les applications classiques dépendantes du cloud lentes ou inutilisables.",
-        solution: "Architecture 'Offline-First' : persistance locale SQLite sur le device mobile, scan instantané par caméra avec ML Kit embarqué, et synchronisation ultra-rapide avec une API Fastify/PostgreSQL optimisée par un cache Redis Dragonfly sous reverse proxy Caddy HTTPS.",
-        stack: ["React Native (Expo SDK 51+)", "TypeScript Strict (Frontend & Backend)", "Redux Toolkit & Expo-SQLite", "Google ML Kit (Camera Vision)", "Fastify Node.js API", "PostgreSQL 16 & Drizzle ORM", "Redis / Dragonfly Cache", "Caddy Server (SSL Auto)", "Docker Compose"],
+        problem: "Les utilisateurs veulent vérifier la composition d'un produit directement en magasin, où la couverture réseau 4G/5G est souvent mauvaise, tandis que les données d'ingrédients (additifs, allergènes, certifications) sont éparses et hétérogènes.",
+        solution: "Architecture mobile Offline-First avec cache local, scan caméra (code-barres + OCR), backend Fastify/PostgreSQL (Drizzle ORM) avec cache Redis pour les lookups produits fréquents, et pipeline de classification des ingrédients par LLM pour normaliser des données hétérogènes en un résultat clair et fiable.",
+        stack: ["React Native (Expo)", "TypeScript Strict (Frontend & Backend)", "Fastify Node.js API", "PostgreSQL & Drizzle ORM", "Redis (ioredis) Cache", "Pipeline de Classification d'Ingrédients par LLM", "Docker Compose"],
         diagram: `
 +-------------------------------------------------------------+
 |               MOBILE DEVICE (REACT NATIVE / EXPO)           |
-|  - Camera ML Kit Scanner (Real-Time Vision)                 |
-|  - Local SQLite Database (Offline-First Storage)            |
-|  - Redux State & Internationalization (i18n)                |
+|  - Scanner Caméra (Code-barres / OCR)                        |
+|  - Cache Local (Offline-First)                                |
+|  - État & Internationalisation (i18n)                        |
 +------------------------------+------------------------------+
                                | (Sync / HTTPS REST API)
                                v
 +-------------------------------------------------------------+
-|             CADDY REVERSE PROXY (HTTPS / AUTO-SSL)          |
-+------------------------------+------------------------------+
-                               |
-                               v
-+-------------------------------------------------------------+
 |                FASTIFY NODE.JS / TYPESCRIPT API             |
-|  - Sub-millisecond routing & validation (Zod / TypeBox)     |
-|  - Rate-limiting & Token Security                           |
+|  - Routing & validation typée (Zod / TypeBox)                |
+|  - Pipeline de classification d'ingrédients (LLM)            |
 +---------------+------------------------------+---------------+
                 |                              |
                 v                              v
 +------------------------------+  +---------------------------+
-|    REDIS / DRAGONFLY CACHE   |  |   POSTGRESQL + DRIZZLE    |
-|    (Hot product Lookups)     |  |   (Master Product Data)   |
+|      REDIS (IOREDIS) CACHE   |  |   POSTGRESQL + DRIZZLE    |
+|      (Hot product Lookups)   |  |   (Master Product Data)   |
 +------------------------------+  +---------------------------+`
       },
       en: {
-        problem: "Retail and supermarket environments frequently suffer from poor cell reception, causing cloud-reliant mobile apps to stall or fail completely.",
-        solution: "Built a true 'Offline-First' architecture: on-device SQLite persistence, instant on-device ML Kit barcode recognition, and asynchronous sync with an ultra-lightweight Fastify backend backed by Dragonfly/Redis caching and Caddy SSL.",
-        stack: ["React Native (Expo SDK 51+)", "Strict TypeScript (Fullstack)", "Redux Toolkit & Expo-SQLite", "Google ML Kit (Computer Vision)", "Fastify Node.js API", "PostgreSQL 16 & Drizzle ORM", "Redis / Dragonfly In-Memory Cache", "Caddy Server (Auto SSL)", "Docker Compose"],
+        problem: "Users want to check a product's composition directly in-store, where cell reception is often poor, while ingredient data (additives, allergens, certifications) remains scattered and inconsistent across sources.",
+        solution: "Built an Offline-First mobile architecture: local caching, camera-based scanning (barcode + OCR), a Fastify/PostgreSQL backend (Drizzle ORM) backed by Redis caching for frequent product lookups, and an LLM-based ingredient classification pipeline to normalize heterogeneous data into a clear, reliable result.",
+        stack: ["React Native (Expo)", "Strict TypeScript (Fullstack)", "Fastify Node.js API", "PostgreSQL 16 & Drizzle ORM", "Redis (ioredis) Cache", "LLM Ingredient Classification Pipeline", "Docker Compose"],
         diagram: `
 +-------------------------------------------------------------+
 |               MOBILE DEVICE (REACT NATIVE / EXPO)           |
-|  - Camera ML Kit Scanner (Real-Time Vision)                 |
-|  - Local SQLite Database (Offline-First Storage)            |
-|  - Redux State & Internationalization (i18n)                |
+|  - Camera Scanner (Barcode / OCR)                            |
+|  - Local Cache (Offline-First)                                |
+|  - State & Internationalization (i18n)                       |
 +------------------------------+------------------------------+
                                | (Sync / HTTPS REST API)
                                v
 +-------------------------------------------------------------+
-|             CADDY REVERSE PROXY (HTTPS / AUTO-SSL)          |
-+------------------------------+------------------------------+
-                               |
-                               v
-+-------------------------------------------------------------+
 |                FASTIFY NODE.JS / TYPESCRIPT API             |
-|  - Sub-millisecond routing & validation (Zod / TypeBox)     |
-|  - Rate-limiting & Token Security                           |
+|  - Typed routing & validation (Zod / TypeBox)                |
+|  - LLM Ingredient Classification Pipeline                    |
 +---------------+------------------------------+---------------+
                 |                              |
                 v                              v
 +------------------------------+  +---------------------------+
-|    REDIS / DRAGONFLY CACHE   |  |   POSTGRESQL + DRIZZLE    |
-|    (Hot product Lookups)     |  |   (Master Product Data)   |
+|      REDIS (IOREDIS) CACHE   |  |   POSTGRESQL + DRIZZLE    |
+|      (Hot product Lookups)   |  |   (Master Product Data)   |
 +------------------------------+  +---------------------------+`
       }
     },
@@ -203,13 +287,13 @@ const projectsData = [
     metrics: {
       fr: [
         { label: "Cycle de détection", value: "30s" },
-        { label: "Disponibilité Edge", value: "99.99%" },
+        { label: "Fonctionnement", value: "24/7 Autonome" },
         { label: "Diffusion Alertes", value: "<1s" },
         { label: "Interface Web", value: "Glassmorphism" }
       ],
       en: [
         { label: "Detection Cycle", value: "30s" },
-        { label: "Edge Cluster Uptime", value: "99.99%" },
+        { label: "Operation", value: "24/7 Autonomous" },
         { label: "Alert Dispatch", value: "<1s" },
         { label: "Web Interface", value: "Glassmorphism" }
       ]
@@ -223,8 +307,8 @@ const projectsData = [
       en: "High-frequency scraping engine, multi-channel webhook alerting, and glassmorphism monitoring dashboard containerized on Raspberry Pi edge hardware with Traefik."
     },
     summary: {
-      fr: "Microservice événementiel développé pour surveiller en continu la disponibilité d'équipements e-commerce critiques auprès de 6+ distributeurs majeurs avec contournement d'anti-bot, dispatch instantané d'alertes (Discord, Telegram, Ntfy) et dashboard de monitoring en direct.",
-      en: "Event-driven microservice engineered to continuously monitor critical e-commerce inventory across 6+ major distributors with anti-bot heuristics, instantaneous multi-channel push alerting (Discord, Telegram, Ntfy), and a real-time web dashboard."
+      fr: "Microservice événementiel développé pour surveiller en continu la disponibilité d'un équipement précis auprès de 6+ distributeurs majeurs, avec contournement d'anti-bot, dispatch instantané d'alertes (Discord, Telegram, Ntfy) et dashboard de monitoring en direct.",
+      en: "Event-driven microservice engineered to continuously monitor a specific product's availability across 6+ major distributors with anti-bot heuristics, instantaneous multi-channel push alerting (Discord, Telegram, Ntfy), and a real-time web dashboard."
     },
     architecture: {
       fr: {
@@ -234,7 +318,7 @@ const projectsData = [
         diagram: `
 +-------------------------------------------------------------+
 |                DISTRIBUTEURS E-COMMERCE (6+)                |
-|  (Optimea, Boulanger, Castorama, Amazon, Darty, Leroy)      |
+|  (Sites Officiels, Grandes Surfaces Spécialisées, etc.)     |
 +------------------------------+------------------------------+
                                ^ (30s Polling Loop + Anti-Bot)
                                |
@@ -269,7 +353,7 @@ const projectsData = [
         diagram: `
 +-------------------------------------------------------------+
 |                E-COMMERCE DISTRIBUTORS (6+)                 |
-|  (Official Outlets, Amazon, Darty, Boulanger, etc.)         |
+|  (Official Outlets, Specialized Retailers, etc.)             |
 +------------------------------+------------------------------+
                                ^ (30s Polling Loop + Anti-Bot)
                                |
@@ -303,45 +387,229 @@ const projectsData = [
     image: "assets/images/project-portasplit.svg"
   },
   {
+    id: "enterprise-devops-infra",
+    category: "devops",
+    categories: ["devops", "cloud", "backend"],
+    featured: true,
+    badges: ["DevSecOps", "Kubernetes", "Docker", "GitLab CI", "Trivy Scan", "Ansible", "AWS", "Prometheus", "Grafana"],
+    metrics: {
+      fr: [
+        { label: "Apps en production", value: "150+" },
+        { label: "Haute Disponibilité", value: "Multi-Sites" },
+        { label: "Support N3 & Sécurité", value: "Expert" },
+        { label: "Supervision", value: "24/7" }
+      ],
+      en: [
+        { label: "Production Apps", value: "150+" },
+        { label: "High Availability", value: "Multi-Site" },
+        { label: "Tier 3 & Security", value: "Expert" },
+        { label: "Monitoring", value: "24/7" }
+      ]
+    },
+    title: {
+      fr: "DevSecOps, Industrialisation Cloud & Observabilité — 150+ Applications Métier",
+      en: "Enterprise DevSecOps & Cloud Observability — 150+ Mission-Critical Apps"
+    },
+    subtitle: {
+      fr: "Industrialisation CI/CD sécurisée (GitLab CI, Trivy, Ansible, Docker, K8s), maintien en condition opérationnelle (MCO) et observabilité Prometheus/Grafana.",
+      en: "End-to-end secured CI/CD (GitLab CI, Trivy, Ansible, Docker, Kubernetes), 24/7 high availability, and Prometheus/Grafana observability."
+    },
+    summary: {
+      fr: "Plus de 5 ans d'expérience au service de grands comptes et institutions publiques. Automatisation complète des déploiements, administration de clusters Kubernetes/Docker, durcissement de sécurité (scans de vulnérabilités Trivy/SonarQube), gestion de bases de données et résolution d'incidents critiques N3.",
+      en: "Over 5 years of proven enterprise experience supporting Tier-1 clients and public institutions. Led deployment automation, Kubernetes/Docker cluster security hardening (Trivy/SonarQube vulnerability scans), relational database tuning, and N3 incident resolution."
+    },
+    architecture: {
+      fr: {
+        problem: "Gérer 150+ applications hétérogènes avec des déploiements manuels risqués, des fenêtres de mise en production complexes et des exigences strictes de sécurité.",
+        solution: "Mise en place de pipelines GitLab CI standardisés avec scans de sécurité (Trivy/SAST), playbooks Ansible idempotents, conteneurisation Docker/Kubernetes durcie et supervision unifiée avec Prometheus, Grafana et alertes dynamiques.",
+        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Playbooks & Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Apache Tomcat, Traefik, Nginx"],
+        diagram: `
++-------------------------------------------------------------+
+|                 DEVELOPMENT & GIT REPOSITORIES              |
+|  (GitLab / Git Workflows / Trunk-Based Development)         |
++------------------------------+------------------------------+
+                               | (Git Push / Tag Trigger)
+                               v
++-------------------------------------------------------------+
+|           DEVSECOPS CI/CD AUTOMATION & TESTING PIPELINE     |
+|  - GitLab CI / Jenkins Runners: Unit & Integration Tests    |
+|  - SAST & Container Vulnerability Scans (Trivy / SonarQube) |
+|  - Docker Multi-Stage Image Build & Container Hardening     |
+|  - Artifact Packaging & Registry Push                       |
++------------------------------+------------------------------+
+                               | (Automated Rollout via Ansible / ArgoCD)
+                               v
++-------------------------------------------------------------+
+|             HIGH-AVAILABILITY PRODUCTION CLUSTER            |
+|  - Kubernetes / Docker Cluster (Zero-Downtime Rolling MEP)  |
+|  - Tomcat WAR Servers & Reverse Proxies (Traefik / Nginx)   |
+|  - Database Clustering (PostgreSQL / Oracle / MariaDB)      |
++------------------------------+------------------------------+
+                               | (Metrics & Logs Ingestion)
+                               v
++-------------------------------------------------------------+
+|            OBSERVABILITY & INCIDENT MANAGEMENT (N3)         |
+|  - Prometheus Time-Series Scrapes & Log Aggregation         |
+|  - Grafana Unified Dashboards & Real-Time Alerts            |
++-------------------------------------------------------------+`
+      },
+      en: {
+        problem: "Managing 150+ legacy and modern applications with manual, risky deployments, long maintenance windows, and strict compliance/security requirements.",
+        solution: "Engineered standardized GitLab CI pipelines with integrated security scanning (Trivy/SAST), paired with idempotent Ansible playbooks, container hardening, zero-downtime rolling updates, and full-stack Prometheus/Grafana telemetry.",
+        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Tomcat, Apache HTTP, Traefik"],
+        diagram: `
++-------------------------------------------------------------+
+|                 DEVELOPMENT & GIT REPOSITORIES              |
+|  (GitLab / Git Workflows / Feature Branches)                |
++------------------------------+------------------------------+
+                               | (Git Push / Tag Trigger)
+                               v
++-------------------------------------------------------------+
+|           DEVSECOPS CI/CD AUTOMATION & TESTING PIPELINE     |
+|  - GitLab CI / Jenkins Runners: Automated Tests & Builds    |
+|  - SAST & Container Vulnerability Scanning (Trivy)          |
+|  - Docker Container Security & Base Image Hardening         |
+|  - Artifact Packaging & Container Registry Dispatch         |
++------------------------------+------------------------------+
+                               | (Automated Rollout via Ansible / ArgoCD)
+                               v
++-------------------------------------------------------------+
+|             HIGH-AVAILABILITY PRODUCTION CLUSTER            |
+|  - Kubernetes / Docker Environments (Rolling Deployments)   |
+|  - Application Servers (Tomcat WAR, IIS, Traefik)           |
+|  - Clustered Databases (PostgreSQL / Oracle / MariaDB)      |
++------------------------------+------------------------------+
+                               | (Metrics & Logs Ingestion)
+                               v
++-------------------------------------------------------------+
+|            OBSERVABILITY & INCIDENT MANAGEMENT (N3)         |
+|  - Prometheus Metrics Exporters & Log Analysis              |
+|  - Grafana Centralized Dashboards & Predictive Alerts       |
++-------------------------------------------------------------+`
+      }
+    },
+    demoUrl: null,
+    githubUrl: "https://github.com/faresmetidji",
+    image: "assets/images/project-devops.svg"
+  },
+  {
+    id: "intrasys-ai-hub",
+    category: "ai",
+    categories: ["ai", "automation"],
+    featured: false,
+    badges: ["Python", "Ollama", "LLM Local", "Automatisation", "Confidentialité"],
+    metrics: {
+      fr: [
+        { label: "Confidentialité données", value: "100% Local" },
+        { label: "Coût d'inférence", value: "Zéro API Cloud" },
+        { label: "Cas d'usage", value: "Matching & Rédaction" },
+        { label: "Intégration", value: "CLI & Dashboard Web" }
+      ],
+      en: [
+        { label: "Data Privacy", value: "100% Local" },
+        { label: "Inference Cost", value: "Zero Cloud API" },
+        { label: "Use Case", value: "Matching & Drafting" },
+        { label: "Integration", value: "CLI & Web Dashboard" }
+      ]
+    },
+    title: {
+      fr: "Assistant IA Local — Analyse de Candidatures & Rédaction Assistée (Ollama)",
+      en: "Local AI Assistant — Application Analysis & Drafting Assistant (Ollama)"
+    },
+    subtitle: {
+      fr: "Module d'intelligence artificielle 100% local (Ollama) intégré à un outil de veille emploi : évalue la pertinence d'une offre par rapport à un CV, rédige une lettre de motivation et suggère des reformulations, sans jamais envoyer de donnée vers un service cloud.",
+      en: "A fully local AI module (Ollama) plugged into a job-search tool: scores a job posting against a CV, drafts a cover letter and suggests rewording — all without ever sending data to a cloud service."
+    },
+    summary: {
+      fr: "Brique d'IA locale conçue pour respecter la confidentialité des données personnelles (CV, lettres de motivation). Utilise un modèle Ollama exécuté en local pour évaluer une offre, générer une lettre de motivation, un message de candidature court et des suggestions de reformulation du CV, directement intégrée dans le tableau de bord d'un outil de veille.",
+      en: "A local-first AI building block designed to keep personal data (CV, cover letters) private. Runs an Ollama model locally to evaluate a job posting, draft a cover letter, a short application message and CV rewording suggestions — integrated directly into a job-tracking dashboard."
+    },
+    architecture: {
+      fr: {
+        problem: "Les outils IA de candidature basés sur des APIs cloud impliquent d'envoyer son CV et ses données personnelles à des tiers, ce qui pose un problème de confidentialité pour un usage personnel répété.",
+        solution: "Intégration d'un modèle Ollama exécuté localement directement dans le flux de veille emploi : évaluation offre/CV, génération de lettre de motivation et de message de candidature, suggestions de reformulation — le tout sans dépendance à un service cloud.",
+        stack: ["Python", "Ollama (Inférence LLM Locale)", "Prompt Engineering", "Intégration CLI & Dashboard Web", "SQLite"],
+        diagram: `
++-------------------------------------------------------------+
+|         OFFRE D'EMPLOI (texte) + CV (Markdown local)         |
++------------------------------+------------------------------+
+                               v
++-------------------------------------------------------------+
+|              MOTEUR OLLAMA LOCAL (100% On-Device)            |
+|  - Évaluation de pertinence offre / profil                  |
+|  - Génération lettre de motivation & message court          |
+|  - Suggestions de reformulation CV                          |
++------------------------------+------------------------------+
+                               v
++-------------------------------------------------------------+
+|         BROUILLONS LOCAUX (jamais envoyés au cloud)          |
++-------------------------------------------------------------+`
+      },
+      en: {
+        problem: "AI application assistants built on cloud APIs require sending your CV and personal data to third parties — a real privacy concern for repeated personal use.",
+        solution: "Integrated a locally-run Ollama model directly into the job-tracking flow: job/CV relevance scoring, cover letter and application message generation, CV rewording suggestions — with zero dependency on a cloud service.",
+        stack: ["Python", "Ollama (Local LLM Inference)", "Prompt Engineering", "CLI & Web Dashboard Integration", "SQLite"],
+        diagram: `
++-------------------------------------------------------------+
+|         JOB POSTING (text) + CV (local Markdown)             |
++------------------------------+------------------------------+
+                               v
++-------------------------------------------------------------+
+|              LOCAL OLLAMA ENGINE (100% On-Device)            |
+|  - Job / profile relevance scoring                          |
+|  - Cover letter & short application message generation      |
+|  - CV rewording suggestions                                  |
++------------------------------+------------------------------+
+                               v
++-------------------------------------------------------------+
+|         LOCAL DRAFTS (never sent to the cloud)                |
++-------------------------------------------------------------+`
+      }
+    },
+    demoUrl: null,
+    githubUrl: "https://github.com/faresmetidji",
+    image: "assets/images/project-remoteradar.svg"
+  },
+  {
     id: "mediaflow-pipeline",
     category: "automation",
     categories: ["automation", "backend"],
     featured: false,
-    badges: ["Python", "FFmpeg", "MoviePy", "Pillow", "Audio DSP", "Batch Processing"],
+    badges: ["Python", "Flask", "FFmpeg", "MoviePy", "Pillow", "SQLite"],
     metrics: {
       fr: [
         { label: "Vitesse d'export", value: "10x vs Manuel" },
-        { label: "Automatisation", value: "100% CLI Headless" },
+        { label: "Interfaces", value: "Flask (Curation + Dashboard)" },
         { label: "Compositing", value: "Multi-Calques" },
         { label: "Stabilité rendu", value: "Zero Artefact" }
       ],
       en: [
         { label: "Render Speed", value: "10x vs Manual" },
-        { label: "Automation", value: "100% Headless CLI" },
+        { label: "Interfaces", value: "Flask (Curation + Dashboard)" },
         { label: "Compositing", value: "Multi-Layer" },
         { label: "Render Quality", value: "Zero Artifact" }
       ]
     },
     title: {
-      fr: "MediaFlow — Pipeline d'Orchestration & Génération Multimédia Automatisée",
-      en: "MediaFlow — Automated Batch Video & Multimedia Compositing Pipeline"
+      fr: "MediaFlow — Pipeline de Génération Automatisée de Vidéos Courtes",
+      en: "MediaFlow — Automated Short-Form Video Generation Pipeline"
     },
     subtitle: {
-      fr: "Moteur de rendu vidéo headless générant dynamiquement des assets multimédias haute définition avec sous-titrage synchronisé et mixage audio.",
-      en: "Headless video rendering engine dynamically producing high-definition multimedia assets with synchronized subtitles and audio mixing."
+      fr: "Pipeline Python de composition vidéo automatisée : synchronisation audio/texte, habillage graphique et export optimisé, piloté par une interface de curation et un tableau de bord locaux.",
+      en: "Python video-compositing pipeline with automated audio/text synchronization, graphic overlays and optimized export, driven by a local curation UI and dashboard."
     },
     summary: {
-      fr: "Architecture de traitement de flux multimédia en Python orchestrant FFmpeg, MoviePy et Pillow. Permet de transformer des métadonnées et sources brutes en capsules vidéo prêtes pour la diffusion avec calques dynamiques, formes d'onde audio et encodage GPU/CPU optimisé.",
-      en: "Python multimedia processing pipeline orchestrating FFmpeg, MoviePy, and Pillow. Ingests raw structured metadata and assets to generate broadcast-ready video content with dynamic motion graphics, synchronized waveform audio, and hardware-accelerated encoding."
+      fr: "Système de production automatisée de courtes vidéos verticales (formats réseaux sociaux) à partir d'un contenu texte source : sélection éditoriale, synchronisation audio/texte mot-à-mot, génération de calques graphiques (Pillow), compositing multi-pistes (MoviePy) et export optimisé (FFmpeg). Deux interfaces web locales (Flask) pilotent la curation et la génération avec aperçu.",
+      en: "Automated production system for short vertical videos (social formats) from source text content: editorial selection, word-level audio/text synchronization, graphic overlay generation (Pillow), multi-track compositing (MoviePy) and optimized export (FFmpeg). Two local Flask web interfaces drive curation and preview-based generation."
     },
     architecture: {
       fr: {
-        problem: "La production manuelle de contenus vidéo récurrents demande des heures d'édition et génère des erreurs de synchronisation sous-titres/audio.",
-        solution: "Création d'un pipeline batch automatisé : calcul précis de la timeline, génération vectorielle des visuels, compositing multi-pistes et encodage par lots sans intervention humaine.",
-        stack: ["Python 3.12", "FFmpeg (Hardware-accelerated libx264 / aac)", "MoviePy (Timeline & Track orchestration)", "Pillow (Vector & Typography rendering)", "Audio DSP (Waveform synchronization)"],
+        problem: "La production manuelle de contenus vidéo courts récurrents (texte + audio + habillage) demande des heures d'édition et génère des erreurs de synchronisation.",
+        solution: "Pipeline Python bout en bout : sélection du contenu du jour, synchronisation audio/texte mot-à-mot, génération programmatique de calques graphiques (Pillow), compositing multi-pistes (MoviePy) et export optimisé (FFmpeg), piloté par deux interfaces Flask locales (curation et génération avec aperçu verrouillé).",
+        stack: ["Python 3.12", "Flask (Interfaces de Curation & Dashboard)", "FFmpeg (Encodage optimisé)", "MoviePy (Compositing multi-pistes)", "Pillow (Rendu graphique & typographie)", "SQLite"],
         diagram: `
 +-------------------------------------------------------------+
-|            INPUT ASSETS (Metadata, Audio, Fonts, SVG)       |
+|            INPUT ASSETS (Métadonnées, Audio, Fonts)         |
 +------------------------------+------------------------------+
                                |
                                v
@@ -349,41 +617,43 @@ const projectsData = [
 |                 MEDIAFLOW ORCHESTRATION CORE                |
 |  - Parseur de métadonnées & découpage temporel              |
 |  - Générateur d'overlays visuels dynamiques (Pillow)        |
-|  - Synchronisation audio-texte et courbes d'onde            |
+|  - Synchronisation audio-texte mot-à-mot                    |
 |  - Moteur de compositing multi-calques (MoviePy)            |
 +------------------------------+------------------------------+
                                |
-                               v
-+-------------------------------------------------------------+
-|             FFMPEG OPTIMIZED ENCODING PIPELINE              |
-|  - Fast 2-pass encoding / H.264 MP4 High Profile            |
-|  - Sortie automatique vers répertoires horodatés            |
-+-------------------------------------------------------------+`
+            +------------------+------------------+
+            |                                     |
+            v                                     v
++-----------------------+             +-----------------------+
+| FLASK CURATION & DASH |             | FFMPEG ENCODING        |
+| (Aperçu, Sélection)   |             | PIPELINE (Export MP4)  |
++-----------------------+             +-----------------------+`
       },
       en: {
-        problem: "Manual production of repetitive video assets consumes excessive editing hours and introduces audio/subtitle synchronization errors.",
-        solution: "Engineered an automated batch pipeline: precise timeline calculation, programmatic vector overlays, multi-track compositing, and scheduled zero-touch rendering.",
-        stack: ["Python 3.12", "FFmpeg (Hardware accelerated)", "MoviePy (Timeline orchestration)", "Pillow (Typography & Vector rendering)", "Audio DSP synchronization"],
+        problem: "Manual production of repetitive short video assets (text + audio + graphics) consumes excessive editing hours and introduces synchronization errors.",
+        solution: "End-to-end Python pipeline: daily content selection, word-level audio/text synchronization, programmatic graphic overlay generation (Pillow), multi-track compositing (MoviePy) and optimized export (FFmpeg), driven by two local Flask interfaces (curation and preview-locked generation).",
+        stack: ["Python 3.12", "Flask (Curation & Dashboard Interfaces)", "FFmpeg (Optimized Encoding)", "MoviePy (Multi-track Compositing)", "Pillow (Typography & Graphic Rendering)", "SQLite"],
         diagram: `
 +-------------------------------------------------------------+
-|            INPUT ASSETS (Metadata, Audio, Fonts, SVG)       |
+|            INPUT ASSETS (Metadata, Audio, Fonts)             |
 +------------------------------+------------------------------+
                                |
                                v
 +-------------------------------------------------------------+
 |                 MEDIAFLOW ORCHESTRATION CORE                |
 |  - Metadata parsing & timeline chunking                     |
-|  - Dynamic visual overlay generation (Pillow)               |
-|  - Audio-to-text waveform synchronization                   |
-|  - Multi-layer compositing engine (MoviePy)                 |
+|  - Dynamic visual overlay generation (Pillow)                |
+|  - Word-level audio-to-text synchronization                  |
+|  - Multi-layer compositing engine (MoviePy)                  |
 +------------------------------+------------------------------+
                                |
-                               v
-+-------------------------------------------------------------+
-|             FFMPEG OPTIMIZED ENCODING PIPELINE              |
-|  - High-performance H.264 MP4 export                        |
-|  - Automated artifact delivery & scheduled queue            |
-+-------------------------------------------------------------+`
+            +------------------+------------------+
+            |                                     |
+            v                                     v
++-----------------------+             +-----------------------+
+| FLASK CURATION & DASH |             | FFMPEG ENCODING        |
+| (Preview, Selection)  |             | PIPELINE (MP4 Export)  |
++-----------------------+             +-----------------------+`
       }
     },
     demoUrl: null,
@@ -395,44 +665,44 @@ const projectsData = [
     category: "backend",
     categories: ["backend", "automation", "devops"],
     featured: false,
-    badges: ["Python", "PDFMiner", "PostgreSQL", "ETL", "Regex OCR", "Data Analytics"],
+    badges: ["Python", "PDFMiner", "PostgreSQL", "ETL", "Regex Parsing", "Data Analytics"],
     metrics: {
       fr: [
-        { label: "Fiches traitées", value: "50,000+" },
-        { label: "Précision d'extraction", value: "99.8%" },
+        { label: "Volume traité", value: "Publications à grande échelle" },
+        { label: "Tolérance typographique", value: "Élevée" },
         { label: "Pipeline ETL", value: "Automatisé" },
         { label: "Stockage", value: "PostgreSQL" }
       ],
       en: [
-        { label: "Records Processed", value: "50,000+" },
-        { label: "Extraction Accuracy", value: "99.8%" },
+        { label: "Processing Volume", value: "Large-Scale Publications" },
+        { label: "Typographic Tolerance", value: "High" },
         { label: "ETL Pipeline", value: "Automated" },
         { label: "Database", value: "PostgreSQL" }
       ]
     },
     title: {
       fr: "DataInsight ETL — Pipeline d'Extraction & Analyse de Données Publiques",
-      en: "DataInsight ETL — High-Throughput Public Gazette Parsing & Analytics"
+      en: "DataInsight ETL — Public Gazette Parsing & Analytics Pipeline"
     },
     subtitle: {
       fr: "Pipeline d'ingestion et de parsing de publications officielles PDF complexes avec nettoyage de données, modélisation SQL et tableaux de bord analytiques.",
-      en: "High-volume data ingestion and parsing pipeline transforming complex public legal PDF publications into queryable SQL models and statistical dashboards."
+      en: "Data ingestion and parsing pipeline transforming complex public legal PDF publications into queryable SQL models and statistical dashboards."
     },
     summary: {
-      fr: "Solution complète d'ingestion de données publiques non structurées (fichiers PDF volumineux, typographie variable). Le pipeline télécharge automatiquement les publications, applique un OCR structurel et des expressions régulières robustes, injecte les résultats dans PostgreSQL et génère des métriques statistiques fiables.",
-      en: "Enterprise-grade data pipeline for unstructured public records. Automatically fetches government releases, executes structural text parsing and robust regex validation, populates a normalized PostgreSQL database, and computes longitudinal trend analytics."
+      fr: "Solution d'ingestion de données publiques non structurées (fichiers PDF volumineux, typographie variable). Le pipeline télécharge automatiquement les publications, applique un parsing structurel et des expressions régulières robustes, injecte les résultats dans PostgreSQL et génère des métriques statistiques.",
+      en: "Data pipeline for unstructured public records. Automatically fetches government releases, executes structural text parsing and robust regex validation, populates a normalized PostgreSQL database, and computes trend analytics."
     },
     architecture: {
       fr: {
-        problem: "Les publications officielles publiques sont publiées sous forme de PDF massifs non structurés, rendant impossible toute recherche ou analyse statistique automatisée.",
+        problem: "Les publications officielles publiques sont publiées sous forme de PDF volumineux et non structurés, rendant difficile toute recherche ou analyse statistique automatisée.",
         solution: "Développement d'un parseur résilient basé sur pdfminer.six et pdfrw avec tolérance aux variations typographiques, pipeline ETL automatisé et stockage relationnel optimisé pour les requêtes analytiques.",
         stack: ["Python (pdfminer.six, pdfrw, regex)", "PostgreSQL 16", "BeautifulSoup4 & Requests (Scraping)", "Pandas (Agrégation & Stats)", "Matplotlib & Chart.js"],
         diagram: `
 +-------------------------------------------------------------+
 |                 PUBLIC OPEN DATA REPOSITORIES               |
-|                 (Massive Unstructured PDFs)                 |
+|                 (PDFs Volumineux & Non Structurés)           |
 +------------------------------+------------------------------+
-                               | (Automated Daily Ingestion)
+                               | (Ingestion Automatisée)
                                v
 +-------------------------------------------------------------+
 |                 PDF STRUCTURAL PARSING ENGINE               |
@@ -443,21 +713,21 @@ const projectsData = [
                                |
                                v
 +-------------------------------------------------------------+
-|                 NORMALIZED POSTGRESQL LAKE                  |
-|  - Indexed schema for sub-second demographic queries        |
-|  - Automated statistical rollups & export API               |
+|                 NORMALIZED POSTGRESQL STORE                 |
+|  - Schéma indexé pour requêtes analytiques rapides          |
+|  - Agrégats statistiques automatisés & export API            |
 +-------------------------------------------------------------+`
       },
       en: {
-        problem: "Official publications are released as massive unstructured PDF files, making automated search, indexing, and statistical modeling impossible.",
+        problem: "Official publications are released as large unstructured PDF files, making automated search, indexing, and statistical modeling difficult.",
         solution: "Built a fault-tolerant parsing engine using pdfminer.six and custom regex tokenizers, coupled with an automated ETL pipeline and optimized PostgreSQL analytical schemas.",
         stack: ["Python (pdfminer.six, pdfrw)", "PostgreSQL 16", "BeautifulSoup4 (Ingestion)", "Pandas (Data manipulation)", "Analytics Engine"],
         diagram: `
 +-------------------------------------------------------------+
 |                 PUBLIC OPEN DATA REPOSITORIES               |
-|                 (Massive Unstructured PDFs)                 |
+|                 (Large Unstructured PDFs)                    |
 +------------------------------+------------------------------+
-                               | (Automated Daily Ingestion)
+                               | (Automated Ingestion)
                                v
 +-------------------------------------------------------------+
 |                 PDF STRUCTURAL PARSING ENGINE               |
@@ -468,9 +738,9 @@ const projectsData = [
                                |
                                v
 +-------------------------------------------------------------+
-|                 NORMALIZED POSTGRESQL LAKE                  |
-|  - Indexed schema for sub-second demographic queries        |
-|  - Automated statistical rollups & export API               |
+|                 NORMALIZED POSTGRESQL STORE                 |
+|  - Indexed schema for fast analytical queries                |
+|  - Automated statistical rollups & export API                |
 +-------------------------------------------------------------+`
       }
     },
@@ -489,13 +759,13 @@ const projectsData = [
         { label: "Latence API", value: "<5ms" },
         { label: "Architecture Cache", value: "In-Memory TTL" },
         { label: "Conteneurisation", value: "Docker Ready" },
-        { label: "Disponibilité", value: "99.99%" }
+        { label: "Charge APIs Tierces", value: "Réduite" }
       ],
       en: [
         { label: "API Response Time", value: "<5ms" },
         { label: "Cache Layer", value: "In-Memory TTL" },
         { label: "Containerization", value: "Docker Ready" },
-        { label: "Availability", value: "99.99%" }
+        { label: "Third-Party API Load", value: "Reduced" }
       ]
     },
     title: {
@@ -507,8 +777,8 @@ const projectsData = [
       en: "Containerized FastAPI microservice featuring zero-dependency in-memory TTL caching, open geospatial data aggregation, and a responsive web UI."
     },
     summary: {
-      fr: "Service backend haute vélocité agrégeant les événements culturels, flux métropolitains et données sportives en temps réel. Optimisé par un cache mémoire avec invalidation automatique (TTL) réduisant la charge des APIs tierces et garantissant une réponse sous les 5ms.",
-      en: "High-velocity backend service consolidating cultural events, metropolitan points of interest, and live sports fixtures. Leverages an optimized in-memory TTL cache to eliminate third-party API rate limits and achieve sub-5ms response times."
+      fr: "Service backend agrégeant les événements culturels, flux métropolitains et données sportives en temps réel. Optimisé par un cache mémoire avec invalidation automatique (TTL) réduisant la charge des APIs tierces.",
+      en: "Backend service consolidating cultural events, metropolitan points of interest, and live sports fixtures. Leverages an optimized in-memory TTL cache to reduce third-party API load."
     },
     architecture: {
       fr: {
@@ -563,206 +833,86 @@ const projectsData = [
     image: "assets/images/project-citypulse.svg"
   },
   {
-    id: "intrasys-ai-hub",
-    category: "ai",
-    categories: ["ai", "backend", "fullstack"],
-    featured: true,
-    badges: ["FastAPI", "Python 3.12", "Ollama", "pgvector", "LangChain", "Docker", "React"],
+    id: "talent-match-radar-case",
+    category: "automation",
+    categories: ["automation", "backend", "ai"],
+    featured: false,
+    badges: ["Python", "Web Scraping", "Scoring IA", "Docker", "Traefik", "Raspberry Pi", "Notifications"],
     metrics: {
       fr: [
-        { label: "Confidentialité données", value: "100% On-Premise" },
-        { label: "Modèles supportés", value: "Mistral, Llama 3" },
-        { label: "Recherche sémantique", value: "<15ms (pgvector)" },
-        { label: "Conteneurisation", value: "Docker Compose" }
+        { label: "Sources surveillées", value: "Multi-Sites" },
+        { label: "Fréquence de veille", value: "Automatisée" },
+        { label: "Alertes", value: "Temps réel" },
+        { label: "Déploiement", value: "Docker / Raspberry Pi" }
       ],
       en: [
-        { label: "Data Privacy", value: "100% On-Premise" },
-        { label: "Supported Models", value: "Mistral, Llama 3" },
-        { label: "Semantic Search", value: "<15ms (pgvector)" },
-        { label: "Containerization", value: "Docker Compose" }
+        { label: "Monitored Sources", value: "Multi-Site" },
+        { label: "Watch Frequency", value: "Automated" },
+        { label: "Alerts", value: "Real-Time" },
+        { label: "Deployment", value: "Docker / Raspberry Pi" }
       ]
     },
     title: {
-      fr: "IntraSys AI Hub — Plateforme Privée de LLMs & RAG Sémantique",
-      en: "IntraSys AI Hub — Private LLM & Semantic RAG Platform"
+      fr: "Talent Match Radar — Veille & Matching Emploi Automatisé (Projet Client)",
+      en: "Talent Match Radar — Automated Job Discovery & Matching (Client Project)"
     },
     subtitle: {
-      fr: "Serveur d'inférence LLM local sécurisé (Ollama / Mistral) avec vector database PostgreSQL (pgvector), pipelines RAG et interface de chat moderne.",
-      en: "Secured on-premise LLM inference server (Ollama / Mistral) with PostgreSQL pgvector embeddings, RAG retrieval pipelines, and modern chat UI."
+      fr: "Outil sur-mesure développé pour un proche en recherche active dans un secteur spécialisé (santé / recherche clinique) : scraping automatisé d'offres, scoring de pertinence, notifications instantanées, déployé sur Raspberry Pi.",
+      en: "Bespoke tool built for an acquaintance actively job-hunting in a specialized field (healthcare / clinical research): automated job scraping, relevance scoring, instant notifications, deployed on a Raspberry Pi."
     },
     summary: {
-      fr: "Solution complète d'intelligence artificielle privée permettant aux entreprises d'exploiter la puissance des LLMs sur leurs propres documents internes sans aucune fuite de données vers des APIs tierces. Intègre un embedding vectoriel local, une recherche sémantique ultra-rapide (pgvector) et une API FastAPI sécurisée.",
-      en: "Enterprise-grade private AI platform enabling organizations to leverage local LLMs on internal proprietary documentation without external data leaks. Features local embeddings, sub-15ms pgvector semantic similarity search, and a secured FastAPI orchestration layer."
+      fr: "Développement d'un outil de veille sur-mesure pour accompagner la recherche d'emploi d'un profil spécialisé : scrapers dédiés à des sites d'offres et d'entreprises ciblées du secteur, moteur de scoring pour évaluer la pertinence de chaque offre par rapport au profil, système de notification automatique et base de données locale de suivi des candidatures. Déployé en autonomie sur Raspberry Pi via Docker Compose, derrière un reverse-proxy Traefik.",
+      en: "Built a bespoke monitoring tool to support the job search of a specialized profile: dedicated scrapers for targeted job boards and sector companies, a scoring engine to evaluate each posting's relevance against the profile, automatic notifications, and a local application-tracking database. Deployed autonomously on a Raspberry Pi via Docker Compose, behind a Traefik reverse proxy."
     },
     architecture: {
       fr: {
-        problem: "Les entreprises manipulant des données sensibles ou confidentielles ne peuvent pas envoyer leurs documents vers des APIs LLM Cloud publiques (OpenAI/Anthropic) pour des raisons de conformité RGPD et de secret des affaires.",
-        solution: "Déploiement d'un cluster d'inférence IA 100% conteneurisé avec Ollama (Mistral 7B / Llama 3), vector store PostgreSQL pgvector, pipeline d'ingestion de documents LangChain et API FastAPI avec streaming SSE.",
-        stack: ["FastAPI (Python 3.12)", "Ollama (Inférence LLM Locale)", "PostgreSQL 16 & pgvector", "LangChain / LlamaIndex", "Docker Compose & GPU Passthrough", "React / Tailwind / SSE Streaming"],
+        problem: "Un proche en recherche active dans un secteur de niche avait besoin de surveiller en continu plusieurs sources d'offres et listes d'entreprises ciblées, sans y passer des heures chaque jour.",
+        solution: "Mise en place de scrapers dédiés, d'un moteur de matching/scoring et d'un système de notification automatique, packagés et déployés en autonomie sur un serveur personnel (Raspberry Pi, Docker Compose, Traefik) pour un fonctionnement sans intervention manuelle.",
+        stack: ["Python", "Scrapers Dédiés (Requests / BeautifulSoup)", "Moteur de Scoring & Matching", "SQLite", "Docker & Docker Compose", "Traefik (Reverse Proxy)", "Raspberry Pi (Déploiement Edge)", "Notifications Automatiques"],
         diagram: `
 +-------------------------------------------------------------+
-|                 DOCUMENTS D'ENTREPRISE (PDF, MD, TXT)       |
+|         SOURCES D'OFFRES & LISTES D'ENTREPRISES CIBLÉES      |
 +------------------------------+------------------------------+
-                               | (Pipeline d'Ingestion & Chunking)
+                               | (Scraping Automatisé)
                                v
 +-------------------------------------------------------------+
-|               EMBEDDING & POSTGRESQL PGVECTOR               |
-|  - Génération d'embeddings locaux (BGE / Nomic)              |
-|  - Index HNSW / Cosine Similarity (<15ms)                   |
-+------------------------------+------------------------------+
-                               | (Contexte Sémantique Pertinent)
-                               v
-+-------------------------------------------------------------+
-|               FASTAPI AI ORCHESTRATOR & AGENT               |
-|  - Prompt Engineering & Context Assembly                    |
-|  - Serveur Ollama Local (Mistral 7B / Llama 3)               |
-|  - Streaming SSE Token par Token                            |
+|               MOTEUR DE MATCHING & SCORING                  |
+|  - Évaluation de pertinence par rapport au profil           |
+|  - Déduplication & suivi en base locale                     |
 +------------------------------+------------------------------+
                                |
                                v
 +-------------------------------------------------------------+
-|                MODERN REACT WEB CHAT INTERFACE              |
+|         RASPBERRY PI (Docker Compose + Traefik)             |
+|  - Notifications automatiques instantanées                  |
 +-------------------------------------------------------------+`
       },
       en: {
-        problem: "Enterprises dealing with sensitive or regulated data cannot send proprietary internal knowledge to public cloud LLM APIs due to strict GDPR and compliance policies.",
-        solution: "Engineered a self-hosted, 100% containerized private AI ecosystem combining local Ollama model runtime, pgvector similarity store, LangChain document chunking, and a FastAPI SSE streaming backend.",
-        stack: ["FastAPI (Python 3.12)", "Ollama (Local LLM Inference)", "PostgreSQL 16 & pgvector", "LangChain / LlamaIndex", "Docker Compose & GPU acceleration", "React / SSE Streaming"],
+        problem: "An acquaintance actively job-hunting in a niche sector needed to continuously monitor several job boards and targeted company lists without spending hours on it every day.",
+        solution: "Built dedicated scrapers, a matching/scoring engine and an automatic notification system, packaged and deployed autonomously on a personal server (Raspberry Pi, Docker Compose, Traefik) for hands-off operation.",
+        stack: ["Python", "Dedicated Scrapers (Requests / BeautifulSoup)", "Matching & Scoring Engine", "SQLite", "Docker & Docker Compose", "Traefik (Reverse Proxy)", "Raspberry Pi (Edge Deployment)", "Automatic Notifications"],
         diagram: `
 +-------------------------------------------------------------+
-|                 INTERNAL ENTERPRISE DOCS (PDF, TXT)         |
+|         TARGETED JOB BOARDS & COMPANY WATCHLISTS            |
 +------------------------------+------------------------------+
-                               | (Chunking & Embedding Pipeline)
+                               | (Automated Scraping)
                                v
 +-------------------------------------------------------------+
-|               EMBEDDINGS & POSTGRESQL PGVECTOR              |
-|  - Local Vector Embeddings (BGE / Nomic)                    |
-|  - HNSW Indexing & Cosine Distance (<15ms)                  |
-+------------------------------+------------------------------+
-                               | (Relevant Context Injection)
-                               v
-+-------------------------------------------------------------+
-|               FASTAPI AI ORCHESTRATION ENGINE               |
-|  - Dynamic System Prompt Synthesis                          |
-|  - Local Ollama Ingestion (Mistral 7B / Llama 3)            |
-|  - Real-Time Token-by-Token SSE Stream                      |
+|                MATCHING & SCORING ENGINE                    |
+|  - Relevance evaluation against the candidate profile       |
+|  - Deduplication & local tracking database                  |
 +------------------------------+------------------------------+
                                |
                                v
 +-------------------------------------------------------------+
-|                MODERN REACT AI CHAT INTERFACE               |
+|         RASPBERRY PI (Docker Compose + Traefik)             |
+|  - Instant automatic notifications                          |
 +-------------------------------------------------------------+`
       }
     },
     demoUrl: null,
     githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-remoteradar.svg"
-  },
-  {
-    id: "enterprise-devops-infra",
-    category: "devops",
-    categories: ["devops", "cloud", "backend"],
-    featured: true,
-    badges: ["DevSecOps", "Kubernetes", "Docker", "GitLab CI", "Trivy Scan", "Ansible", "AWS", "Prometheus", "Grafana"],
-    metrics: {
-      fr: [
-        { label: "Apps en production", value: "150+" },
-        { label: "Déploiements manuels", value: "-60%" },
-        { label: "Disponibilité SLA", value: "99.9%" },
-        { label: "Support N3 & Sécurité", value: "Expert" }
-      ],
-      en: [
-        { label: "Production Apps", value: "150+" },
-        { label: "Manual Deploy Overhead", value: "-60%" },
-        { label: "Service SLA", value: "99.9%" },
-        { label: "Tier 3 & Security", value: "Expert" }
-      ]
-    },
-    title: {
-      fr: "DevSecOps, Industrialisation Cloud & Observabilité — 150+ Applications Métier",
-      en: "Enterprise DevSecOps & Cloud Observability — 150+ Mission-Critical Apps"
-    },
-    subtitle: {
-      fr: "Industrialisation CI/CD sécurisée (GitLab CI, Trivy, Ansible, Docker, K8s), maintien en condition opérationnelle (MCO) et observabilité Prometheus/Grafana.",
-      en: "End-to-end secured CI/CD (GitLab CI, Trivy, Ansible, Docker, Kubernetes), 24/7 high availability, and Prometheus/Grafana observability."
-    },
-    summary: {
-      fr: "Plus de 5 ans d'expérience au service de grands comptes et institutions publiques (Conseil Départemental des Yvelines, Publicis Groupe, Vocalcom, Orange). Automatisation complète des déploiements, administration de clusters Kubernetes/Docker, durcissement de sécurité (scans de vulnérabilités Trivy/SonarQube), gestion de bases de données et résolution d'incidents critiques N3.",
-      en: "Over 5 years of proven enterprise experience supporting Tier-1 clients and public institutions (Conseil Départemental, Publicis Groupe, Vocalcom, Orange). Led deployment automation, Kubernetes/Docker cluster security hardening (Trivy/SonarQube vulnerability scans), relational database tuning, and N3 incident resolution."
-    },
-    architecture: {
-      fr: {
-        problem: "Gérer 150+ applications hétérogènes avec des déploiements manuels risqués, des fenêtres de mise en production complexes et des exigences strictes de sécurité.",
-        solution: "Mise en place de pipelines GitLab CI standardisés avec scans de sécurité (Trivy/SAST), playbooks Ansible idempotents, conteneurisation Docker/Kubernetes durcie et supervision unifiée avec Prometheus, Grafana et alertes dynamiques.",
-        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Playbooks & Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Apache Tomcat, Traefik, Nginx"],
-        diagram: `
-+-------------------------------------------------------------+
-|                 DEVELOPMENT & GIT REPOSITORIES              |
-|  (GitLab / Git Workflows / Trunk-Based Development)         |
-+------------------------------+------------------------------+
-                               | (Git Push / Tag Trigger)
-                               v
-+-------------------------------------------------------------+
-|           DEVSECOPS CI/CD AUTOMATION & TESTING PIPELINE     |
-|  - GitLab CI / Jenkins Runners: Unit & Integration Tests    |
-|  - SAST & Container Vulnerability Scans (Trivy / SonarQube) |
-|  - Docker Multi-Stage Image Build & Container Hardening     |
-|  - Artifact Packaging & Registry Push                       |
-+------------------------------+------------------------------+
-                               | (Automated Rollout via Ansible / ArgoCD)
-                               v
-+-------------------------------------------------------------+
-|             HIGH-AVAILABILITY PRODUCTION CLUSTER            |
-|  - Kubernetes / Docker Cluster (Zero-Downtime Rolling MEP)  |
-|  - Tomcat WAR Servers & Reverse Proxies (Traefik / Nginx)   |
-|  - Database Clustering (PostgreSQL / Oracle / MariaDB)      |
-+------------------------------+------------------------------+
-                               | (Metrics & Logs Ingestion)
-                               v
-+-------------------------------------------------------------+
-|            OBSERVABILITY & INCIDENT MANAGEMENT (N3)         |
-|  - Prometheus Time-Series Scrapes & Log Aggregation         |
-|  - Grafana Unified Dashboards & SLA Real-Time Alerts        |
-+-------------------------------------------------------------+`
-      },
-      en: {
-        problem: "Managing 150+ legacy and modern applications with manual, risky deployments, long maintenance windows, and strict compliance/security requirements.",
-        solution: "Engineered standardized GitLab CI pipelines with integrated security scanning (Trivy/SAST), paired with idempotent Ansible playbooks, container hardening, zero-downtime rolling updates, and full-stack Prometheus/Grafana telemetry.",
-        stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Tomcat, Apache HTTP, Traefik"],
-        diagram: `
-+-------------------------------------------------------------+
-|                 DEVELOPMENT & GIT REPOSITORIES              |
-|  (GitLab / Git Workflows / Feature Branches)                |
-+------------------------------+------------------------------+
-                               | (Git Push / Tag Trigger)
-                               v
-+-------------------------------------------------------------+
-|           DEVSECOPS CI/CD AUTOMATION & TESTING PIPELINE     |
-|  - GitLab CI / Jenkins Runners: Automated Tests & Builds    |
-|  - SAST & Container Vulnerability Scanning (Trivy)          |
-|  - Docker Container Security & Base Image Hardening         |
-|  - Artifact Packaging & Container Registry Dispatch         |
-+------------------------------+------------------------------+
-                               | (Automated Rollout via Ansible / ArgoCD)
-                               v
-+-------------------------------------------------------------+
-|             HIGH-AVAILABILITY PRODUCTION CLUSTER            |
-|  - Kubernetes / Docker Environments (Rolling Deployments)   |
-|  - Application Servers (Tomcat WAR, IIS, Traefik)           |
-|  - Clustered Databases (PostgreSQL / Oracle / MariaDB)      |
-+------------------------------+------------------------------+
-                               | (Metrics & Logs Ingestion)
-                               v
-+-------------------------------------------------------------+
-|            OBSERVABILITY & INCIDENT MANAGEMENT (N3)         |
-|  - Prometheus Metrics Exporters & Log Analysis              |
-|  - Grafana Centralized Dashboards & Predictive Alerts       |
-+-------------------------------------------------------------+`
-      }
-    },
-    demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
-    image: "assets/images/project-devops.svg"
   }
 ];
 

@@ -8,7 +8,7 @@ const translations = {
   fr: {
     // Meta & Header
     meta_title: "Fares METIDJI | Ingénieur DevSecOps & Développeur Full-Stack",
-    meta_desc: "Ingénieur DevSecOps & Développeur Full-Stack (5+ ans d'expérience, Master 2). Automatisation Cloud sécurisée (Docker, K8s, CI/CD), développement d'APIs FastAPI/Python, interfaces React et intégration IA.",
+    meta_desc: "Ingénieur DevSecOps & Développeur Full-Stack (5+ ans d'expérience, Master 2). Automatisation Cloud sécurisée (Docker, K8s, CI/CD), développement d'APIs (Python, FastAPI), interfaces React et intégration IA.",
     
     // Navbar
     nav_home: "Accueil",
@@ -28,7 +28,7 @@ const translations = {
     hero_chip_devops: "🔒 DevSecOps & Cloud",
     hero_chip_ai: "🤖 Intégration IA (LLMs/RAG)",
     hero_chip_mco: "🛡️ Supervision & MCO",
-    hero_pitch: "Ingénieur DevSecOps & logiciel avec plus de 5 ans d'expérience en production et titulaire d'un Master en Réseaux & Sécurité. J'interviens sur l'automatisation d'infrastructures Cloud sécurisées (Docker, Kubernetes, CI/CD, scans Trivy), le développement d'applications web fiables (Python, TypeScript, React) et l'intégration de solutions IA (LLMs, RAG, pgvector).",
+    hero_pitch: "Ingénieur DevSecOps & logiciel avec plus de 5 ans d'expérience en production et titulaire d'un Master 2 en Informatique (Réseaux & Sécurité). J'interviens sur la conception d'applications web modernes (React, TypeScript), le développement d'APIs performantes (Python, FastAPI), l'intégration de solutions IA (LLMs, RAG, pgvector) et l'automatisation d'infrastructures Cloud sécurisées (Docker, Kubernetes, CI/CD).",
     hero_cta_projects: "Voir mes réalisations",
     hero_cta_contact: "Me contacter",
     hero_stats_exp: "Ans d'expérience",
@@ -168,15 +168,15 @@ const translations = {
     contact_form_success: "Merci ! Votre message a été préparé.",
     
     // Footer & Actions
-    footer_rights: "Fares METIDJI. Développeur Full-Stack & Ingénieur DevOps.",
+    footer_rights: "Fares METIDJI. Ingénieur DevSecOps & Full-Stack.",
     toast_copied: "Copié dans le presse-papiers !",
     back_to_top: "Haut de page"
   },
 
   en: {
     // Meta & Header
-    meta_title: "Fares METIDJI | DevSecOps Engineer & Full-Stack Developer",
-    meta_desc: "DevSecOps Engineer & Full-Stack Developer (5+ years exp, Master's Degree in Networks & Security). Secure Cloud automation (Docker, K8s, CI/CD), FastAPI/Python APIs, React interfaces, and AI integration.",
+    meta_title: "Fares METIDJI | DevSecOps & Full-Stack Engineer",
+    meta_desc: "DevSecOps & Full-Stack Engineer (5+ years exp, Master's Degree in CS & Security). Secure Cloud automation (Docker, K8s, CI/CD), web application development (React, TypeScript), Python/FastAPI APIs, and AI integration.",
     
     // Navbar
     nav_home: "Home",
@@ -196,7 +196,7 @@ const translations = {
     hero_chip_devops: "🔒 DevSecOps & Cloud",
     hero_chip_ai: "🤖 AI Integration (LLMs/RAG)",
     hero_chip_mco: "🛡️ MCO & Production",
-    hero_pitch: "DevSecOps & Software Engineer with 5+ years of production experience and a Master's Degree in Networks & Security. I specialize in automating secure Cloud infrastructure (Docker, Kubernetes, CI/CD, Trivy scans), building reliable web applications (Python, TypeScript, React), and integrating applied AI solutions (LLMs, RAG, pgvector).",
+    hero_pitch: "DevSecOps & Software Engineer with 5+ years of production experience and a Master's Degree in Computer Science & Security. I specialize in building modern web applications (React, TypeScript), high-performance APIs (Python, FastAPI), applied AI integration (LLMs, RAG, pgvector), and automating secure Cloud infrastructure (Docker, Kubernetes, CI/CD).",
     hero_cta_projects: "View My Work",
     hero_cta_contact: "Contact Me",
     hero_stats_exp: "Years Experience",
@@ -336,7 +336,7 @@ const translations = {
     contact_form_success: "Thank you! Your message has been prepared.",
     
     // Footer & Actions
-    footer_rights: "Fares METIDJI. Full-Stack Developer & DevOps Engineer.",
+    footer_rights: "Fares METIDJI. DevSecOps & Full-Stack Engineer.",
     toast_copied: "Copied to clipboard!",
     back_to_top: "Back to top"
   }
