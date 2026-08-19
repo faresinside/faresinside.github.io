@@ -749,87 +749,79 @@ const projectsData = [
     image: "assets/images/project-datainsight.svg"
   },
   {
-    id: "parispulse-geo-api",
-    category: "backend",
-    categories: ["backend", "fullstack"],
+    id: "paris-explorer",
+    category: "fullstack",
+    categories: ["fullstack", "backend"],
     featured: false,
-    badges: ["FastAPI", "Python", "Docker", "REST API", "In-Memory Cache", "Jinja2"],
+    badges: ["FastAPI", "Python", "JavaScript", "Docker", "LocalStorage", "Open Data API"],
     metrics: {
       fr: [
-        { label: "Latence API", value: "<5ms" },
-        { label: "Architecture Cache", value: "In-Memory TTL" },
-        { label: "Conteneurisation", value: "Docker Ready" },
-        { label: "Charge APIs Tierces", value: "Réduite" }
+        { label: "Lieux référencés", value: "30+" },
+        { label: "Persistance", value: "LocalStorage" },
+        { label: "Source événements", value: "Open Data Paris (Live)" },
+        { label: "Déploiement", value: "Docker" }
       ],
       en: [
-        { label: "API Response Time", value: "<5ms" },
-        { label: "Cache Layer", value: "In-Memory TTL" },
-        { label: "Containerization", value: "Docker Ready" },
-        { label: "Third-Party API Load", value: "Reduced" }
+        { label: "Curated Spots", value: "30+" },
+        { label: "Persistence", value: "LocalStorage" },
+        { label: "Events Source", value: "Paris Open Data (Live)" },
+        { label: "Deployment", value: "Docker" }
       ]
     },
     title: {
-      fr: "CityPulse — Microservice Géospatial & Événements Haute Cadence",
-      en: "CityPulse — High-Performance Geospatial & Event Microservice"
+      fr: "Le Grand Tour de Paris — Carnet de Découverte & Événements en Direct",
+      en: "Paris Explorer — Discovery Journal & Live Events"
     },
     subtitle: {
-      fr: "Microservice FastAPI conteneurisé avec cache in-memory TTL, agrégation d'APIs Open Data géolocalisées et interface responsive.",
-      en: "Containerized FastAPI microservice featuring zero-dependency in-memory TTL caching, open geospatial data aggregation, and a responsive web UI."
+      fr: "Application web personnelle : carnet de visite des lieux secrets de Paris avec suivi de progression et notes en local, complété par les événements culturels du moment via l'API Open Data de la ville.",
+      en: "Personal web app: a visit journal for Paris' hidden spots with local progress tracking and notes, complemented by live cultural events pulled from the city's Open Data API."
     },
     summary: {
-      fr: "Service backend agrégeant les événements culturels, flux métropolitains et données sportives en temps réel. Optimisé par un cache mémoire avec invalidation automatique (TTL) réduisant la charge des APIs tierces.",
-      en: "Backend service consolidating cultural events, metropolitan points of interest, and live sports fixtures. Leverages an optimized in-memory TTL cache to reduce third-party API load."
+      fr: "Petite application FastAPI + JavaScript vanilla : une sélection curatée de dizaines de lieux secrets par arrondissement (adresse, métro, astuce), un suivi de visite/favoris/notes sauvegardé en local (aucun compte, aucune base de données), et un flux d'événements culturels parisiens interrogé en direct sur l'API Open Data de la ville avec cache mémoire de 5 minutes.",
+      en: "A small FastAPI + vanilla JavaScript app: a curated selection of dozens of hidden Paris spots per district (address, nearest metro, tip), local visit/favorites/notes tracking (no account, no database), and a live Paris cultural events feed queried from the city's Open Data API with a 5-minute in-memory cache."
     },
     architecture: {
       fr: {
-        problem: "Les APIs publiques d'open data urbaines subissent des limites de requêtes sévères et des latences élevées pouvant dégrader l'expérience utilisateur.",
-        solution: "Implémentation d'une couche de cache in-memory thread-safe avec invalidation par TTL, couplée à une API FastAPI asynchrone et un déploiement conteneurisé sous Docker.",
-        stack: ["FastAPI (Python)", "Jinja2 Templates & Static Web UI", "Docker & Docker Compose", "Thread-Safe In-Memory TTL Cache Engine", "Open Data RESTful APIs"],
+        problem: "Garder une trace personnelle des lieux visités et des envies à Paris, sans dépendre d'un compte ou d'un service tiers, tout en gardant un aperçu des événements du moment.",
+        solution: "Frontend JavaScript vanilla piloté par un jeu de données curaté (lieux secrets par arrondissement) avec persistance `localStorage` (visites, favoris, notes, dates), et backend FastAPI léger qui interroge l'API Open Data de Paris pour les événements culturels avec un cache mémoire à courte durée de vie (5 min) pour limiter les appels.",
+        stack: ["FastAPI (Python)", "Jinja2 Templates", "JavaScript Vanilla (Frontend)", "LocalStorage (Persistance Client)", "API Open Data Paris (Événements)", "Docker & Docker Compose"],
         diagram: `
 +-------------------------------------------------------------+
-|              UPSTREAM PUBLIC OPEN DATA APIS                 |
-|             (Municipal Events, Sports Feeds)                |
+|              FRONTEND (JavaScript Vanilla)                  |
+|  - Carnet de lieux secrets (jeu de données curaté)           |
+|  - Suivi visites / favoris / notes (LocalStorage)            |
 +------------------------------+------------------------------+
-                               ^ (TTL-Cached Queries)
-                               |
-+-------------------------------------------------------------+
-|               FASTAPI DOCKERIZED MICROSERVICE               |
-|  - Asynchronous HTTP Client with Error Fallbacks            |
-|  - Zero-Dependency In-Memory TTL Cache Layer                |
-|  - Fast JSON Serializer & Jinja2 Template Views             |
-+------------------------------+------------------------------+
-                               | (Sub-5ms Response)
+                               | (Fetch Événements)
                                v
 +-------------------------------------------------------------+
-|                  CLIENTS & WEB DASHBOARDS                   |
+|               BACKEND FASTAPI (Python)                      |
+|  - Cache mémoire 5 min (TTL)                                 |
+|  - Appel API Open Data Paris (événements culturels live)     |
+|  - Agenda sportif parisien (liste statique)                  |
 +-------------------------------------------------------------+`
       },
       en: {
-        problem: "Public urban open data APIs impose strict rate limits and unpredictable latencies that degrade frontend user experience.",
-        solution: "Engineered a thread-safe in-memory caching engine with automatic TTL invalidation, wrapped in an asynchronous FastAPI service and packaged as a Docker microservice.",
-        stack: ["FastAPI (Python)", "Jinja2 & Static Frontend", "Docker & Compose", "In-Memory TTL Caching Engine", "REST Open Data Services"],
+        problem: "Keep a personal record of visited spots and wishlist items in Paris, without relying on an account or third-party service, while still surfacing current local events.",
+        solution: "Vanilla JavaScript frontend driven by a curated dataset (hidden spots per district) with `localStorage` persistence (visits, favorites, notes, dates), and a lightweight FastAPI backend that queries the Paris Open Data API for cultural events, using a short-lived in-memory cache (5 min) to limit calls.",
+        stack: ["FastAPI (Python)", "Jinja2 Templates", "Vanilla JavaScript (Frontend)", "LocalStorage (Client Persistence)", "Paris Open Data API (Events)", "Docker & Docker Compose"],
         diagram: `
 +-------------------------------------------------------------+
-|              UPSTREAM PUBLIC OPEN DATA APIS                 |
-|             (Municipal Events, Sports Feeds)                |
+|              FRONTEND (Vanilla JavaScript)                  |
+|  - Curated hidden-spots journal (dataset-driven)             |
+|  - Visit / favorites / notes tracking (LocalStorage)         |
 +------------------------------+------------------------------+
-                               ^ (TTL-Cached Queries)
-                               |
-+-------------------------------------------------------------+
-|               FASTAPI DOCKERIZED MICROSERVICE               |
-|  - Asynchronous HTTP Client with Error Fallbacks            |
-|  - Zero-Dependency In-Memory TTL Cache Layer                |
-|  - Fast JSON Serializer & Jinja2 Template Views             |
-+------------------------------+------------------------------+
-                               | (Sub-5ms Response)
+                               | (Fetch Events)
                                v
 +-------------------------------------------------------------+
-|                  CLIENTS & WEB DASHBOARDS                   |
+|               FASTAPI BACKEND (Python)                      |
+|  - 5-min In-Memory Cache (TTL)                               |
+|  - Paris Open Data API call (live cultural events)           |
+|  - Static Paris sports agenda                                |
 +-------------------------------------------------------------+`
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
+    githubUrl: "https://github.com/faresinside/paris-explorer",
     image: "assets/images/project-citypulse.svg"
   },
   {
