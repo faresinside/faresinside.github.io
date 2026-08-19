@@ -73,7 +73,10 @@
       openModal(activeModalProject);
     }
 
-
+    // Reset Typewriter immediately for new language
+    if (typeof restartTypewriter === "function") {
+      restartTypewriter();
+    }
   }
 
   // Language Switcher Events
@@ -120,6 +123,13 @@
     }
 
     typeTimer = setTimeout(typeWriter, speed);
+  }
+
+  function restartTypewriter() {
+    clearTimeout(typeTimer);
+    charIndex = 0;
+    isDeleting = false;
+    typeWriter();
   }
 
   /* ==========================================================================
