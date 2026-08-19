@@ -216,9 +216,10 @@
       exec: () => {
         return `
 <span class="term-cyan">======================= CURRICULUM VITAE =======================</span>
-<span class="term-bold">FARES METIDJI</span> - Ingénieur DevOps & Développeur Full-Stack Cloud
+<span class="term-bold">FARES METIDJI</span> - Ingénieur DevSecOps & Développeur Full-Stack
 Paris, France | fares.metidji@outlook.fr | +33 7 62 46 83 12
 LinkedIn: linkedin.com/in/faresmetidji
+PDF: <a href="assets/cv/CV_Fares_METIDJI_DevOps.pdf" target="_blank" class="term-cyan" style="text-decoration: underline;">Télécharger CV_Fares_METIDJI_DevOps.pdf 📄</a>
 
 <span class="term-yellow">[EXPÉRIENCES CLÉS]</span>
 • 01/2025 - Présent : Ingénieur Intégration & DevOps @ Conseil départemental des Yvelines
