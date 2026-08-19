@@ -187,7 +187,7 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresinside/athan-app",
+    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-devops.svg"
   },
   {
