@@ -690,10 +690,15 @@ html.light .mobile-toggle span {
 
 .project-footer-actions {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: flex-start;
   gap: 12px;
   margin-top: auto;
+  flex-wrap: nowrap;
+}
+
+.project-footer-actions .btn {
+  white-space: nowrap;
 }
 
 /* --------------------------------------------------------------------------
