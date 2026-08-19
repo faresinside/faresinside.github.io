@@ -159,7 +159,7 @@ const translations = {
 
     // Contact Section
     contact_title: "Me Contacter",
-    contact_subtitle: "Vous avez un projet ou une question technique ? Échangeons simplement et sans engagement.",
+    contact_subtitle: "Vous avez un projet ou une question technique ? Je réponds généralement sous 24h ouvrées.",
     contact_badge: "Échange Direct",
     contact_email_label: "Email :",
     contact_phone_label: "Téléphone :",
@@ -343,7 +343,7 @@ const translations = {
 
     // Contact Section
     contact_title: "Contact Me",
-    contact_subtitle: "Have a project or technical question? Let's discuss your requirements without any obligation.",
+    contact_subtitle: "Have a project or technical question? I typically respond within 24 business hours.",
     contact_badge: "Direct Contact",
     contact_email_label: "Email:",
     contact_phone_label: "Phone:",

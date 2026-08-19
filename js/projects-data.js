@@ -13,13 +13,13 @@ const projectsData = [
     metrics: {
       fr: [
         { label: "Sources analysées", value: "30+" },
-        { label: "Latence scoring IA", value: "<500ms" },
+        { label: "Fréquence de veille", value: "Toutes les 2h" },
         { label: "Génération CV PDF", value: "Temps réel" },
         { label: "Flux automatisé", value: "100%" }
       ],
       en: [
         { label: "Sources Aggregated", value: "30+" },
-        { label: "AI Match Latency", value: "<500ms" },
+        { label: "Watch Frequency", value: "Every 2h" },
         { label: "Dynamic PDF CV", value: "Real-Time" },
         { label: "Automated Flow", value: "100%" }
       ]
@@ -198,16 +198,16 @@ const projectsData = [
     badges: ["React Native", "Expo", "TypeScript", "Fastify", "PostgreSQL", "Drizzle ORM", "Redis", "LLM Classification", "Docker"],
     metrics: {
       fr: [
+        { label: "Fonctionne", value: "Même Hors-Ligne" },
+        { label: "Résultat produit", value: "Instantané" },
         { label: "Temps réponse cache", value: "<10ms" },
-        { label: "Architecture", value: "Offline-First" },
-        { label: "Typage de bout en bout", value: "100% Strict" },
-        { label: "Déploiement", value: "Docker" }
+        { label: "Typage de bout en bout", value: "100% Strict" }
       ],
       en: [
+        { label: "Works", value: "Even Offline" },
+        { label: "Product Result", value: "Instant" },
         { label: "Cache Response Time", value: "<10ms" },
-        { label: "Architecture", value: "Offline-First" },
-        { label: "End-to-End Typing", value: "100% Strict" },
-        { label: "Deployment", value: "Docker" }
+        { label: "End-to-End Typing", value: "100% Strict" }
       ]
     },
     title: {
@@ -383,7 +383,8 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
+    githubUrl: "https://github.com/faresinside/stock-monitor-service",
+    isPublicRepo: true,
     image: "assets/images/project-portasplit.svg"
   },
   {
@@ -579,15 +580,15 @@ const projectsData = [
     metrics: {
       fr: [
         { label: "Vitesse d'export", value: "10x vs Manuel" },
+        { label: "Stabilité rendu", value: "Zero Artefact" },
         { label: "Interfaces", value: "Flask (Curation + Dashboard)" },
-        { label: "Compositing", value: "Multi-Calques" },
-        { label: "Stabilité rendu", value: "Zero Artefact" }
+        { label: "Compositing", value: "Multi-Calques" }
       ],
       en: [
         { label: "Render Speed", value: "10x vs Manual" },
+        { label: "Render Quality", value: "Zero Artifact" },
         { label: "Interfaces", value: "Flask (Curation + Dashboard)" },
-        { label: "Compositing", value: "Multi-Layer" },
-        { label: "Render Quality", value: "Zero Artifact" }
+        { label: "Compositing", value: "Multi-Layer" }
       ]
     },
     title: {
@@ -669,14 +670,14 @@ const projectsData = [
     metrics: {
       fr: [
         { label: "Volume traité", value: "Publications à grande échelle" },
+        { label: "Pipeline ETL", value: "100% Automatisé" },
         { label: "Tolérance typographique", value: "Élevée" },
-        { label: "Pipeline ETL", value: "Automatisé" },
         { label: "Stockage", value: "PostgreSQL" }
       ],
       en: [
         { label: "Processing Volume", value: "Large-Scale Publications" },
+        { label: "ETL Pipeline", value: "100% Automated" },
         { label: "Typographic Tolerance", value: "High" },
-        { label: "ETL Pipeline", value: "Automated" },
         { label: "Database", value: "PostgreSQL" }
       ]
     },
@@ -757,14 +758,14 @@ const projectsData = [
     metrics: {
       fr: [
         { label: "Lieux référencés", value: "30+" },
-        { label: "Persistance", value: "LocalStorage" },
         { label: "Source événements", value: "Open Data Paris (Live)" },
+        { label: "Persistance", value: "LocalStorage" },
         { label: "Déploiement", value: "Docker" }
       ],
       en: [
         { label: "Curated Spots", value: "30+" },
-        { label: "Persistence", value: "LocalStorage" },
         { label: "Events Source", value: "Paris Open Data (Live)" },
+        { label: "Persistence", value: "LocalStorage" },
         { label: "Deployment", value: "Docker" }
       ]
     },
@@ -822,6 +823,7 @@ const projectsData = [
     },
     demoUrl: null,
     githubUrl: "https://github.com/faresinside/paris-explorer",
+    isPublicRepo: true,
     image: "assets/images/project-citypulse.svg"
   },
   {

@@ -165,6 +165,10 @@
             <button class="btn btn-outline btn-sm btn-view-arch" data-id="${p.id}">
               <span>⚙️ ${dict.projects_btn_arch}</span>
             </button>
+            ${p.isPublicRepo ? `
+            <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <span>🐙 ${dict.projects_btn_github}</span>
+            </a>` : ""}
           </div>
         </div>
       `;
