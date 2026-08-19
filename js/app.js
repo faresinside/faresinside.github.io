@@ -398,6 +398,25 @@
   }
 
   /* ==========================================================================
+     8b. IN-PAGE ANCHOR SMOOTH SCROLL
+     Native fragment navigation doesn't reliably scroll on this page (body's
+     overflow-x rule causes an implicit overflow-y that confuses the browser's
+     scroll-to-fragment step), so anchor clicks are handled manually here.
+     ========================================================================== */
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href").slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (!targetEl) return;
+      e.preventDefault();
+      const navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
+      const targetY = targetEl.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+      history.pushState(null, "", `#${targetId}`);
+    });
+  });
+
+  /* ==========================================================================
      9. SCROLL REVEAL OBSERVER
      ========================================================================== */
   function initScrollReveal() {

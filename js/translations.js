@@ -8,7 +8,7 @@ const translations = {
   fr: {
     // Meta & Header
     meta_title: "Fares METIDJI | Ingénieur DevSecOps & Développeur Full-Stack",
-    meta_desc: "Ingénieur DevSecOps & Développeur Full-Stack (5+ ans d'expérience, Master 2). Automatisation Cloud sécurisée (Docker, K8s, CI/CD), développement d'APIs (Python, FastAPI), interfaces React et intégration IA.",
+    meta_desc: "Ingénieur DevSecOps & Développeur Full-Stack (Master 2 Réseaux & Sécurité). Automatisation Cloud sécurisée (Docker, K8s, CI/CD), développement d'APIs (Python, FastAPI), interfaces React et intégration IA.",
     
     // Navbar
     nav_home: "Accueil",
@@ -28,7 +28,7 @@ const translations = {
     hero_chip_devops: "🔒 DevSecOps & Cloud",
     hero_chip_ai: "🤖 Intégration IA (LLMs/RAG)",
     hero_chip_mco: "🛡️ Supervision & MCO",
-    hero_pitch: "Ingénieur DevSecOps & logiciel avec plus de 5 ans d'expérience en production et titulaire d'un Master 2 en Informatique (Réseaux & Sécurité). J'interviens sur la conception d'applications web modernes (React, TypeScript), le développement d'APIs performantes (Python, FastAPI), l'intégration de solutions IA (LLMs, RAG, pgvector) et l'automatisation d'infrastructures Cloud sécurisées (Docker, Kubernetes, CI/CD).",
+    hero_pitch: "Ingénieur DevSecOps & logiciel, titulaire d'un Master 2 en Informatique (Réseaux & Sécurité). Je conçois des applications web modernes (React, TypeScript), développe des APIs performantes (Python, FastAPI), déploie des solutions IA (LLMs, RAG) et automatise des infrastructures Cloud sécurisées (Docker, Kubernetes, CI/CD).",
     hero_cta_projects: "Voir mes réalisations",
     hero_cta_contact: "Me contacter",
     hero_stats_exp: "Ans d'expérience",
@@ -37,14 +37,14 @@ const translations = {
     hero_stats_satisfaction: "Implication & Suivi",
 
     // Value Pillars (Work Philosophy & Trust)
-    pillars_title: "Engagements & Sérénité Client",
-    pillars_subtitle: "Une collaboration pensée pour éliminer les incertitudes, garantir la qualité technique et vous faire gagner du temps.",
+    pillars_title: "Méthode de Travail",
+    pillars_subtitle: "Comment se déroule une mission, du cadrage initial à la livraison.",
     pillar1_title: "Code Documenté & 100% Transférable",
     pillar1_desc: "Développement propre et typé (TypeScript, Python/FastAPI), code commenté et documentation d'architecture. Vous restez 100% propriétaire de votre projet, sans aucune dépendance technique.",
-    pillar2_title: "Déploiements Maîtrisés & Zéro Stress",
-    pillar2_desc: "Conteneurisation Docker standardisée, pipelines CI/CD reproductibles et vérifications de sécurité pour que vos mises en production se fassent en toute confiance, sans interruption.",
-    pillar3_title: "Cadrage Réaliste & Garantie Post-Livraison",
-    pillar3_desc: "Un périmètre clair défini ensemble dès le départ, une communication fluide au quotidien et une période de garantie incluse après livraison pour une passation sereine.",
+    pillar2_title: "Déploiements Conteneurisés & Reproductibles",
+    pillar2_desc: "Conteneurisation Docker standardisée, pipelines CI/CD reproductibles et vérifications de sécurité intégrées avant chaque mise en production.",
+    pillar3_title: "Périmètre Défini & Garantie Post-Livraison",
+    pillar3_desc: "Un périmètre défini ensemble dès le départ, un point d'avancement régulier et une période de garantie incluse après livraison.",
 
     // Services
     services_title: "Prestations & Compétences",
@@ -134,7 +134,7 @@ const translations = {
 
     // Client FAQ
     faq_title: "Questions Fréquentes",
-    faq_subtitle: "Toutes les réponses pour aborder notre collaboration en toute sérénité.",
+    faq_subtitle: "Les réponses aux questions les plus fréquentes avant de démarrer une mission.",
     faq1_q: "Comment se passe le premier échange ?",
     faq1_a: "Un échange simple de 20 à 30 minutes sans engagement pour faire le point sur vos objectifs, votre stack actuelle et vos délais. Si le projet correspond à mes compétences, je vous transmets une proposition claire sous 48h.",
     faq2_q: "Quelles sont les garanties sur les délais et le budget ?",
@@ -176,7 +176,7 @@ const translations = {
   en: {
     // Meta & Header
     meta_title: "Fares METIDJI | DevSecOps & Full-Stack Engineer",
-    meta_desc: "DevSecOps & Full-Stack Engineer (5+ years exp, Master's Degree in CS & Security). Secure Cloud automation (Docker, K8s, CI/CD), web application development (React, TypeScript), Python/FastAPI APIs, and AI integration.",
+    meta_desc: "DevSecOps & Full-Stack Engineer (Master's Degree in CS & Security). Secure Cloud automation (Docker, K8s, CI/CD), web application development (React, TypeScript), Python/FastAPI APIs, and AI integration.",
     
     // Navbar
     nav_home: "Home",
@@ -196,7 +196,7 @@ const translations = {
     hero_chip_devops: "🔒 DevSecOps & Cloud",
     hero_chip_ai: "🤖 AI Integration (LLMs/RAG)",
     hero_chip_mco: "🛡️ MCO & Production",
-    hero_pitch: "DevSecOps & Software Engineer with 5+ years of production experience and a Master's Degree in Computer Science & Security. I specialize in building modern web applications (React, TypeScript), high-performance APIs (Python, FastAPI), applied AI integration (LLMs, RAG, pgvector), and automating secure Cloud infrastructure (Docker, Kubernetes, CI/CD).",
+    hero_pitch: "DevSecOps & Software Engineer with a Master's Degree in Computer Science & Security. I build modern web applications (React, TypeScript), high-performance APIs (Python, FastAPI), deploy applied AI solutions (LLMs, RAG), and automate secure Cloud infrastructure (Docker, Kubernetes, CI/CD).",
     hero_cta_projects: "View My Work",
     hero_cta_contact: "Contact Me",
     hero_stats_exp: "Years Experience",
@@ -205,14 +205,14 @@ const translations = {
     hero_stats_satisfaction: "Commitment & Follow-up",
 
     // Value Pillars (Work Philosophy & Trust)
-    pillars_title: "Client Commitments & Peace of Mind",
-    pillars_subtitle: "A technical partnership designed to eliminate uncertainty, ensure clean delivery, and save you time.",
+    pillars_title: "Working Method",
+    pillars_subtitle: "How a project runs, from initial scoping to delivery.",
     pillar1_title: "Documented & 100% Transferable Code",
     pillar1_desc: "Clean typed development (TypeScript, Python/FastAPI), clear comments, and architectural documentation. You retain 100% ownership with zero vendor lock-in.",
-    pillar2_title: "Smooth Deployments & Zero Stress",
-    pillar2_desc: "Standardized Docker containers, reproducible CI/CD pipelines, and security hygiene to ensure confident zero-downtime releases.",
-    pillar3_title: "Clear Scoping & Post-Delivery Warranty",
-    pillar3_desc: "A realistic scope defined together upfront, regular progress updates, and an included warranty period after delivery for seamless onboarding.",
+    pillar2_title: "Containerized & Reproducible Deployments",
+    pillar2_desc: "Standardized Docker containers, reproducible CI/CD pipelines, and security checks built into every release.",
+    pillar3_title: "Defined Scope & Post-Delivery Warranty",
+    pillar3_desc: "A scope defined together upfront, regular progress updates, and an included warranty period after delivery.",
 
     // Services
     services_title: "Services & Capabilities",
@@ -302,7 +302,7 @@ const translations = {
 
     // Client FAQ
     faq_title: "Frequently Asked Questions",
-    faq_subtitle: "Clear answers to approach our collaboration with complete peace of mind.",
+    faq_subtitle: "Answers to the most common questions before starting a project.",
     faq1_q: "How does the initial discovery call work?",
     faq1_a: "A straightforward 20-30 minute conversation without obligation to review your goals, tech stack, and timeline. If it matches my expertise, I deliver a clear roadmap proposal within 48h.",
     faq2_q: "What guarantees exist for deadlines and budget?",
