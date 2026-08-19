@@ -679,28 +679,22 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="contact-name" class="form-label" data-i18n="contact_form_name">Votre Nom / Société :</label>
-                  <input type="text" id="contact-name" class="form-control" placeholder="Jean Dupont / Entreprise" required />
+                  <input type="text" id="contact-name" class="form-control" data-i18n-placeholder="contact_form_placeholder_name" placeholder="Nom / Société" required />
                 </div>
                 <div class="form-group">
                   <label for="contact-email" class="form-label" data-i18n="contact_form_email">Votre Email :</label>
-                  <input type="email" id="contact-email" class="form-control" placeholder="jean@entreprise.com" required />
+                  <input type="email" id="contact-email" class="form-control" data-i18n-placeholder="contact_form_placeholder_email" placeholder="vous@entreprise.com" required />
                 </div>
               </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="contact-service" class="form-label" data-i18n="contact_form_service">Type de mission :</label>
-                  <select id="contact-service" class="form-control">
-                    <option value="dev" data-i18n="contact_form_service_opt_dev">Développement Web / Backend / API</option>
-                    <option value="ops" data-i18n="contact_form_service_opt_ops">DevOps, CI/CD & Déploiement Cloud</option>
-                    <option value="auto" data-i18n="contact_form_service_opt_auto">Automatisation & Web Scraping</option>
-                    <option value="other" data-i18n="contact_form_service_opt_other">Autre / Conseil Technique</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="contact-budget" class="form-label" data-i18n="contact_form_budget">Budget indicatif / TJM souhaité :</label>
-                  <input type="text" id="contact-budget" class="form-control" placeholder="Ex: Forfait ou TJM indicatif" />
-                </div>
+              <div class="form-group">
+                <label for="contact-service" class="form-label" data-i18n="contact_form_service">Type de mission :</label>
+                <select id="contact-service" class="form-control">
+                  <option value="dev" data-i18n="contact_form_service_opt_dev">Développement Web / Backend / API</option>
+                  <option value="ops" data-i18n="contact_form_service_opt_ops">DevOps, CI/CD & Déploiement Cloud</option>
+                  <option value="auto" data-i18n="contact_form_service_opt_auto">Automatisation & Web Scraping</option>
+                  <option value="other" data-i18n="contact_form_service_opt_other">Autre / Conseil Technique</option>
+                </select>
               </div>
 
               <div class="form-group">

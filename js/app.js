@@ -304,13 +304,12 @@
       const name = document.getElementById("contact-name").value;
       const email = document.getElementById("contact-email").value;
       const service = document.getElementById("contact-service").value;
-      const budget = document.getElementById("contact-budget").value;
       const message = document.getElementById("contact-message").value;
 
       const mailtoLink = `mailto:fares.metidji@outlook.fr?subject=${encodeURIComponent(
         `[Mission Freelance] Demande de ${name} (${service})`
       )}&body=${encodeURIComponent(
-        `Nom / Entreprise : ${name}\nEmail : ${email}\nPrestation : ${service}\nBudget indicatif : ${budget}\n\nMessage :\n${message}`
+        `Nom / Entreprise : ${name}\nEmail : ${email}\nPrestation : ${service}\n\nMessage :\n${message}`
       )}`;
 
       window.open(mailtoLink, "_blank");
