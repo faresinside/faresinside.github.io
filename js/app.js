@@ -202,6 +202,42 @@
   /* ==========================================================================
      4. ARCHITECTURE MODAL
      ========================================================================== */
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function renderArchNode(node) {
+    const title = `<div class="arch-node-title">${escapeHtml(node.title)}</div>`;
+    const body = node.items
+      ? `<ul class="arch-node-items">${node.items.map((i) => `<li>${escapeHtml(i)}</li>`).join("")}</ul>`
+      : node.desc
+      ? `<p class="arch-node-desc">${escapeHtml(node.desc)}</p>`
+      : "";
+    return `<div class="arch-node">${title}${body}</div>`;
+  }
+
+  function renderArchArrow(label) {
+    return `<div class="arch-arrow"><span class="arch-arrow-line"></span>${
+      label ? `<span class="arch-arrow-label">${escapeHtml(label)}</span>` : ""
+    }<span class="arch-arrow-icon">▼</span></div>`;
+  }
+
+  function buildArchDiagram(flow) {
+    return flow
+      .map((step, i) => {
+        const arrow = i > 0 ? renderArchArrow(step.edgeLabel) : "";
+        if (step.branch) {
+          return `${arrow}<div class="arch-branch-row">${step.branch
+            .map((n) => renderArchNode(n))
+            .join("")}</div>`;
+        }
+        return `${arrow}${renderArchNode(step)}`;
+      })
+      .join("");
+  }
+
   function openModal(project) {
     activeModalProject = project;
     const lang = window.currentLang || "fr";
@@ -225,7 +261,7 @@
     }
 
     if (diagramEl) {
-      diagramEl.textContent = arch.diagram.trim();
+      diagramEl.innerHTML = buildArchDiagram(arch.flow || []);
     }
 
     if (modalBackdrop) {

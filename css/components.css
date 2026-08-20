@@ -800,16 +800,119 @@ html.light .mobile-toggle span {
   gap: 8px;
 }
 
-.modal-diagram-box {
-  background: #060a14;
+.arch-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0b0f18;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 24px 20px;
+}
+
+.arch-node {
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.arch-node-title {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: #a5f3fc;
-  overflow-x: auto;
-  line-height: 1.45;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cyan-light);
+  margin: 0 0 6px;
+}
+
+.arch-node-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.arch-node-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.arch-node-items li {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.arch-node-items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan-primary);
+}
+
+.arch-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.arch-arrow-line {
+  width: 1px;
+  height: 16px;
+  background: var(--border-glass-hover);
+}
+
+.arch-arrow-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+  margin: 2px 0;
+  text-align: center;
+}
+
+.arch-arrow-icon {
+  color: var(--cyan-primary);
+  font-size: 0.85rem;
+  line-height: 1;
+  margin-top: -2px;
+}
+
+.arch-branch-row {
+  display: flex;
+  gap: 14px;
+  width: 100%;
+  max-width: 440px;
+  justify-content: center;
+}
+
+.arch-branch-row .arch-node {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+}
+
+@media (max-width: 520px) {
+  .arch-branch-row {
+    flex-direction: column;
+  }
 }
 
 /* --------------------------------------------------------------------------
