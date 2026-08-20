@@ -7,8 +7,8 @@
 const translations = {
   fr: {
     // Meta & Header
-    meta_title: "Fares METIDJI | Ingénieur DevSecOps & Développeur Full-Stack",
-    meta_desc: "Ingénieur DevSecOps & Développeur Full-Stack (Master 2 Réseaux & Sécurité). Automatisation Cloud sécurisée (Docker, K8s, CI/CD), développement d'APIs (Python, FastAPI), interfaces React et intégration IA.",
+    meta_title: "Fares METIDJI | Ingénieur DevOps & Développeur Full-Stack",
+    meta_desc: "Ingénieur DevOps & Développeur Full-Stack (Master 2 Réseaux & Sécurité). Automatisation Cloud (Docker, K8s, CI/CD), développement d'APIs (Python, FastAPI), interfaces React et intégration IA.",
     
     // Navbar
     nav_home: "Accueil",
@@ -23,16 +23,16 @@ const translations = {
     // Hero Section
     hero_greeting: "Bonjour, je suis",
     hero_name: "Fares METIDJI",
-    hero_title: "Ingénieur DevSecOps & Full-Stack",
+    hero_title: "Ingénieur DevOps & Full-Stack",
     hero_chip_web: "⚡ Web & APIs (FastAPI / React)",
-    hero_chip_devops: "🔒 DevSecOps & Cloud",
+    hero_chip_devops: "🔒 DevOps & Cloud",
     hero_chip_ai: "🤖 Intégration IA (LLMs/RAG)",
     hero_chip_mco: "🛡️ Supervision & MCO",
-    hero_pitch: "Ingénieur DevSecOps & logiciel, titulaire d'un Master 2 en Informatique (Réseaux & Sécurité). Je conçois des applications web modernes (React, TypeScript), développe des APIs performantes (Python, FastAPI), déploie des solutions IA (LLMs, RAG) et automatise des infrastructures Cloud sécurisées (Docker, Kubernetes, CI/CD).",
-    hero_card_desc: "Compétences appliquées : développement d'applications web & APIs (FastAPI, React, TypeScript), intégration de LLMs / IA et industrialisation d'infrastructures Cloud sécurisées (Docker, K8s, CI/CD).",
+    hero_pitch: "Ingénieur DevOps & logiciel, titulaire d'un Master 2 en Informatique (Réseaux & Sécurité). Je conçois des applications web modernes (React, TypeScript), développe des APIs performantes (Python, FastAPI), déploie des solutions IA (LLMs, RAG) et automatise des infrastructures Cloud (Docker, Kubernetes, CI/CD).",
+    hero_card_desc: "Compétences appliquées : développement d'applications web & APIs (FastAPI, React, TypeScript), intégration de LLMs / IA et industrialisation d'infrastructures Cloud (Docker, K8s, CI/CD).",
     hero_card_domains_label: "Domaines d'intervention clés :",
     hero_card_domain1: "🤖 Intégration IA & RAG",
-    hero_card_domain2: "🔒 DevSecOps & Sécurité",
+    hero_card_domain2: "🔒 DevOps & Cloud",
     hero_card_domain3: "⚡ Backends & APIs",
     hero_card_domain4: "🐳 Docker & Kubernetes",
     hero_cta_projects: "Voir mes réalisations",
@@ -58,9 +58,9 @@ const translations = {
     service_fullstack_title: "Développement Web & Intégration IA",
     service_fullstack_desc: "Conception d'APIs backend (FastAPI, Python 3.12, TypeScript), interfaces web (React) et intégration de modèles d'IA (LLMs, pipelines RAG, bases vectorielles pgvector).",
     service_fullstack_tag: "Web & IA",
-    service_devops_title: "DevSecOps & Déploiements Cloud Sécurisés",
+    service_devops_title: "DevOps & Déploiements Cloud",
     service_devops_desc: "Mise en place de pipelines CI/CD sécurisés (GitLab CI, GitHub Actions), conteneurisation Docker/Kubernetes durcie, scans de vulnérabilités (Trivy, SonarQube) et configuration Cloud AWS.",
-    service_devops_tag: "DevSecOps & Cloud",
+    service_devops_tag: "DevOps & Cloud",
     service_automation_title: "Automatisation & Traitement de Données",
     service_automation_desc: "Scripts d'extraction de données (scraping), nettoyage et structuration en base relationnelle, alertes automatiques et webhooks.",
     service_automation_tag: "Automatisation",
@@ -184,15 +184,15 @@ const translations = {
     contact_form_success: "Merci ! Votre message a été préparé.",
     
     // Footer & Actions
-    footer_rights: "Fares METIDJI. Ingénieur DevSecOps & Full-Stack.",
+    footer_rights: "Fares METIDJI. Ingénieur DevOps & Full-Stack.",
     toast_copied: "Copié dans le presse-papiers !",
     back_to_top: "Haut de page"
   },
 
   en: {
     // Meta & Header
-    meta_title: "Fares METIDJI | DevSecOps & Full-Stack Engineer",
-    meta_desc: "DevSecOps & Full-Stack Engineer (Master's Degree in CS & Security). Secure Cloud automation (Docker, K8s, CI/CD), web application development (React, TypeScript), Python/FastAPI APIs, and AI integration.",
+    meta_title: "Fares METIDJI | DevOps & Full-Stack Engineer",
+    meta_desc: "DevOps & Full-Stack Engineer (Master's Degree in CS & Security). Cloud automation (Docker, K8s, CI/CD), web application development (React, TypeScript), Python/FastAPI APIs, and AI integration.",
     
     // Navbar
     nav_home: "Home",
@@ -207,16 +207,16 @@ const translations = {
     // Hero Section
     hero_greeting: "Hello, I am",
     hero_name: "Fares METIDJI",
-    hero_title: "DevSecOps & Full-Stack Engineer",
+    hero_title: "DevOps & Full-Stack Engineer",
     hero_chip_web: "⚡ Web & APIs (FastAPI / React)",
-    hero_chip_devops: "🔒 DevSecOps & Cloud",
+    hero_chip_devops: "🔒 DevOps & Cloud",
     hero_chip_ai: "🤖 AI Integration (LLMs/RAG)",
     hero_chip_mco: "🛡️ MCO & Production",
-    hero_pitch: "DevSecOps & Software Engineer with a Master's Degree in Computer Science & Security. I build modern web applications (React, TypeScript), high-performance APIs (Python, FastAPI), deploy applied AI solutions (LLMs, RAG), and automate secure Cloud infrastructure (Docker, Kubernetes, CI/CD).",
-    hero_card_desc: "Applied skills: web & API development (FastAPI, React, TypeScript), LLM / AI integration, and secure Cloud infrastructure automation (Docker, K8s, CI/CD).",
+    hero_pitch: "DevOps & Software Engineer with a Master's Degree in Computer Science & Security. I build modern web applications (React, TypeScript), high-performance APIs (Python, FastAPI), deploy applied AI solutions (LLMs, RAG), and automate Cloud infrastructure (Docker, Kubernetes, CI/CD).",
+    hero_card_desc: "Applied skills: web & API development (FastAPI, React, TypeScript), LLM / AI integration, and Cloud infrastructure automation (Docker, K8s, CI/CD).",
     hero_card_domains_label: "Key areas of expertise:",
     hero_card_domain1: "🤖 AI Integration & RAG",
-    hero_card_domain2: "🔒 DevSecOps & Security",
+    hero_card_domain2: "🔒 DevOps & Cloud",
     hero_card_domain3: "⚡ Backends & APIs",
     hero_card_domain4: "🐳 Docker & Kubernetes",
     hero_cta_projects: "View My Work",
@@ -242,9 +242,9 @@ const translations = {
     service_fullstack_title: "Web Development & AI Integration",
     service_fullstack_desc: "Backend API design (FastAPI, Python 3.12, TypeScript), modern web interfaces (React), and AI integrations (LLMs, RAG pipelines, pgvector vector search).",
     service_fullstack_tag: "Web & AI",
-    service_devops_title: "DevSecOps & Secure Cloud Deployments",
+    service_devops_title: "DevOps & Cloud Deployments",
     service_devops_desc: "Automated security CI/CD pipelines (GitLab CI, GitHub Actions), hardened Docker/Kubernetes containerization, vulnerability scanning (Trivy, SonarQube), and AWS configuration.",
-    service_devops_tag: "DevSecOps & Cloud",
+    service_devops_tag: "DevOps & Cloud",
     service_automation_title: "Automation & Data Processing",
     service_automation_desc: "Data extraction scripts (scraping), relational database normalization, automated alerts, and webhooks.",
     service_automation_tag: "Automation",
@@ -368,7 +368,7 @@ const translations = {
     contact_form_success: "Thank you! Your message has been prepared.",
     
     // Footer & Actions
-    footer_rights: "Fares METIDJI. DevSecOps & Full-Stack Engineer.",
+    footer_rights: "Fares METIDJI. DevOps & Full-Stack Engineer.",
     toast_copied: "Copied to clipboard!",
     back_to_top: "Back to top"
   }

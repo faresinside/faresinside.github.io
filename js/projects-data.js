@@ -262,7 +262,7 @@ const projectsData = [
     category: "devops",
     categories: ["devops", "cloud", "backend"],
     featured: true,
-    badges: ["DevSecOps", "Kubernetes", "Docker", "GitLab CI", "Trivy Scan", "Ansible", "AWS", "Prometheus", "Grafana"],
+    badges: ["DevOps", "Kubernetes", "Docker", "GitLab CI", "Trivy Scan", "Ansible", "AWS", "Prometheus", "Grafana"],
     metrics: {
       fr: [
         { label: "Apps en production", value: "150+" },
@@ -278,8 +278,8 @@ const projectsData = [
       ]
     },
     title: {
-      fr: "DevSecOps, Industrialisation Cloud & Observabilité — 150+ Applications Métier",
-      en: "Enterprise DevSecOps & Cloud Observability — 150+ Mission-Critical Apps"
+      fr: "DevOps, Industrialisation Cloud & Observabilité — 150+ Applications Métier",
+      en: "Enterprise DevOps & Cloud Observability — 150+ Mission-Critical Apps"
     },
     subtitle: {
       fr: "Industrialisation CI/CD sécurisée (GitLab CI, Trivy, Ansible, Docker, K8s), maintien en condition opérationnelle (MCO) et observabilité Prometheus/Grafana.",
@@ -296,7 +296,7 @@ const projectsData = [
         stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Playbooks & Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Apache Tomcat, Traefik, Nginx"],
         flow: [
           { title: "Dépôts Git & Développement", desc: "GitLab, workflows Git, trunk-based development" },
-          { title: "Pipeline CI/CD DevSecOps", edgeLabel: "Git Push / Tag Trigger", items: ["Tests unitaires & d'intégration", "Scans de sécurité (Trivy / SonarQube)", "Build & hardening des images Docker", "Packaging & push registry"] },
+          { title: "Pipeline CI/CD", edgeLabel: "Git Push / Tag Trigger", items: ["Tests unitaires & d'intégration", "Scans de sécurité (Trivy / SonarQube)", "Build & hardening des images Docker", "Packaging & push registry"] },
           { title: "Cluster de Production Haute Disponibilité", edgeLabel: "Rollout via Ansible / ArgoCD", items: ["Kubernetes/Docker (rolling zero-downtime)", "Tomcat & reverse proxies (Traefik/Nginx)", "Clustering bases de données"] },
           { title: "Observabilité & Incidents (N3)", edgeLabel: "Metrics & Logs", items: ["Prometheus (séries temporelles)", "Grafana (dashboards & alertes temps réel)"] }
         ]
@@ -307,7 +307,7 @@ const projectsData = [
         stack: ["Kubernetes & Docker Compose", "GitLab CI / Jenkins / ArgoCD", "Trivy & SonarQube (Security Scans)", "Ansible Automation", "AWS Cloud & VMware vSphere", "Linux (RHEL, Debian) Hardening", "PostgreSQL, Oracle Database, MariaDB", "Prometheus, Grafana, Nagios, SolarWinds", "Tomcat, Apache HTTP, Traefik"],
         flow: [
           { title: "Git Repositories & Development", desc: "GitLab, Git workflows, feature branches" },
-          { title: "DevSecOps CI/CD Pipeline", edgeLabel: "Git Push / Tag Trigger", items: ["Automated tests & builds", "SAST & container vulnerability scans (Trivy)", "Image build & hardening", "Artifact packaging & registry push"] },
+          { title: "CI/CD Pipeline", edgeLabel: "Git Push / Tag Trigger", items: ["Automated tests & builds", "SAST & container vulnerability scans (Trivy)", "Image build & hardening", "Artifact packaging & registry push"] },
           { title: "High-Availability Production Cluster", edgeLabel: "Rollout via Ansible / ArgoCD", items: ["Kubernetes/Docker (rolling deployments)", "Application servers (Tomcat, Traefik)", "Clustered databases"] },
           { title: "Observability & Incident Management (N3)", edgeLabel: "Metrics & Logs", items: ["Prometheus metrics exporters", "Grafana dashboards & predictive alerts"] }
         ]
