@@ -108,15 +108,31 @@
   .nav-actions .btn-cta-nav {
     width: 34px;
     height: 34px;
+    min-width: 34px;
     padding: 0;
-    border-radius: 50%;
+    border-radius: var(--radius-pill);
     flex-shrink: 0;
     font-size: 0;
+    background: rgba(16, 24, 43, 0.8);
+    color: var(--text-main);
+    border: 1px solid var(--border-glass);
+    box-shadow: none;
+  }
+
+  html.light .nav-actions .btn-cta-nav {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(15, 23, 42, 0.15);
+    color: #0f172a;
+  }
+
+  .nav-actions .btn-cta-nav:hover {
+    border-color: var(--cyan-primary);
+    transform: scale(1.08);
   }
 
   .nav-actions .btn-cta-nav::before {
     content: "\2709";
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     line-height: 1;
   }
 
