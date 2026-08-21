@@ -127,6 +127,10 @@
   text-align: center;
 }
 
+.btn-cta-nav-icon {
+  display: none;
+}
+
 /* Language Switcher Button */
 .lang-switcher {
   display: flex;
