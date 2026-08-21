@@ -43,6 +43,14 @@
   --font-heading: 'Outfit', var(--font-sans);
   --font-mono: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
 
+  /* Type scale roles (secondary/meta text below body size; display and
+     heading sizes stay on their own responsive clamp() scale) */
+  --text-2xs: 0.75rem;
+  --text-xs: 0.85rem;
+  --text-sm: 0.95rem;
+  --text-md: 1.1rem;
+  --text-lg: 1.4rem;
+
   /* Spacing & Layout */
   --container-max: 1240px;
   --header-height: 76px;
@@ -455,6 +463,45 @@ img, svg {
 
 .text-emerald {
   color: var(--emerald-primary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Typography Role Utilities */
+.text-caption {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.text-meta {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.text-lead {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.eyebrow-label {
+  font-size: var(--text-xs);
+  color: var(--cyan-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.subsection-title {
+  font-size: var(--text-lg);
+  margin-bottom: 24px;
+}
+
+.subsection-title--center {
+  text-align: center;
 }
 
 /* Button Component Styles */
