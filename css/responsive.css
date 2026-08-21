@@ -100,8 +100,24 @@
     border-bottom-color: rgba(15, 23, 42, 0.06);
   }
 
+  .nav-links .nav-link[href="#contact"] {
+    color: var(--cyan-primary);
+    font-weight: 700;
+  }
+
   .nav-actions .btn-cta-nav {
-    display: none;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-size: 0;
+  }
+
+  .nav-actions .btn-cta-nav::before {
+    content: "\2709";
+    font-size: 1.05rem;
+    line-height: 1;
   }
 
   /* Hero Section */
@@ -220,25 +236,6 @@
     min-height: 46px;
   }
 
-  .hero-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 14px 12px;
-  }
-
-  .stat-item {
-    min-height: 70px;
-  }
-
-  .stat-number {
-    font-size: 1.6rem;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
-    min-height: 2.2em;
-  }
-
   /* Pillars & Services */
   .pillars-grid {
     grid-template-columns: 1fr;
@@ -271,8 +268,12 @@
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .project-card {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
   .project-body {
@@ -289,53 +290,6 @@
     width: 100%;
     padding: 12px 16px;
     min-height: 42px;
-  }
-
-  /* DevOps Terminal */
-  .terminal-window {
-    border-radius: var(--radius-md);
-  }
-
-  .terminal-chips-bar {
-    padding: 10px 12px;
-    gap: 8px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .terminal-chips-bar span {
-    display: none;
-  }
-
-  .terminal-chip {
-    font-size: 0.78rem;
-    padding: 6px 12px;
-    flex-shrink: 0;
-    white-space: nowrap;
-    min-height: 34px;
-  }
-
-  .terminal-body {
-    padding: 16px 14px;
-    font-size: 0.82rem;
-    line-height: 1.5;
-    min-height: 220px;
-    max-height: 380px;
-  }
-
-  .terminal-input-row {
-    padding: 10px 14px;
-  }
-
-  .term-prompt {
-    font-size: 0.82rem;
-    margin-right: 6px;
-  }
-
-  .terminal-input {
-    font-size: 0.84rem;
-    min-width: 0;
   }
 
   /* Form & Contact */
@@ -407,13 +361,8 @@
     padding: 18px 16px;
   }
 
-  .modal-diagram-box {
-    font-size: 0.72rem;
-    padding: 12px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: pre;
-    line-height: 1.4;
+  .arch-diagram {
+    padding: 16px 12px;
   }
 
   /* Footer & Floating Elements */
@@ -484,20 +433,12 @@
     font-size: 1.3rem;
   }
 
-  .hero-profile-info h3 {
+  .hero-profile-info .hero-profile-name {
     font-size: 1.1rem;
   }
 
   .hero-profile-info p {
     font-size: 0.78rem;
-  }
-
-  .stat-number {
-    font-size: 1.4rem;
-  }
-
-  .stat-label {
-    font-size: 0.72rem;
   }
 
   .skill-category-card {
@@ -537,5 +478,39 @@
 
   .contact-info-panel, .contact-form-panel {
     padding: 18px 14px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. REDUCED MOTION
+   Preserve state changes (visibility, color, shadow) while removing
+   purely decorative motion for users who have asked the OS to reduce it.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .status-dot {
+    animation: none;
+  }
+
+  .glass-panel:hover,
+  .btn:hover,
+  .theme-toggle-btn:hover,
+  .back-to-top:hover,
+  .pillar-card:hover,
+  .service-card:hover,
+  .skill-category-card:hover,
+  .project-card:hover {
+    transform: none;
+  }
+
+  .modal-window,
+  .toast-msg {
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
   }
 }

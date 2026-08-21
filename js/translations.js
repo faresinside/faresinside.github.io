@@ -19,7 +19,11 @@ const translations = {
     nav_experience: "Références",
     nav_contact: "Contact",
     nav_cta: "Me contacter",
-    
+    aria_theme_toggle: "Changer le thème",
+    aria_mobile_menu: "Menu mobile",
+    aria_modal_close: "Fermer",
+    aria_back_to_top: "Retour en haut de page",
+
     // Hero Section
     hero_greeting: "Bonjour, je suis",
     hero_name: "Fares METIDJI",
@@ -94,19 +98,6 @@ const translations = {
     modal_diagram: "Schéma d'Architecture",
     modal_close: "Fermer",
 
-    // Interactive Terminal
-    terminal_badge: "Terminal Interactif",
-    terminal_title: "Aperçu Technique en Ligne de Commande",
-    terminal_subtitle: "Pour explorer mon profil et mes compétences via une interface CLI interactive.",
-    terminal_prompt_text: "Commandes suggérées :",
-    terminal_chip_help: "help",
-    terminal_chip_skills: "skills",
-    terminal_chip_projects: "projects",
-    terminal_chip_deploy: "deploy --prod",
-    terminal_chip_status: "status",
-    terminal_chip_hire: "hire",
-    terminal_chip_clear: "clear",
-
     // Skills Section
     skills_title: "Compétences Techniques",
     skills_subtitle: "Technologies et outils utilisés au quotidien sur des projets concrets.",
@@ -160,7 +151,6 @@ const translations = {
     // Contact Section
     contact_title: "Me Contacter",
     contact_subtitle: "Vous avez un projet ou une question technique ? Je réponds généralement sous 24h ouvrées.",
-    contact_badge: "Échange Direct",
     contact_email_label: "Email :",
     contact_phone_label: "Téléphone :",
     contact_location_label: "Localisation :",
@@ -181,8 +171,9 @@ const translations = {
     contact_form_message: "Votre message :",
     contact_form_placeholder_msg: "Présentez brièvement votre projet, les technologies envisagées ou vos délais...",
     contact_form_submit: "Envoyer le message ✉️",
-    contact_form_success: "Merci ! Votre message a été préparé.",
-    
+    contact_form_success: "Client mail ouvert — cliquez sur Envoyer pour finaliser.",
+    contact_form_hint: "Ce bouton ouvre votre client mail avec le message pré-rempli. Pas de client configuré ? Écrivez directement à fares.metidji@outlook.fr.",
+
     // Footer & Actions
     footer_rights: "Fares METIDJI. Ingénieur DevOps & Full-Stack.",
     toast_copied: "Copié dans le presse-papiers !",
@@ -203,6 +194,10 @@ const translations = {
     nav_experience: "Experience",
     nav_contact: "Contact",
     nav_cta: "Contact Me",
+    aria_theme_toggle: "Toggle theme",
+    aria_mobile_menu: "Mobile menu",
+    aria_modal_close: "Close",
+    aria_back_to_top: "Back to top",
 
     // Hero Section
     hero_greeting: "Hello, I am",
@@ -278,19 +273,6 @@ const translations = {
     modal_diagram: "Architecture Blueprint",
     modal_close: "Close",
 
-    // Interactive Terminal
-    terminal_badge: "Interactive Terminal",
-    terminal_title: "Command-Line Technical Overview",
-    terminal_subtitle: "Explore my profile and technical credentials through an interactive CLI interface.",
-    terminal_prompt_text: "Suggested commands:",
-    terminal_chip_help: "help",
-    terminal_chip_skills: "skills",
-    terminal_chip_projects: "projects",
-    terminal_chip_deploy: "deploy --prod",
-    terminal_chip_status: "status",
-    terminal_chip_hire: "hire",
-    terminal_chip_clear: "clear",
-
     // Skills Section
     skills_title: "Technical Skills",
     skills_subtitle: "Technologies and tools used daily across real-world systems.",
@@ -344,7 +326,6 @@ const translations = {
     // Contact Section
     contact_title: "Contact Me",
     contact_subtitle: "Have a project or technical question? I typically respond within 24 business hours.",
-    contact_badge: "Direct Contact",
     contact_email_label: "Email:",
     contact_phone_label: "Phone:",
     contact_location_label: "Location:",
@@ -365,8 +346,9 @@ const translations = {
     contact_form_message: "Your Message:",
     contact_form_placeholder_msg: "Briefly describe your project, preferred technologies, or expected timeline...",
     contact_form_submit: "Send Message ✉️",
-    contact_form_success: "Thank you! Your message has been prepared.",
-    
+    contact_form_success: "Mail client opened — click Send to finish.",
+    contact_form_hint: "This button opens your mail client with the message pre-filled. No client configured? Email me directly at fares.metidji@outlook.fr.",
+
     // Footer & Actions
     footer_rights: "Fares METIDJI. DevOps & Full-Stack Engineer.",
     toast_copied: "Copied to clipboard!",

@@ -65,7 +65,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-remoteradar.svg"
   },
   {
@@ -125,7 +124,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-devops.svg"
   },
   {
@@ -189,7 +187,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-scancraft.svg"
   },
   {
@@ -314,7 +311,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-devops.svg"
   },
   {
@@ -372,7 +368,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-remoteradar.svg"
   },
   {
@@ -436,7 +431,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-mediaflow.svg"
   },
   {
@@ -494,7 +488,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-datainsight.svg"
   },
   {
@@ -609,7 +602,6 @@ const projectsData = [
       }
     },
     demoUrl: null,
-    githubUrl: "https://github.com/faresmetidji",
     image: "assets/images/project-remoteradar.svg"
   }
 ];

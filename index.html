@@ -92,10 +92,10 @@
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
         
-        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Changer le thème">🌙</button>
-        <a href="#contact" class="btn btn-primary btn-cta-nav" data-i18n="nav_cta">Me contacter</a>
-        
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu Mobile" aria-expanded="false">
+        <button class="theme-toggle-btn" id="theme-toggle" data-i18n-aria="aria_theme_toggle" aria-label="Changer le thème">🌙</button>
+        <a href="#contact" class="btn btn-primary btn-cta-nav" data-i18n="nav_cta" data-i18n-aria="nav_cta">Me contacter</a>
+
+        <button class="mobile-toggle" id="mobile-toggle" data-i18n-aria="aria_mobile_menu" aria-label="Menu Mobile" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -140,7 +140,7 @@
               <div style="display: flex; align-items: center; gap: 16px;">
                 <div class="hero-profile-avatar">FM</div>
                 <div class="hero-profile-info">
-                  <h3>Fares METIDJI</h3>
+                  <p class="hero-profile-name">Fares METIDJI</p>
                   <p data-i18n="hero_title">Ingénieur DevOps & Full-Stack</p>
                 </div>
               </div>
@@ -183,7 +183,6 @@
     <section class="section" id="approach">
       <div class="container">
         <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="pillars_title">Méthode de Travail</div>
           <h2 class="section-title" data-i18n="pillars_title">Méthode de Travail</h2>
           <p class="section-subtitle" data-i18n="pillars_subtitle">
             Comment se déroule une mission, du cadrage initial à la livraison.
@@ -224,7 +223,6 @@
     <section class="section" id="services">
       <div class="container">
         <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="services_title">Domaines d'Intervention</div>
           <h2 class="section-title" data-i18n="services_title">Ce que je peux réaliser pour vous</h2>
           <p class="section-subtitle" data-i18n="services_subtitle">
             Des prestations adaptées à vos besoins, au forfait ou en régie (TJM).
@@ -321,7 +319,6 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="projects_title">Projets & Études de Cas</div>
           <h2 class="section-title" data-i18n="projects_title">Réalisations & Architectures</h2>
           <p class="section-subtitle" data-i18n="projects_subtitle">
             Exemples concrets d'architectures techniques et de solutions développées.
@@ -351,7 +348,6 @@
     <section class="section" id="skills">
       <div class="container">
         <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="skills_title">Compétences Techniques</div>
           <h2 class="section-title" data-i18n="skills_title">Stack & Outils du Quotidien</h2>
           <p class="section-subtitle" data-i18n="skills_subtitle">
             Technologies et outils utilisés au quotidien sur des projets réels.
@@ -370,6 +366,7 @@
               <span class="skill-tag-item"><span class="tag-dot"></span>Kubernetes (K8s)</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>GitLab CI / CD</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>GitHub Actions</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>Agile / Scrum</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Scans Trivy & SAST</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Ansible Playbooks</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Linux (Debian, RHEL)</span>
@@ -449,6 +446,7 @@
               <span class="skill-tag-item"><span class="tag-dot"></span>Prometheus & Grafana</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Secrets (Vault, SOPS)</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Analyse de Logs</span>
+              <span class="skill-tag-item"><span class="tag-dot"></span>ITIL / ITSM</span>
               <span class="skill-tag-item"><span class="tag-dot"></span>Support & Diagnostic N3</span>
             </div>
           </div>
@@ -462,7 +460,6 @@
     <section class="section" id="experience">
       <div class="container">
         <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="experience_title">Parcours Professionnel</div>
           <h2 class="section-title" data-i18n="experience_title">Expériences en Entreprise</h2>
           <p class="section-subtitle" data-i18n="experience_subtitle">
             Un parcours solide au sein d'environnements d'entreprise et d'institutions publiques.
@@ -559,7 +556,6 @@
     <section class="section" id="faq">
       <div class="container">
         <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="faq_title">FAQ</div>
           <h2 class="section-title" data-i18n="faq_title">Questions Fréquentes</h2>
           <p class="section-subtitle" data-i18n="faq_subtitle">
             Les réponses aux questions les plus fréquentes avant de démarrer une mission.
@@ -624,7 +620,6 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="section-header reveal-init">
-          <div class="section-badge" data-i18n="contact_badge">Contact</div>
           <h2 class="section-title" data-i18n="contact_title">Me Contacter</h2>
           <p class="section-subtitle" data-i18n="contact_subtitle">
             Vous avez un projet ou une question technique ? Je réponds généralement sous 24h ouvrées.
@@ -704,6 +699,9 @@
               <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="contact-submit-btn" data-i18n="contact_form_submit">
                 Envoyer le message ✉️
               </button>
+              <p class="form-hint" data-i18n="contact_form_hint">
+                Ce bouton ouvre votre client mail avec le message pré-rempli. Pas de client configuré ? Écrivez directement à fares.metidji@outlook.fr.
+              </p>
             </form>
           </div>
         </div>
@@ -738,7 +736,7 @@
           <span style="font-size: 0.8rem; color: var(--cyan-primary); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;" data-i18n="modal_title_arch">Architecture & Détails Techniques</span>
           <h3 id="modal-project-title">Titre du Projet</h3>
         </div>
-        <button class="modal-close-btn" id="modal-close-btn" aria-label="Fermer">✕</button>
+        <button class="modal-close-btn" id="modal-close-btn" data-i18n-aria="aria_modal_close" aria-label="Fermer">✕</button>
       </div>
 
       <div class="modal-content">
@@ -783,7 +781,7 @@
   </div>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de page">↑</button>
+  <button class="back-to-top" id="back-to-top" data-i18n-aria="aria_back_to_top" aria-label="Retour en haut de page">↑</button>
 
   <!-- JavaScript Scripts -->
   <script src="js/translations.js?v=20260819_4"></script>

@@ -56,6 +56,14 @@
       }
     });
 
+    // Update aria-labels with data-i18n-aria
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria");
+      if (dict[key]) {
+        el.setAttribute("aria-label", dict[key]);
+      }
+    });
+
     // Update switcher active states
     langButtons.forEach((btn) => {
       if (btn.getAttribute("data-lang") === lang) {
@@ -70,7 +78,7 @@
 
     // If modal is open, re-render modal
     if (activeModalProject) {
-      openModal(activeModalProject);
+      openModal(activeModalProject, lastFocusedTrigger);
     }
   }
 
@@ -181,12 +189,13 @@
       btn.addEventListener("click", (e) => {
         const id = btn.getAttribute("data-id");
         const found = projectsData.find((proj) => proj.id === id);
-        if (found) openModal(found);
+        if (found) openModal(found, btn);
       });
     });
 
-    // Trigger reveal observer
-    initScrollReveal();
+    // Observe the freshly created cards only; the shared observer already
+    // watches every other .reveal-init element on the page.
+    observeReveal(projectsGrid);
   }
 
   // Filter Pills Event
@@ -238,8 +247,19 @@
       .join("");
   }
 
-  function openModal(project) {
+  let lastFocusedTrigger = null;
+
+  function getFocusableElements(container) {
+    return Array.from(
+      container.querySelectorAll(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    );
+  }
+
+  function openModal(project, triggerEl) {
     activeModalProject = project;
+    lastFocusedTrigger = triggerEl || document.activeElement;
     const lang = window.currentLang || "fr";
     const dict = translations[lang] || translations.fr;
     const arch = project.architecture[lang] || project.architecture.fr;
@@ -267,6 +287,7 @@
     if (modalBackdrop) {
       modalBackdrop.classList.add("active");
       document.body.style.overflow = "hidden";
+      if (modalCloseBtn) modalCloseBtn.focus();
     }
   }
 
@@ -276,6 +297,10 @@
       modalBackdrop.classList.remove("active");
       document.body.style.overflow = "";
     }
+    if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === "function") {
+      lastFocusedTrigger.focus();
+    }
+    lastFocusedTrigger = null;
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
@@ -287,6 +312,21 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modalBackdrop && modalBackdrop.classList.contains("active")) {
       closeModal();
+      return;
+    }
+    if (e.key === "Tab" && modalBackdrop && modalBackdrop.classList.contains("active")) {
+      const modalWindow = modalBackdrop.querySelector(".modal-window");
+      const focusable = modalWindow ? getFocusableElements(modalWindow) : [];
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 
@@ -352,9 +392,8 @@
         `Nom / Entreprise : ${name}\nEmail : ${email}\nPrestation : ${service}\n\nMessage :\n${message}`
       )}`;
 
-      window.open(mailtoLink, "_blank");
+      window.location.href = mailtoLink;
       showToast(dict.contact_form_success);
-      contactForm.reset();
     });
   }
 
@@ -459,19 +498,19 @@
   /* ==========================================================================
      9. SCROLL REVEAL OBSERVER
      ========================================================================== */
-  function initScrollReveal() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-    document.querySelectorAll(".reveal-init").forEach((el) => observer.observe(el));
+  function observeReveal(root) {
+    (root || document).querySelectorAll(".reveal-init").forEach((el) => revealObserver.observe(el));
   }
 
   /* ==========================================================================
@@ -479,6 +518,6 @@
      ========================================================================== */
   document.addEventListener("DOMContentLoaded", () => {
     applyLanguage(window.currentLang);
-    initScrollReveal();
+    observeReveal();
   });
 })();
